@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgno562ms3olb"]
+
+[ext_resource type="PackedScene" uid="uid://dooam02gtbd3f" path="res://assets/models/creature/creature.glb" id="1_1l2tg"]
+[ext_resource type="Material" uid="uid://d0l7yjscysd4o" path="res://assets/models/creature/creature_material.tres" id="2_mo80b"]
+
+[node name="creature" instance=ExtResource("1_1l2tg")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Final" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_mo80b")
