@@ -11,5 +11,15 @@ config_version=5
 [application]
 
 config/name="Toxic Terror Gamejam"
+run/main_scene="uid://p61rvjjd1k2g"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
