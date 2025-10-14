@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctpgkabgno2ba"]
+[gd_scene load_steps=7 format=3 uid="uid://ctpgkabgno2ba"]
 
 [ext_resource type="Script" uid="uid://747148yvc33q" path="res://tests-scripts/test_Jason/dialogue_box.gd" id="1_2bp2t"]
+[ext_resource type="Texture2D" uid="uid://b3e1qwthldyqx" path="res://assets/2Dsprite/text box.png" id="2_e6ah5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e6ah5"]
+font_size = 36
+
+[sub_resource type="Animation" id="Animation_e6ah5"]
+resource_name = "scroll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [0, 53]
+}
+
+[sub_resource type="Animation" id="Animation_ekdfl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wg77"]
+_data = {
+&"RESET": SubResource("Animation_ekdfl"),
+&"scroll": SubResource("Animation_e6ah5")
+}
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
@@ -11,28 +51,53 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2bp2t")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextBox" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(479, 410)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_e6ah5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.07300001
+anchor_top = 0.61300004
+anchor_right = 0.947
+anchor_bottom = 0.9110001
+offset_left = -0.08000946
+offset_top = 0.97998047
+offset_right = -0.11999512
+offset_bottom = 1.059967
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.19607843, 0.3019608, 0.58431375, 0.5764706)
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -253.0
-grow_horizontal = 2
-grow_vertical = 0
-horizontal_alignment = 1
+[node name="Label" type="Label" parent="ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "bla
+bla
+bla
+bla
+bla"
+label_settings = SubResource("LabelSettings_e6ah5")
 
-[node name="Timer" type="Timer" parent="Label"]
+[node name="TimerLetter" type="Timer" parent="ScrollContainer/Label"]
 wait_time = 0.05
 autostart = true
 
-[connection signal="timeout" from="Label/Timer" to="." method="next_letter"]
+[node name="TimerScroll" type="Timer" parent="ScrollContainer/Label"]
+wait_time = 0.25
+one_shot = true
+
+[node name="ScrollAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2wg77")
+}
+speed_scale = 4.0
+
+[connection signal="timeout" from="ScrollContainer/Label/TimerLetter" to="." method="next_letter"]
+[connection signal="timeout" from="ScrollContainer/Label/TimerScroll" to="." method="endScroll"]
