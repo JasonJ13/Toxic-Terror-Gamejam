@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	
 	
-	nmb_line_tot = full_text.get_slice_count("]") + 1
+	nmb_line_tot = full_text.get_slice_count("]") - 1
 	get_next_line()
 	
 	file.close()
@@ -54,34 +54,39 @@ func get_next_line()  -> bool :
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 
-	if Input.is_action_just_pressed("ui_accept") && n_line<nmb_line_tot :
+	if Input.is_action_just_pressed("ui_accept") && timerScroll.is_stopped() :
+		timerLetter.wait_time = 0.05
 		if n_letter == nmb_letter_tot : 
 			
-			if not(get_next_line()) :
-				pass
+			if not(get_next_line()) :	#Ce n'est pas qu'une condition, ça fait aussi des trucs
+				get_tree().free()
 				# Changement de jour/ passage à la nuit
 			
 		else : 
 			if carriage_return == 3 :
+				label.text += '\n'
 				animationScroll.play("scroll")
 				timerScroll.start()
 			
 			else :
-				n_letter = nmb_letter_tot
-				timerLetter.stop()
-				label.text = act_line
+				timerLetter.wait_time = 0.001
 		
 
 func next_letter() -> void:
-	if n_letter < nmb_letter_tot && carriage_return < 3: 
+	if n_letter < nmb_letter_tot && carriage_return < 3 : 
 		if act_line[n_letter] == '\n' :
 			carriage_return += 1
+		
+			if carriage_return == 3 :
+				n_letter += 1
+				return
+		
 		n_letter += 1
 		label.text = act_line.left(n_letter)
 		
 		
 func endScroll() -> void:
-	var lost_ind : int = act_line.find("\n")
+	var lost_ind : int = act_line.find("\n") +1
 	var lost_line : int = act_line.left(lost_ind).length()
 	
 	act_line = act_line.right(-lost_ind)
