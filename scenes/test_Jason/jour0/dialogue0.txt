@@ -1,0 +1,10 @@
+Text 0
+dialogue 1
+Ligne 3
+Ligne 4]
+Text 0
+dialogue 2]
+Text 0
+dialogue 3]
+Text 0
+dialogue 4]
