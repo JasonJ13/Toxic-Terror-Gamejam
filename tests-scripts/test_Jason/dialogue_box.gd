@@ -21,6 +21,8 @@ var lst_obj : int = 0
 @onready var animationScroll : AnimationPlayer = $ScrollAnimation
 @onready var timerScroll : Timer = $ScrollContainer/Label/TimerScroll
 
+signal end_dialogue
+
 func _ready() -> void:
 	var file = FileAccess.open("res://scenes/test_Jason/jour0/dialogue0.txt",FileAccess.READ)
 	
@@ -59,7 +61,7 @@ func _process(delta: float) -> void:
 		if n_letter == nmb_letter_tot : 
 			
 			if not(get_next_line()) :	#Ce n'est pas qu'une condition, ça fait aussi des trucs
-				get_tree().free()
+				end_dialogue.emit()
 				# Changement de jour/ passage à la nuit
 			
 		else : 
@@ -95,3 +97,7 @@ func endScroll() -> void:
 	
 	carriage_return = 2
 	timerLetter.start()
+
+
+func choice_made(choice: Variant) -> void:
+	$"../Dialogue2C".queue_free()

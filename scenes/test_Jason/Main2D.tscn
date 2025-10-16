@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://dul1c872kc1af"]
+
+[ext_resource type="Texture2D" uid="uid://b3e1qwthldyqx" path="res://assets/2Dsprite/text box.png" id="1_5kul3"]
+[ext_resource type="Script" uid="uid://bhtoku17vfbwb" path="res://tests-scripts/test_Jason/main_2d.gd" id="1_h1khe"]
+[ext_resource type="PackedScene" uid="uid://chugbggdwlbcd" path="res://scenes/test_Jason/ParentScene.tscn" id="1_qfgsi"]
+[ext_resource type="PackedScene" uid="uid://ctpgkabgno2ba" path="res://scenes/test_Jason/DialogueWOC.tscn" id="2_3l4t5"]
+[ext_resource type="PackedScene" uid="uid://bjke1nq30guc" path="res://scenes/test_Jason/BullyScene.tscn" id="3_3l4t5"]
+[ext_resource type="PackedScene" uid="uid://d1p2orljewk23" path="res://scenes/test_Jason/Dialogue2C.tscn" id="4_qfgsi"]
+
+[node name="Main2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1khe")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 480.0
+offset_top = 152.0
+offset_right = 520.0
+offset_bottom = 192.0
+
+[node name="ParentScene" parent="Control" instance=ExtResource("1_qfgsi")]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 2.0
+grow_vertical = 1
+
+[node name="BullyScene" parent="Control" instance=ExtResource("3_3l4t5")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+grow_vertical = 1
+
+[node name="TextBox" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(488.50003, 410)
+scale = Vector2(2.9960938, 3.6)
+texture = ExtResource("1_5kul3")
+
+[node name="DialogueWOC" parent="." instance=ExtResource("2_3l4t5")]
+layout_mode = 1
+
+[node name="Dialogue2C" parent="." instance=ExtResource("4_qfgsi")]
+visible = false
+layout_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.15686275)
+
+[connection signal="end_dialogue" from="DialogueWOC" to="." method="end_dialogue"]
+[connection signal="end_dialogue" from="Dialogue2C" to="DialogueWOC" method="choice_made"]
