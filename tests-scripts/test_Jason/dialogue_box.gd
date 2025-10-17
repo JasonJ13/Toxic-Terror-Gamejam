@@ -12,9 +12,6 @@ var nmb_letter_tot : int
 
 var carriage_return = 0
 
-var n_jour : int = 0
-var lst_obj : int = 0
-
 @onready var scroll : ScrollContainer = $ScrollContainer
 @onready var label : Label = $ScrollContainer/Label
 @onready var timerLetter : Timer = $ScrollContainer/Label/TimerLetter
@@ -23,18 +20,17 @@ var lst_obj : int = 0
 
 signal end_dialogue
 
-func _ready() -> void:
-	var file = FileAccess.open("res://scenes/test_Jason/jour0/dialogue0.txt",FileAccess.READ)
-	
+func new_text(file_name : String) -> void:
+	var file = FileAccess.open("res://assets/dialogue/"+file_name+".txt",FileAccess.READ)
 	full_text = file.get_as_text()
 	
-	
-	
 	nmb_line_tot = full_text.get_slice_count("]") - 1
+	n_line = 0
 	get_next_line()
 	
 	file.close()
 	
+	timerLetter.start()
 
 
 func get_next_line()  -> bool :
@@ -50,6 +46,7 @@ func get_next_line()  -> bool :
 		timerLetter.start()
 		return true
 	else :
+		label.text = ""
 		return false
 
 
@@ -81,7 +78,7 @@ func next_letter() -> void:
 		
 			if carriage_return == 3 :
 				n_letter += 1
-				return
+				return 
 		
 		n_letter += 1
 		label.text = act_line.left(n_letter)
@@ -99,5 +96,6 @@ func endScroll() -> void:
 	timerLetter.start()
 
 
+@warning_ignore("unused_parameter")
 func choice_made(choice: Variant) -> void:
 	$"../Dialogue2C".queue_free()

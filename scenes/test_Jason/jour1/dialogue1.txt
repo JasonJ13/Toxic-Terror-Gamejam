@@ -1,8 +1,0 @@
-Text 1
-dialogue 1]
-Text 1
-dialogue 2]
-Text 1
-dialogue 3]
-Text 1
-dialogue 4]

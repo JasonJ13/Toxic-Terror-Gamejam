@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by207n0e821ow"
-path="res://.godot/imported/fond-bully.png-ac054eaf3139dbe7a17e56c6a94cbd8d.ctex"
+uid="uid://c3ctgygunw2xq"
+path="res://.godot/imported/fond-bus.png-93ab1e13f10010ea94faae13ad12bbe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/fond-bully.png"
-dest_files=["res://.godot/imported/fond-bully.png-ac054eaf3139dbe7a17e56c6a94cbd8d.ctex"]
+source_file="res://assets/2Dsprite/fond/fond-bus.png"
+dest_files=["res://.godot/imported/fond-bus.png-93ab1e13f10010ea94faae13ad12bbe9.ctex"]
 
 [params]
 

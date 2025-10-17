@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://chugbggdwlbcd"]
 
-[ext_resource type="Texture2D" uid="uid://b8guob4mpnpxq" path="res://assets/2Dsprite/fond-parent.png" id="1_y43ad"]
-[ext_resource type="Texture2D" uid="uid://8d8t23a0fkc8" path="res://assets/2Dsprite/corp_parent.png" id="2_gxfpp"]
-[ext_resource type="SpriteFrames" uid="uid://c8dij63un4m3s" path="res://scenes/test_Jason/ParentScene.tres" id="3_rxymr"]
+[ext_resource type="Texture2D" uid="uid://b8guob4mpnpxq" path="res://assets/2Dsprite/fond/fond-parent.png" id="1_doaxs"]
+[ext_resource type="Texture2D" uid="uid://8d8t23a0fkc8" path="res://assets/2Dsprite/corp_parent.png" id="2_abp6b"]
+[ext_resource type="SpriteFrames" uid="uid://c8dij63un4m3s" path="res://scenes/test_Jason/ParentScene.tres" id="3_5dhp1"]
 
 [node name="ParentScene" type="ColorRect"]
 anchors_preset = 4
@@ -11,36 +11,37 @@ anchor_bottom = 0.5
 offset_top = -1.0
 offset_bottom = 1.0
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="background" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(8, 8)
-texture = ExtResource("1_y43ad")
+texture = ExtResource("1_doaxs")
 
 [node name="parent1" type="Sprite2D" parent="background"]
 texture_filter = 1
 position = Vector2(-20, 4)
 scale = Vector2(0.8, 0.8)
 skew = 0.17453292
-texture = ExtResource("2_gxfpp")
+texture = ExtResource("2_abp6b")
 
 [node name="Parent2" type="Sprite2D" parent="background"]
 texture_filter = 1
 position = Vector2(20, 4)
 scale = Vector2(0.8, 0.8)
 skew = -0.17453292
-texture = ExtResource("2_gxfpp")
+texture = ExtResource("2_abp6b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="background"]
 position = Vector2(-18, -8)
 scale = Vector2(0.6, 0.6)
-sprite_frames = ExtResource("3_rxymr")
+sprite_frames = ExtResource("3_5dhp1")
 autoplay = "default"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="background"]
 position = Vector2(18, -8)
 scale = Vector2(0.6, 0.6)
-sprite_frames = ExtResource("3_rxymr")
+sprite_frames = ExtResource("3_5dhp1")
 autoplay = "default"
 frame = 2
 frame_progress = 0.9278033

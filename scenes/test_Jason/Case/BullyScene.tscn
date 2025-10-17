@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjke1nq30guc"]
 
-[ext_resource type="Texture2D" uid="uid://by207n0e821ow" path="res://assets/2Dsprite/fond-bully.png" id="1_swd2v"]
+[ext_resource type="Texture2D" uid="uid://by207n0e821ow" path="res://assets/2Dsprite/fond/fond-bully.png" id="1_swd2v"]
 [ext_resource type="Texture2D" uid="uid://dghf7awuggwqw" path="res://assets/2Dsprite/bully.png" id="2_xhpju"]
 
 [sub_resource type="Animation" id="Animation_xhpju"]
@@ -83,7 +83,7 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 grow_vertical = 2
-color = Color(0.36558083, 0.3666131, 0.48975313, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

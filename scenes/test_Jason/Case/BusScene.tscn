@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://mkgrqijbhi3d"]
+
+[ext_resource type="Texture2D" uid="uid://c3ctgygunw2xq" path="res://assets/2Dsprite/fond/fond-bus.png" id="1_wn3eg"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-256, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("1_wn3eg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_wn3eg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(256, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("1_wn3eg")

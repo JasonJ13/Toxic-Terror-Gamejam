@@ -71,11 +71,6 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "bla
-bla
-bla
-bla
-bla"
 label_settings = SubResource("LabelSettings_e6ah5")
 
 [node name="TimerLetter" type="Timer" parent="ScrollContainer/Label"]
