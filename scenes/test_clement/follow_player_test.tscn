@@ -1,19 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://p61rvjjd1k2g"]
+[gd_scene load_steps=12 format=3 uid="uid://bbt61d2raicpq"]
 
-[ext_resource type="PackedScene" uid="uid://cgno562ms3olb" path="res://entities/npc/creature/creature.tscn" id="1_2xoxk"]
-[ext_resource type="Script" uid="uid://btj23sm0qwerf" path="res://tests-scripts/pathFollowCreature.gd" id="1_8bdxb"]
-[ext_resource type="Environment" uid="uid://cff6swre0cgvh" path="res://scenes/test_clement/test_env.tres" id="1_qhxx4"]
-[ext_resource type="PackedScene" uid="uid://ccggkqpnhhm8l" path="res://entities/decors/flickeringLight/flickering_light.tscn" id="4_y7uti"]
+[ext_resource type="Environment" uid="uid://cff6swre0cgvh" path="res://scenes/test_clement/test_env.tres" id="1_74ppi"]
+[ext_resource type="PackedScene" uid="uid://cgno562ms3olb" path="res://entities/npc/creature/creature.tscn" id="2_2n0ru"]
+[ext_resource type="PackedScene" uid="uid://n7makxhyljut" path="res://entities/player/player.tscn" id="4_74ppi"]
+[ext_resource type="PackedScene" uid="uid://ccggkqpnhhm8l" path="res://entities/decors/flickeringLight/flickering_light.tscn" id="4_k2lq4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bdxb"]
-albedo_color = Color(0.3372549, 0.27450982, 0.27058825, 0.39215687)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8bdxb"]
 material = SubResource("StandardMaterial3D_8bdxb")
-size = Vector3(85, 1, 75)
+size = Vector3(850, 1, 750)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhxx4"]
-size = Vector3(75, 1, 75)
+size = Vector3(750, 1, 750)
 
 [sub_resource type="SphereMesh" id="SphereMesh_2xoxk"]
 radius = 2.0
@@ -22,17 +21,9 @@ height = 4.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_8bdxb"]
 radius = 2.0
 
-[sub_resource type="Curve3D" id="Curve3D_2xoxk"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4457073, 0, 17.68904, 0, 0, 0, 0, 0, 0, 10.981459, 6.62403, 7.354312, 0, 0, 0, 0, 0, 0, 17.494812, 0, -10.254857, 0, 0, 0, 0, 0, 0, 6.02145, 0.73809814, -18.154537, 0, 0, 0, 0, 0, 0, -6.1978884, -2.5885744, -20.568901, 0, 0, 0, 0, 0, 0, -21.018797, 0.9976177, 0, 0, 0, 0, 0, 0, 0, -10.595787, 0.9424944, 18.47942),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 7
-
-[sub_resource type="BoxMesh" id="BoxMesh_qhxx4"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhxx4"]
+
+[sub_resource type="Curve3D" id="Curve3D_74ppi"]
 
 [node name="RagdollTest" type="Node3D"]
 
@@ -45,10 +36,6 @@ mesh = SubResource("BoxMesh_8bdxb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_qhxx4")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4719315, 9.47005, 50.083218)
-environment = ExtResource("1_qhxx4")
-
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.402723, 0.6681216)
 
@@ -58,10 +45,12 @@ mesh = SubResource("SphereMesh_2xoxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_8bdxb")
 
-[node name="creature" parent="." node_paths=PackedStringArray("toFollow") instance=ExtResource("1_2xoxk")]
+[node name="creature" parent="." instance=ExtResource("2_2n0ru")]
 transform = Transform3D(1, -1.4901161e-08, 0, 1.4901161e-08, 1.0000001, 2.9802322e-08, 0, 2.9802322e-08, 1, 4.7683716e-07, 8.571854, 1.9073486e-06)
-toFollow = NodePath("../Path3D/PathFollow3D")
-followForceArm = 4.0
+followForceHead = 4.0
+followForceArm = 0.4
+upOffset = 10.0
+headDownDistance = 15.0
 
 [node name="Physical Bone Spine" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
 transform = Transform3D(1, -2.3841858e-07, -2.650513e-15, -7.528103e-09, -0.031575136, -0.9995013, 2.3829969e-07, 0.9995014, -0.03157508, -7.833023e-11, 0.29775858, -0.09656356)
@@ -89,9 +78,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8899835e-10, -1.1360125
 body_offset = Transform3D(1, 8.526513e-13, 3.5083048e-14, 1.8207658e-14, 8.624047e-07, -1, -8.526513e-13, 1.0000001, 9.275973e-07, 2.8899194e-10, 0.18257332, 1.1190772e-05)
 
 [node name="Physical Bone Neck_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="5"]
-transform = Transform3D(1, -2.3851416e-07, -2.9807376e-12, 5.8129164e-09, 0.024383867, -0.99970263, 2.384433e-07, 0.9997027, 0.024383932, 7.348433e-09, 2.5187168, -0.057227075)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.347878e-09, -1.4684879e-07, 0.18053816)
-body_offset = Transform3D(1, -9.555379e-11, -2.7609026e-12, -2.7768898e-12, 8.288771e-07, -1.0000001, 9.5568e-11, 1.0000001, 8.959323e-07, 7.348376e-09, 0.18053818, -1.4901161e-08)
+transform = Transform3D(1, -2.3851416e-07, -2.9807376e-12, 5.8129164e-09, 0.024383867, -0.99970263, 2.384433e-07, 0.9997027, 0.024383932, 1.1352483e-08, 2.5187168, -0.057227075)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1351928e-08, -1.4684879e-07, 0.18053816)
+body_offset = Transform3D(1, -9.555379e-11, -2.7609026e-12, -2.7768898e-12, 8.288771e-07, -1.0000001, 9.5568e-11, 1.0000001, 8.959323e-07, 1.13524266e-08, 0.18053818, -1.4901161e-08)
 
 [node name="Physical Bone Head" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="6"]
 transform = Transform3D(-1, 7.2489325e-15, -2.2442716e-15, 9.769963e-15, 0.9463497, -0.32314408, -2.9116758e-22, -0.32314417, -0.94634974, 5.684342e-14, 2.7332258, 0.03801403)
@@ -149,9 +138,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0304312e-06, 1.4737719e-
 body_offset = Transform3D(0.9999999, -1.0158867e-05, -2.7532951e-06, -2.7145288e-06, -3.9384468e-05, -1, 1.0114163e-05, 1.0000001, -3.93847e-05, 0, 0.3741994, 0)
 
 [node name="Physical Bone tail" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="17"]
-transform = Transform3D(1, 4.7683713e-07, 4.42687e-15, -1.5056198e-08, 0.03157513, 0.9995013, 4.7659938e-07, -0.9995014, 0.031575073, 3.1558557e-08, -0.51117706, -0.22681369)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0948403e-09, 0.0015208425, 0.56755924)
-body_offset = Transform3D(1, -2.842171e-14, -2.4868996e-14, 0, 0, -1, 0, 1, 5.2154064e-08, 7.0948545e-09, 0.56755924, -0.0015208721)
+transform = Transform3D(1, 4.7683713e-07, 4.42687e-15, -1.5056198e-08, 0.03157513, 0.9995013, 4.7659938e-07, -0.9995014, 0.031575073, 3.5562607e-08, -0.51117706, -0.22681369)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1098891e-08, 0.0015208425, 0.56755924)
+body_offset = Transform3D(1, -2.842171e-14, -2.4868996e-14, 0, 0, -1, 0, 1, 5.2154064e-08, 1.1098905e-08, 0.56755924, -0.0015208721)
 
 [node name="Physical Bone tail_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="18"]
 transform = Transform3D(1, 4.7683713e-07, 6.2032267e-15, -1.5056196e-08, 0.03157512, 0.9995013, 4.7659938e-07, -0.9995014, 0.031575065, 2.4661688e-08, -1.6461673, -0.26418874)
@@ -159,9 +148,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.262989e-10, 1.8777397e-0
 body_offset = Transform3D(1, -2.842171e-14, -2.4868996e-14, 0, 0, -1, 0, 1, 5.2154064e-08, -5.262848e-10, 0.56772137, -1.9073486e-06)
 
 [node name="Physical Bone tail_002" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="19"]
-transform = Transform3D(1, 4.7683713e-07, 6.2032267e-15, -1.5056196e-08, 0.03157512, 0.9995013, 4.7659938e-07, -0.9995014, 0.031575065, 1.8294486e-08, -2.7810025, -0.3015691)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62266e-09, -0.0015272794, 0.5677285)
-body_offset = Transform3D(1, -2.842171e-14, -2.4868996e-14, 0, 0, -1, 0, 1, 5.2154064e-08, -7.622646e-09, 0.5677285, 0.0015272498)
+transform = Transform3D(1, 4.7683713e-07, 6.2032267e-15, -1.5056196e-08, 0.03157512, 0.9995013, 4.7659938e-07, -0.9995014, 0.031575065, 1.42904355e-08, -2.7810025, -0.3015691)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.162671e-08, -0.0015272794, 0.5677285)
+body_offset = Transform3D(1, -2.842171e-14, -2.4868996e-14, 0, 0, -1, 0, 1, 5.2154064e-08, -1.1626696e-08, 0.5677285, 0.0015272498)
 
 [node name="Physical Bone tail_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="20"]
 transform = Transform3D(1, 4.7683713e-07, 6.2032267e-15, -1.5056196e-08, 0.03157512, 0.9995013, 4.7659938e-07, -0.9995014, 0.031575065, 2.518891e-08, -3.915921, -0.3358954)
@@ -183,19 +172,8 @@ transform = Transform3D(1, 4.7683713e-07, 6.2032267e-15, -1.5056196e-08, 0.03157
 joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.098777e-13, -0.0015234349, 0.5675007)
 body_offset = Transform3D(1, -2.842171e-14, -2.4868996e-14, 0, 0, -1, 0, 1, 5.2154064e-08, -7.9580786e-13, 0.5675007, 0.0015234053)
 
-[node name="Path3D" type="Path3D" parent="."]
-curve = SubResource("Curve3D_2xoxk")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.8451724, -0.25458595, -0.46996376, 0, 0.87927264, -0.47631162, 0.53449273, 0.4025668, 0.7431352, 4.4457073, 0, 17.68904)
-script = ExtResource("1_8bdxb")
-speed_fact = 0.1
-
-[node name="Objectif" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
-mesh = SubResource("BoxMesh_qhxx4")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_qhxx4")
+environment = ExtResource("1_74ppi")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.263939, 2.9970284, 0)
@@ -214,7 +192,14 @@ sides = 16
 transform = Transform3D(0.04077706, -0.9991683, 0, 0.9991683, 0.04077706, 0, 0, 0, 1, 0, 0, 0)
 light_energy = 0.5
 
-[node name="FlickeringLight" parent="." instance=ExtResource("4_y7uti")]
+[node name="FlickeringLight" parent="." instance=ExtResource("4_k2lq4")]
 transform = Transform3D(0.99770564, 0.00084956735, -0.06769652, 0.05799284, -0.52667886, 0.84808385, -0.03493382, -0.8500639, -0.5255197, -20.270561, 8.375913, 5.405064)
+
+[node name="Player" parent="." instance=ExtResource("4_74ppi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4828053, 0.6697502, 16.20811)
+speed = 10.0
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_74ppi")
 
 [editable path="creature"]
