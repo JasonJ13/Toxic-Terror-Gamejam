@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm8vb8lrj1x0o"
-path="res://.godot/imported/bus-character.png-4a50cadd88a86bd27da6d7c3cd8f03de.ctex"
+uid="uid://cj51rel5in42c"
+path="res://.godot/imported/siège1.png-56ee323da862e9e98271de3aa642f8f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/bus-character.png"
-dest_files=["res://.godot/imported/bus-character.png-4a50cadd88a86bd27da6d7c3cd8f03de.ctex"]
+source_file="res://assets/2Dsprite/siège1.png"
+dest_files=["res://.godot/imported/siège1.png-56ee323da862e9e98271de3aa642f8f1.ctex"]
 
 [params]
 

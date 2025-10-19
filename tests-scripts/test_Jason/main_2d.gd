@@ -40,7 +40,7 @@ func next_case() -> void :
 		n_case += 1
 		var strScene = order.get_slice('/',n_case)
 		var caseressource : Resource = load("res://scenes/test_Jason/Case/"+strScene+".tscn")
-		
+		print("res://scenes/test_Jason/Case/"+strScene+".tscn")
 		caseScene = caseressource.instantiate()
 		dialogueWOC.new_text(strScene)
 		
@@ -52,8 +52,9 @@ func next_case() -> void :
 
 
 func end_dialogue() -> void:
-	animation.play("fondu_Out")
-	$TextAnimation/Duration.start()
+	if $TextAnimation/Duration.is_stopped() :
+		animation.play("fondu_Out")
+		$TextAnimation/Duration.start()
 
 func animatio_ended() -> void:
 	next_case()
