@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://duwmoygyd1pdb"]
+[gd_scene load_steps=10 format=3 uid="uid://duwmoygyd1pdb"]
 
 [ext_resource type="PackedScene" uid="uid://n7makxhyljut" path="res://entities/player/player.tscn" id="1_po62g"]
+[ext_resource type="Script" uid="uid://nebjoxxdp85n" path="res://entities/Copiable/copiable.gd" id="2_ialih"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6ps6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,10 +22,10 @@ size = Vector2(10, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ialih"]
 points = PackedVector3Array(5.077377, 0.07933401, 5.077377, -5.077377, -0.07933401, -5.077377, -5.077377, 0.07933401, -5.077377, 5.077377, -0.07933401, -5.077377, -5.077377, -0.07933401, 5.077377, -5.077377, 0.07933401, 5.077377, 5.077377, 0.07933401, -5.077377, 5.077377, -0.07933401, 5.077377)
 
-[sub_resource type="BoxMesh" id="BoxMesh_po62g"]
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_po62g"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_po62g"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -46,11 +47,14 @@ shape = SubResource("ConvexPolygonShape3D_ialih")
 [node name="Player" parent="." instance=ExtResource("1_po62g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["copiable"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("meshInstance")]
 transform = Transform3D(6.7893534, 0, 0, 0, 3.5310304, 0, 0, 0, 1, 1.8904762, 4.7683716e-07, -3.3007736)
-mesh = SubResource("BoxMesh_po62g")
+script = ExtResource("2_ialih")
+meshInstance = NodePath("MeshInstance3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" groups=["copiable"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_po62g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_po62g")
+skeleton = NodePath("../..")
