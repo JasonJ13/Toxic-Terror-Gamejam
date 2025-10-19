@@ -5,6 +5,7 @@ var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
 var object_view := false
+var jump_speed := 6.0
 
 @onready var pitch_pivot := $PitchPivot
 @onready var camera :=$PitchPivot/Camera3D
@@ -49,7 +50,10 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= 20.0 * delta
 	else:
-		velocity.y = 0.0
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = jump_speed
+		else:
+			velocity.y = 0.0
 
 	move_and_slide()
 
@@ -158,3 +162,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		twist_input = -event.relative.x * mouse_sensitivity
 		pitch_input = -event.relative.y * mouse_sensitivity
+	if event is InputEventMouseButton and event.pressed:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
