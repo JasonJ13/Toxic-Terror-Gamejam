@@ -56,5 +56,5 @@ func end_dialogue() -> void:
 		animation.play("fondu_Out")
 		$TextAnimation/Duration.start()
 
-func animatio_ended() -> void:
+func animation_ended() -> void:
 	next_case()
