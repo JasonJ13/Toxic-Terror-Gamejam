@@ -1,0 +1,24 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cff6swre0cgvh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5su3f"]
+
+[sub_resource type="Sky" id="Sky_kbjno"]
+sky_material = SubResource("ProceduralSkyMaterial_5su3f")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_kbjno")
+tonemap_mode = 1
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 1.0
+glow_blend_mode = 4
+fog_mode = 1
+fog_light_color = Color(0.5176471, 1, 0.60784316, 1)
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.83, 0.8923333, 1, 1)
+volumetric_fog_emission = Color(0.83, 0.8923333, 1, 1)
+volumetric_fog_emission_energy = 0.1

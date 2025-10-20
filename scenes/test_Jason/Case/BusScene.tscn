@@ -1,0 +1,751 @@
+[gd_scene load_steps=20 format=3 uid="uid://mkgrqijbhi3d"]
+
+[ext_resource type="Texture2D" uid="uid://c3ctgygunw2xq" path="res://assets/2Dsprite/fond/fond-bus.png" id="1_b4ct7"]
+[ext_resource type="Script" uid="uid://begh0avlcodbo" path="res://tests-scripts/test_Jason/bus_scene.gd" id="1_csvk3"]
+[ext_resource type="Texture2D" uid="uid://cm8vb8lrj1x0o" path="res://assets/2Dsprite/MainCharacter/bus-character.png" id="2_aknvg"]
+[ext_resource type="Texture2D" uid="uid://dghf7awuggwqw" path="res://assets/2Dsprite/bully.png" id="2_qxgr6"]
+[ext_resource type="Texture2D" uid="uid://cj51rel5in42c" path="res://assets/2Dsprite/siège1.png" id="3_1m8mb"]
+[ext_resource type="Texture2D" uid="uid://ygssa25yup6d" path="res://assets/2Dsprite/siège2.png" id="3_qxgr6"]
+[ext_resource type="Texture2D" uid="uid://bgcfcs1wu6lvh" path="res://assets/2Dsprite/MainCharacter/bus-character2.png" id="6_fm2n3"]
+[ext_resource type="Texture2D" uid="uid://dnerogai2t2su" path="res://assets/2Dsprite/MainCharacter/bus-character3.png" id="7_ubg36"]
+
+[sub_resource type="Animation" id="Animation_fm2n3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus1/backgroundchar2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.875, 14.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bus1/backgroundchar1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bus1/backgroundchar3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.25, -9.0625)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bus1/backgroundchar4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11.625, -8.3125)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bus1/BusCharacter:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.125, -0.124999985)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bus2/backgroundchar2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.875, 13.973006)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bus2/backgroundchar1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 13.973006)]
+}
+
+[sub_resource type="Animation" id="Animation_1m8mb"]
+resource_name = "bus1"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus1/backgroundchar2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 1, 1.1, 1.2, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.875, 14), Vector2(5.875, 13), Vector2(5.875, 14), Vector2(5.875, 14), Vector2(5.875, 13), Vector2(5.875, 14), Vector2(5.875, 14), Vector2(5.875, 13), Vector2(5.875, 14)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bus1/backgroundchar1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 1, 1.1, 1.2, 1.5, 1.6, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7, 14), Vector2(-7, 13), Vector2(-7, 14), Vector2(-7, 14), Vector2(-7, 13), Vector2(-7, 14), Vector2(-7, 14), Vector2(-7, 13), Vector2(-7, 14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bus1/backgroundchar3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 1.1, 1.2, 1.3000001, 1.6, 1.7, 1.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9), Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9), Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bus1/backgroundchar4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 1.1, 1.2, 1.3000001, 1.6, 1.7, 1.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9), Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9), Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bus1/BusCharacter:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.05, 0.15, 0.25, 1.05, 1.15, 1.25, 1.55, 1.65, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 0.125), Vector2(4, -0.375), Vector2(4, 0.125), Vector2(4, 0.125), Vector2(4, -0.375), Vector2(4, 0.125), Vector2(4, 0.125), Vector2(4, -0.375), Vector2(4, 0.125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ubg36"]
+_data = {
+&"RESET": SubResource("Animation_fm2n3"),
+&"bus1": SubResource("Animation_1m8mb")
+}
+
+[sub_resource type="Animation" id="Animation_csvk3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("backgroundchar3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.25, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("backgroundchar4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11.625, -9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BusCharacter2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.875, 0.25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("backgroundchar1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 13.973006)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("backgroundchar2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.875, 13.973006)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -20)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ubg36"]
+resource_name = "busAnimation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("backgroundchar3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.86666656, 0.9666665, 1.0666666, 1.8666666, 1.9666666, 2.0666666, 2.3666666, 2.4666667, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9), Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9), Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("backgroundchar4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.86666656, 0.9666665, 1.0666666, 1.8666666, 1.9666666, 2.0666666, 2.3666666, 2.4666667, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9), Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9), Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BusCharacter2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8333332, 0.9333332, 1.0333332, 1.8333333, 1.9333333, 2.0333333, 2.3333333, 2.4333332, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.875, 0.25), Vector2(2.875, -0.25), Vector2(2.875, 0.25), Vector2(2.875, 0.25), Vector2(2.875, -0.25), Vector2(2.875, 0.25), Vector2(2.875, 0.25), Vector2(2.875, -0.25), Vector2(2.875, 0.25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("backgroundchar1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.76666653, 0.86666656, 0.9666665, 1.7666665, 1.8666666, 1.9666666, 2.2666664, 2.3666666, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7, 13.973006), Vector2(-7, 12.973), Vector2(-7, 13.973006), Vector2(-7, 13.973006), Vector2(-7, 12.973), Vector2(-7, 13.973006), Vector2(-7, 13.973006), Vector2(-7, 12.973), Vector2(-7, 13.973006)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("backgroundchar2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.76666653, 0.86666656, 0.9666665, 1.7666665, 1.8666666, 1.9666666, 2.2666664, 2.3666666, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.875, 13.973006), Vector2(5.875, 12.973), Vector2(5.875, 13.973006), Vector2(5.875, 13.973006), Vector2(5.875, 12.973), Vector2(5.875, 13.973006), Vector2(5.875, 13.973006), Vector2(5.875, 12.973), Vector2(5.875, 13.973006)]
+}
+
+[sub_resource type="Animation" id="Animation_w8p04"]
+resource_name = "case_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w8p04"]
+_data = {
+&"RESET": SubResource("Animation_csvk3"),
+&"busAnimation": SubResource("Animation_ubg36"),
+&"case_in": SubResource("Animation_w8p04")
+}
+
+[sub_resource type="Animation" id="Animation_3wagr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("backgroundchar3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.25, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("backgroundchar4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11.625, -9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BusCharacter3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.875, 0.49999988)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("backgroundchar1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 14)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("backgroundchar2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.875, 14)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, -20)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v2ru4"]
+resource_name = "busAnimation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("backgroundchar3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.2333333, 1.3333334, 1.4333334, 2.2666667, 2.3666668, 2.4666667, 2.7333333, 2.8333335, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9), Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9), Vector2(-1.25, -9), Vector2(-1.25, -10), Vector2(-1.25, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("backgroundchar4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2333333, 1.3333334, 1.4333334, 2.2666667, 2.3666668, 2.4666667, 2.7333333, 2.8333335, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9), Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9), Vector2(11.625, -9), Vector2(11.625, -10), Vector2(11.625, -9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BusCharacter3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2, 1.3, 1.4, 2.2333333, 2.3333333, 2.4333334, 2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3.875, 0.49999988), Vector2(3.875, 0), Vector2(3.875, 0.49999988), Vector2(3.875, 0.49999988), Vector2(3.875, 0), Vector2(3.875, 0.49999988), Vector2(3.875, 0.49999988), Vector2(3.875, 0), Vector2(3.875, 0.49999988)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("backgroundchar1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1333333, 1.2333333, 1.3333334, 2.1666665, 2.2666667, 2.3666668, 2.6333332, 2.7333333, 2.8333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7, 14), Vector2(-7, 13), Vector2(-7, 14), Vector2(-7, 14), Vector2(-7, 13), Vector2(-7, 14), Vector2(-7, 14), Vector2(-7, 13), Vector2(-7, 14)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("backgroundchar2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1333333, 1.2333333, 1.3333334, 2.1666665, 2.2666667, 2.3666668, 2.6333332, 2.7333333, 2.8333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.875, 14), Vector2(5.875, 13), Vector2(5.875, 14), Vector2(5.875, 14), Vector2(5.875, 13), Vector2(5.875, 14), Vector2(5.875, 14), Vector2(5.875, 13), Vector2(5.875, 14)]
+}
+
+[sub_resource type="Animation" id="Animation_nuvlj"]
+resource_name = "case_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(256, -20), Vector2(256, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nuvlj"]
+_data = {
+&"RESET": SubResource("Animation_3wagr"),
+&"busAnimation": SubResource("Animation_v2ru4"),
+&"case_in": SubResource("Animation_nuvlj")
+}
+
+[node name="BusScene" type="ColorRect"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+size_flags_horizontal = 0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_csvk3")
+
+[node name="Bus1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-256, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("1_b4ct7")
+
+[node name="backgroundchar3" type="Sprite2D" parent="Bus1"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-1.25, -9.0625)
+scale = Vector2(0.5, 0.42968753)
+texture = ExtResource("2_qxgr6")
+
+[node name="backgroundchar4" type="Sprite2D" parent="Bus1"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(11.625, -8.3125)
+scale = Vector2(0.5, 0.43847656)
+texture = ExtResource("2_qxgr6")
+
+[node name="Siège1" type="Sprite2D" parent="Bus1"]
+position = Vector2(-3.75, 0.5)
+texture = ExtResource("3_1m8mb")
+
+[node name="Siège2" type="Sprite2D" parent="Bus1"]
+position = Vector2(9, 0.25)
+texture = ExtResource("3_1m8mb")
+
+[node name="BusCharacter" type="Sprite2D" parent="Bus1"]
+texture_filter = 1
+position = Vector2(4.125, -0.124999985)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("2_aknvg")
+
+[node name="Siège4" type="Sprite2D" parent="Bus1"]
+texture_filter = 1
+position = Vector2(-7, 10.875)
+texture = ExtResource("3_qxgr6")
+
+[node name="Siège3" type="Sprite2D" parent="Bus1"]
+texture_filter = 1
+position = Vector2(6, 11.125)
+texture = ExtResource("3_qxgr6")
+
+[node name="backgroundchar1" type="Sprite2D" parent="Bus1"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-7, 14)
+scale = Vector2(0.5, 0.43359375)
+texture = ExtResource("2_qxgr6")
+
+[node name="backgroundchar2" type="Sprite2D" parent="Bus1"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(5.875, 14.75)
+scale = Vector2(0.5, 0.43359375)
+texture = ExtResource("2_qxgr6")
+
+[node name="AnimationBus" type="AnimationPlayer" parent="Bus1"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ubg36")
+}
+autoplay = "bus1"
+
+[node name="Bus2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(0, -20)
+scale = Vector2(8, 8)
+texture = ExtResource("1_b4ct7")
+
+[node name="backgroundchar3" type="Sprite2D" parent="Bus2"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-1.25, -9)
+scale = Vector2(0.5, 0.42968753)
+texture = ExtResource("2_qxgr6")
+
+[node name="backgroundchar4" type="Sprite2D" parent="Bus2"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(11.625, -9)
+scale = Vector2(0.5, 0.43847656)
+texture = ExtResource("2_qxgr6")
+
+[node name="Siège1" type="Sprite2D" parent="Bus2"]
+position = Vector2(-3.75, 0.5)
+texture = ExtResource("3_1m8mb")
+
+[node name="Siège2" type="Sprite2D" parent="Bus2"]
+position = Vector2(9, 0.25)
+texture = ExtResource("3_1m8mb")
+
+[node name="BusCharacter2" type="Sprite2D" parent="Bus2"]
+position = Vector2(2.875, 0.25)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_fm2n3")
+
+[node name="Siège4" type="Sprite2D" parent="Bus2"]
+texture_filter = 1
+position = Vector2(-7, 10.875)
+texture = ExtResource("3_qxgr6")
+
+[node name="Siège3" type="Sprite2D" parent="Bus2"]
+texture_filter = 1
+position = Vector2(6, 11.125)
+texture = ExtResource("3_qxgr6")
+
+[node name="backgroundchar1" type="Sprite2D" parent="Bus2"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-7, 13.973006)
+scale = Vector2(0.5, 0.43359375)
+texture = ExtResource("2_qxgr6")
+
+[node name="backgroundchar2" type="Sprite2D" parent="Bus2"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(5.875, 13.973006)
+scale = Vector2(0.5, 0.43359375)
+texture = ExtResource("2_qxgr6")
+
+[node name="AnimationBus" type="AnimationPlayer" parent="Bus2"]
+libraries = {
+&"": SubResource("AnimationLibrary_w8p04")
+}
+
+[node name="Bus3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(256, -20)
+scale = Vector2(8, 8)
+texture = ExtResource("1_b4ct7")
+
+[node name="backgroundchar3" type="Sprite2D" parent="Bus3"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-1.25, -9)
+scale = Vector2(0.5, 0.42968753)
+texture = ExtResource("2_qxgr6")
+
+[node name="backgroundchar4" type="Sprite2D" parent="Bus3"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(11.625, -9)
+scale = Vector2(0.5, 0.43847656)
+texture = ExtResource("2_qxgr6")
+
+[node name="Siège1" type="Sprite2D" parent="Bus3"]
+position = Vector2(-3.75, 0.5)
+texture = ExtResource("3_1m8mb")
+
+[node name="Siège2" type="Sprite2D" parent="Bus3"]
+position = Vector2(9, 0.25)
+texture = ExtResource("3_1m8mb")
+
+[node name="BusCharacter3" type="Sprite2D" parent="Bus3"]
+position = Vector2(3.875, 0.49999988)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_ubg36")
+
+[node name="Siège4" type="Sprite2D" parent="Bus3"]
+texture_filter = 1
+position = Vector2(-7, 10.875)
+texture = ExtResource("3_qxgr6")
+
+[node name="Siège3" type="Sprite2D" parent="Bus3"]
+texture_filter = 1
+position = Vector2(6, 11.125)
+texture = ExtResource("3_qxgr6")
+
+[node name="backgroundchar1" type="Sprite2D" parent="Bus3"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(-7, 14)
+scale = Vector2(0.5, 0.43359375)
+texture = ExtResource("2_qxgr6")
+
+[node name="backgroundchar2" type="Sprite2D" parent="Bus3"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(5.875, 14)
+scale = Vector2(0.5, 0.43359375)
+texture = ExtResource("2_qxgr6")
+
+[node name="AnimationBus" type="AnimationPlayer" parent="Bus3"]
+libraries = {
+&"": SubResource("AnimationLibrary_nuvlj")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="animation_finished" from="Bus2/AnimationBus" to="." method="In2_finished"]
+[connection signal="animation_finished" from="Bus3/AnimationBus" to="." method="In3_finished"]
