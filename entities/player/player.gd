@@ -1,10 +1,13 @@
 extends CharacterBody3D
 
-@export var speed := 2.0
-var mouse_sensitivity := 0.001
+var speed := 2.0
+@export var default_speed:=2.0
+@export var object_speed:=0.2
+@export var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
 var object_view := false
+@export var jump_speed := 6.0
 
 @onready var pitch_pivot := $PitchPivot
 @onready var camera :=$PitchPivot/Camera3D
@@ -15,6 +18,8 @@ var default_shape: Shape3D
 var default_mesh: Mesh
 var collider_offset_y := 0.0
 var default_collider_offset_y := 0.0
+
+var highlighted_object: Objet = null
 	
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -49,7 +54,10 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= 20.0 * delta
 	else:
-		velocity.y = 0.0
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = jump_speed
+		else:
+			velocity.y = 0.0
 
 	move_and_slide()
 
@@ -60,101 +68,88 @@ func _process(delta: float) -> void:
 
 	twist_input = 0.0
 	pitch_input = 0.0
-
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	#Si le joueur n'est pas pas un objet on surligne les objet dont il peut prendre la forme
+	if !object_view:
+		processRaycast()
+
 		
 	if Input.is_action_just_pressed("change_view"):
 		object_view=!object_view
 		if object_view:
-			if copy_mesh():
+			if change_to_object():
 				camera.position=$ObjectViewPoint.position
+				speed=object_speed
 			else:
-				object_view!=object_view
+				object_view = false
 		else:
 			$CollisionShape3D.shape=default_shape
 			$MeshInstance3D.mesh=default_mesh
+			$MeshInstance3D.scale = Vector3(0.4,1,0.4)
 			var old_center = collider_offset_y  # centre précédent
 			var new_center = default_collider_offset_y
 			# Ajuster la position verticale pour compenser
 			position.y += (new_center - old_center)
 			collider_offset_y = new_center  # mettre à jour l'offset
-		
-			
 			camera.transform = default_camera_transform
 			
+			speed=default_speed
+			
 			
 		
-		
-func copy_mesh()->bool:
+func processRaycast():
 	raycast.global_transform.origin = camera.global_transform.origin
 	raycast.global_transform.basis = camera.global_transform.basis
 
  
 	raycast.force_raycast_update()  # s'assure que le raycast est à jour
 	if raycast.is_colliding():
-		var collider = raycast.get_collider()
-		
-			# Vérifier si l'objet a un MeshInstance
-		var mesh_instance = find_mesh_instance(collider)
-		if not mesh_instance.is_in_group("copiable"):
-			print("Objet non copiable")
-			return false
-		if mesh_instance:
-			# Copier le mesh
-			var player_mesh = $MeshInstance3D  # ton mesh actuel du joueur
-			player_mesh.mesh = mesh_instance.mesh
-			print("Joueur transformé en l'objet touché !")
-
-			# Si tu veux, tu peux aussi ajuster le collider du joueur
-			var shape = mesh_instance.mesh.create_convex_shape()
-			if shape:
-				var collision_shape = $CollisionShape3D  # collider actuel du joueur
-				var old_center = collider_offset_y  # centre précédent
-				collision_shape.shape = shape
-				var new_center = get_collider_center_y(shape,mesh_instance.mesh)
-
-				# Ajuster la position verticale pour compenser
-				position.y += (new_center - old_center)
-				collider_offset_y = new_center  # mettre à jour l'offset
-	
-				print("Collider du joueur mis à jour !")
-				return(true)
-				
+		var collide = raycast.get_collider()
+		if collide is Objet:
+			# Applique le contour si c’est un nouvel objet
+			if highlighted_object != collide:
+				if highlighted_object:
+					highlighted_object.remove_outline()
+				collide.outline()
+				highlighted_object = collide
 		else:
-			print("Pas de MeshInstance trouvé sur cet objet.")
+			# Si ce n’est pas un objet copiable
+			if highlighted_object:
+				highlighted_object.remove_outline()
+				highlighted_object = null
+	else:
+		# Si le raycast ne touche rien
+		if highlighted_object:
+			highlighted_object.remove_outline()
+			highlighted_object = null
+		
+func change_to_object()->bool:
+	if highlighted_object is Copiable:
+		$MeshInstance3D.mesh  = highlighted_object.meshInstance.mesh
+		$MeshInstance3D.scale = Vector3(1,1,1)
+		var shape = $MeshInstance3D.mesh.create_convex_shape()
+		$CollisionShape3D.shape=shape
+		
+		#Déplacer le center pour pas tomber à travers le sol
+		var old_center = collider_offset_y  
+		var new_center = get_collider_center_y(shape,highlighted_object.meshInstance.mesh)
+		position.y += (new_center - old_center)
+		collider_offset_y = new_center  
+		
+		#On désactive le surlignage quand on prend la forme de l'objet
+		highlighted_object.remove_outline() 
+		highlighted_object=null
+		return(true)
 	return false
 
-
-func find_mesh_instance_in_children(node: Node) -> MeshInstance3D:
-	for child in node.get_children():
-		var found = find_mesh_instance_in_children(child)
-		if found:
-			return found
-	return null
-	
-func find_mesh_instance(collider: Node) -> MeshInstance3D:
-	var node = collider
-	while node:
-		if node is MeshInstance3D:
-			return node
-		node = node.get_parent()
-	return find_mesh_instance_in_children(collider)
-	
-	
-func draw_ray(start_pos: Vector3, end_pos: Vector3, color: Color):
-	var line = ImmediateMesh.new()
-	line.surface_begin(Mesh.PRIMITIVE_LINES)
-	line.surface_set_color(color)
-	line.surface_add_vertex(start_pos)
-	line.surface_add_vertex(end_pos)
-	line.surface_end()
-
-	var mesh_instance = MeshInstance3D.new()
-	mesh_instance.mesh = line
-	add_child(mesh_instance)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		twist_input = -event.relative.x * mouse_sensitivity
 		pitch_input = -event.relative.y * mouse_sensitivity
+	if event is InputEventMouseButton and event.pressed:
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
