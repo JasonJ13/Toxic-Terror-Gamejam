@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbt61d2raicpq"]
+[gd_scene load_steps=16 format=3 uid="uid://bbt61d2raicpq"]
 
 [ext_resource type="PackedScene" uid="uid://cgno562ms3olb" path="res://entities/npc/creature/creature.tscn" id="1_m07vw"]
 [ext_resource type="Environment" uid="uid://cff6swre0cgvh" path="res://scenes/test_clement/test_env.tres" id="2_64xmg"]
 [ext_resource type="PackedScene" uid="uid://ccggkqpnhhm8l" path="res://entities/decors/flickeringLight/flickering_light.tscn" id="3_o0kxo"]
 [ext_resource type="PackedScene" uid="uid://n7makxhyljut" path="res://entities/player/player.tscn" id="4_31kyv"]
 [ext_resource type="Script" uid="uid://ceq4wyb23lprb" path="res://tools-scripts/spline_tool.gd" id="5_3608x"]
+[ext_resource type="Script" uid="uid://nebjoxxdp85n" path="res://entities/Objets/Copiable/copiable.gd" id="6_64xmg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bdxb"]
 
@@ -32,6 +33,12 @@ _data = {
 }
 point_count = 10
 
+[sub_resource type="BoxMesh" id="BoxMesh_64xmg"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64xmg"]
+size = Vector3(2, 2, 2)
+
 [node name="RagdollTest" type="Node3D"]
 
 [node name="Ground" type="StaticBody3D" parent="."]
@@ -47,7 +54,6 @@ shape = SubResource("BoxShape3D_qhxx4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.402723, 0.6681216)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.5671425)
 mesh = SubResource("SphereMesh_2xoxk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
@@ -60,6 +66,7 @@ followForceHead = 400.0
 followForceArm = 30.0
 searchingPath = NodePath("../SearchPath")
 findDistance = 60.0
+multForceRushingPlayer = 3.0
 
 [node name="Physical Bone Spine" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
 transform = Transform3D(0.5, -1.1921118e-07, 1.15463195e-14, -3.7641006e-09, -0.015787581, -0.4997507, 1.1915174e-07, 0.4997507, -0.015787581, 0, 0.29784584, -0.09655611)
@@ -137,9 +144,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007321247, -0.000625939
 body_offset = Transform3D(0.5, -2.4214387e-07, 3.5487355e-06, 3.5673547e-06, -6.4249616e-07, -0.50000006, 2.4028122e-07, 0.50000006, -6.4237975e-07, -0.0003681183, 0.28964996, 0.00031334162)
 
 [node name="Physical Bone arm_R_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="15"]
-transform = Transform3D(-0.002942001, 0.0018224989, 0.49998802, 0.49967828, -0.0176805, 0.003004625, 0.017691027, 0.49968398, -0.0017172941, -3.5853882, 1.5984335, -0.048407596)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034007542, -0.0022419863, 1.2440643)
-body_offset = Transform3D(0.49999997, 9.313226e-09, -1.9677827e-08, -8.1490725e-10, -1.7179409e-06, -0.5, -9.313226e-09, 0.5, -1.7179409e-06, 0.0017004013, 0.62203217, 0.0011231303)
+transform = Transform3D(-0.002942001, 0.0018224989, 0.49998802, 0.49967828, -0.0176805, 0.003004625, 0.017691027, 0.49968398, -0.0017172941, -3.7992668, 1.5984325, -0.046893723)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0060233423, -0.003708698, 1.6718216)
+body_offset = Transform3D(0.49999997, 9.313226e-09, -1.9677827e-08, -8.1490725e-10, -1.7179409e-06, -0.5, -9.313226e-09, 0.5, -1.7179409e-06, 0.0030117035, 0.8359108, 0.0018572211)
 
 [node name="Physical Bone arm_R_004" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="16"]
 transform = Transform3D(-0.002940654, 0.0018435356, 0.499988, 0.499678, -0.01768922, 0.003004054, 0.017699871, 0.49968362, -0.0017383124, -4.0852623, 1.5939989, -0.047956184)
@@ -206,11 +213,22 @@ transform = Transform3D(0.99770564, 0.00084956735, -0.06769652, 0.05799284, -0.5
 
 [node name="Player" parent="." instance=ExtResource("4_31kyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4828053, 0.6697502, 16.20811)
-speed = 10.0
+default_speed = 10.0
 
 [node name="SearchPath" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32.25425, 0)
 curve = SubResource("Curve3D_74ppi")
 script = ExtResource("5_3608x")
+
+[node name="TestCopiable" type="StaticBody3D" parent="." node_paths=PackedStringArray("meshInstance")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.825905, -3.8673897, 20.175245)
+script = ExtResource("6_64xmg")
+meshInstance = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestCopiable"]
+mesh = SubResource("BoxMesh_64xmg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestCopiable"]
+shape = SubResource("BoxShape3D_64xmg")
 
 [editable path="creature"]
