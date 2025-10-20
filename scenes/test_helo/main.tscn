@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duwmoygyd1pdb"]
+[gd_scene load_steps=13 format=3 uid="uid://duwmoygyd1pdb"]
 
 [ext_resource type="PackedScene" uid="uid://n7makxhyljut" path="res://entities/player/player.tscn" id="1_po62g"]
 [ext_resource type="Script" uid="uid://nebjoxxdp85n" path="res://entities/Objets/Copiable/copiable.gd" id="2_ialih"]
@@ -22,29 +22,6 @@ size = Vector2(10, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ialih"]
 points = PackedVector3Array(5.077377, 0.07933401, 5.077377, -5.077377, -0.07933401, -5.077377, -5.077377, 0.07933401, -5.077377, 5.077377, -0.07933401, -5.077377, -5.077377, -0.07933401, 5.077377, -5.077377, 0.07933401, 5.077377, 5.077377, 0.07933401, -5.077377, 5.077377, -0.07933401, 5.077377)
-
-[sub_resource type="Shader" id="Shader_ialih"]
-code = "shader_type spatial;
-render_mode unshaded, cull_disabled;
-
-uniform vec4 outline_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform float outline_thickness : hint_range(0.0, 0.05) = 0.02;
-
-void vertex() {
-	VERTEX += NORMAL * outline_thickness;
-}
-
-void fragment() {
-	ALBEDO = outline_color.rgb;
-	ALPHA = outline_color.a;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtvnl"]
-render_priority = 0
-shader = SubResource("Shader_ialih")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_thickness = 0.02
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_po62g"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
@@ -75,7 +52,6 @@ shape = SubResource("ConvexPolygonShape3D_ialih")
 
 [node name="Player" parent="." instance=ExtResource("1_po62g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-outline_material = SubResource("ShaderMaterial_dtvnl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." node_paths=PackedStringArray("meshInstance")]
 transform = Transform3D(6.7893534, 0, 0, 0, 3.5310304, 0, 0, 0, 1, 1.8904762, 4.7683716e-07, -3.3007736)

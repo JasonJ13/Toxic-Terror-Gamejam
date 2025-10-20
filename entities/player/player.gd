@@ -1,13 +1,13 @@
 extends CharacterBody3D
 
 var speed := 2.0
-var default_speed:=2.0
-var object_speed:=0.2
-var mouse_sensitivity := 0.001
+@export var default_speed:=2.0
+@export var object_speed:=0.2
+@export var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
 var object_view := false
-var jump_speed := 6.0
+@export var jump_speed := 6.0
 
 @onready var pitch_pivot := $PitchPivot
 @onready var camera :=$PitchPivot/Camera3D
@@ -19,7 +19,6 @@ var default_mesh: Mesh
 var collider_offset_y := 0.0
 var default_collider_offset_y := 0.0
 
-@export var outline_material: Material
 var highlighted_object: Objet = null
 	
 func _ready() -> void:
