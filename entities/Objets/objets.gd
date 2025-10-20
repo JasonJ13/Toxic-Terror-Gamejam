@@ -1,6 +1,9 @@
-class_name Copiable extends StaticBody3D
+class_name Objet extends StaticBody3D
 
 @export var meshInstance : MeshInstance3D
+
+var outline_color:=Color.WHITE
+var outline_thickness: float = 1.03 # échelle du contour
 
 func outline():
 	# Supprime un ancien contour s’il existe déjà
@@ -12,7 +15,7 @@ func outline():
 	var outline = MeshInstance3D.new()
 	outline.name = "OutlineMesh"
 	outline.mesh = meshInstance.mesh
-	outline.scale = meshInstance.scale * 1.03  # un peu plus grand
+	outline.scale = meshInstance.scale * outline_thickness  # un peu plus grand
 	outline.material_override = create_outline_material()
 	outline.visible = true
 	outline.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -40,4 +43,5 @@ func create_outline_material() -> ShaderMaterial:
 	"""
 	var mat = ShaderMaterial.new()
 	mat.shader = shader
+	mat.set_shader_parameter("outline_color", outline_color)
 	return mat

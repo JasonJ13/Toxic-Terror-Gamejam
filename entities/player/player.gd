@@ -20,7 +20,7 @@ var collider_offset_y := 0.0
 var default_collider_offset_y := 0.0
 
 @export var outline_material: Material
-var highlighted_object: Copiable = null
+var highlighted_object: Objet = null
 	
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -85,7 +85,7 @@ func _process(delta: float) -> void:
 				camera.position=$ObjectViewPoint.position
 				speed=object_speed
 			else:
-				object_view!=object_view
+				object_view = false
 		else:
 			$CollisionShape3D.shape=default_shape
 			$MeshInstance3D.mesh=default_mesh
@@ -109,7 +109,7 @@ func processRaycast():
 	raycast.force_raycast_update()  # s'assure que le raycast est à jour
 	if raycast.is_colliding():
 		var collide = raycast.get_collider()
-		if collide is Copiable:
+		if collide is Objet:
 			# Applique le contour si c’est un nouvel objet
 			if highlighted_object != collide:
 				if highlighted_object:
@@ -128,7 +128,7 @@ func processRaycast():
 			highlighted_object = null
 		
 func change_to_object()->bool:
-	if highlighted_object:
+	if highlighted_object is Copiable:
 		$MeshInstance3D.mesh  = highlighted_object.meshInstance.mesh
 		$MeshInstance3D.scale = Vector3(1,1,1)
 		var shape = $MeshInstance3D.mesh.create_convex_shape()
