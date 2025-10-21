@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dul1c872kc1af"]
+
+[ext_resource type="Script" uid="uid://bhtoku17vfbwb" path="res://tests-scripts/test_Jason/gestion_case.gd" id="1_h1khe"]
+[ext_resource type="PackedScene" uid="uid://cyr7m83boa1oh" path="res://scenes/test_Jason/sunset.tscn" id="4_qfgsi"]
+
+[node name="Main2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1khe")
+
+[node name="Control" parent="." instance=ExtResource("4_qfgsi")]
+layout_mode = 1
