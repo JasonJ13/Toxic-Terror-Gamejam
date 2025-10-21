@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=3 uid="uid://dpkeuyfe2thtu"]
+
+[ext_resource type="PackedScene" uid="uid://desm1shs2u8dn" path="res://assets/models/environment/outdoors/broken_wall_0/broken_wall_0.tscn" id="1_t2l2d"]
+[ext_resource type="Texture2D" uid="uid://d4fy0l6y58mmi" path="res://assets/textures/snow/snow_02_diff_2k.jpg" id="2_wy0cf"]
+[ext_resource type="Texture2D" uid="uid://ls2iddhiqx1h" path="res://assets/textures/hdri/passendorf_snow_1k.hdr" id="2_x87fi"]
+[ext_resource type="Texture2D" uid="uid://cf23vfnevmtkq" path="res://assets/textures/snow/snow_02_arm_2k.jpg" id="3_scvhx"]
+[ext_resource type="PackedScene" uid="uid://b5rhghv1eajei" path="res://assets/models/environment/outdoors/broken_wall_0/broken_wall_0_snow.tscn" id="4_1bh1t"]
+[ext_resource type="LightmapGIData" uid="uid://cgtyx04pg40us" path="res://scenes/test_ambre/lightmaps/test_ambre.lmbake" id="4_wni5b"]
+[ext_resource type="Texture2D" uid="uid://b8jogokqcb18y" path="res://assets/textures/snow/snow_02_nor_gl_2k.jpg" id="4_wsouy"]
+[ext_resource type="PackedScene" uid="uid://cel4sbrk05end" path="res://assets/models/environment/outdoors/rock_0/rock_0_snow.tscn" id="8_scvhx"]
+[ext_resource type="PackedScene" uid="uid://djvlxaq1nwvx0" path="res://assets/models/environment/outdoors/tree_0/tree_0_snow.tscn" id="9_wsouy"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hasa0"]
+panorama = ExtResource("2_x87fi")
+
+[sub_resource type="Sky" id="Sky_1bh1t"]
+sky_material = SubResource("PanoramaSkyMaterial_hasa0")
+
+[sub_resource type="Environment" id="Environment_wni5b"]
+background_mode = 2
+sky = SubResource("Sky_1bh1t")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.7312589, 0.7312589, 0.7312589, 1)
+adjustment_brightness = 1.16
+adjustment_contrast = 0.72
+adjustment_saturation = 1.24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bx7c8"]
+albedo_texture = ExtResource("2_wy0cf")
+metallic = 1.0
+metallic_texture = ExtResource("3_scvhx")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_scvhx")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("4_wsouy")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("3_scvhx")
+uv1_scale = Vector3(11.77, 11.77, 11.77)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t2l2d"]
+lightmap_size_hint = Vector2i(502, 502)
+material = SubResource("StandardMaterial3D_bx7c8")
+add_uv2 = true
+size = Vector2(100, 100)
+
+[node name="TestAmbre" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.9935719, 0.021212162, -0.11119805, 0, 0.98228717, 0.18738131, 0.1132032, 0.18617679, -0.97597295, -1.078, 4.077, -7.905)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wni5b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.82953167, -0.3000568, -0.4710024, -0.29029992, -0.4888049, 0.8226758, -0.47707748, 0.81916755, 0.3183726, 0, 0, 0)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 3
+bounces = 5
+generate_probes_subdiv = 3
+light_data = ExtResource("4_wni5b")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1885624, 2.9699407, 4.611823)
+light_color = Color(2.015759, 1.592409, 0.8303789, 1)
+light_energy = 8.153
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 15.0
+
+[node name="Scene" type="Node3D" parent="."]
+
+[node name="rock_0" parent="Scene" instance=ExtResource("8_scvhx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6458564, 0)
+
+[node name="rock_1" parent="Scene" instance=ExtResource("8_scvhx")]
+transform = Transform3D(0.5337621, 0.4570571, 0.71147513, 0, 0.84135056, -0.54049003, -0.8456348, 0.2884931, 0.44908103, 8.547924, 0.59196377, 0)
+
+[node name="rock_2" parent="Scene" instance=ExtResource("8_scvhx")]
+transform = Transform3D(-0.94354105, -0.1790403, -0.278702, 0.1857483, 0.41066816, -0.8926641, 0.2742769, -0.8940337, -0.35422572, 1.103323, 0.23530722, -4.2195053)
+
+[node name="tree_0" parent="Scene" instance=ExtResource("9_wsouy")]
+transform = Transform3D(1.6769037, 0, -1.0899514, 0, 2, 0, 1.0899514, 0, 1.6769037, -4.0831914, 0.024475574, 5.3488483)
+
+[node name="broken_wall_0_snow" parent="Scene" instance=ExtResource("4_1bh1t")]
+transform = Transform3D(0.8193723, -0.03196673, 0.5723698, -0.037883382, 0.99324226, 0.10970391, -0.5720086, -0.11157167, 0.8126242, -8.308563, 0.67729807, -15.766063)
+
+[node name="broken_wall_0_snow2" parent="Scene" instance=ExtResource("4_1bh1t")]
+transform = Transform3D(0.6418066, 0.108330525, -0.7591765, -0.037883386, 0.99324226, 0.10970392, 0.7659302, -0.041648626, 0.64157337, 0.16208935, 0.67729807, -14.757977)
+
+[node name="broken_wall_0_snow3" parent="Scene" instance=ExtResource("4_1bh1t")]
+transform = Transform3D(-0.56615937, -0.111796476, 0.8166794, -0.037883382, 0.9932423, 0.10970392, -0.8234247, 0.031171441, -0.5665686, 8.03564, 0.67729807, -5.115734)
+
+[node name="broken_wall_0_snow4" parent="Scene" instance=ExtResource("4_1bh1t")]
+transform = Transform3D(0.9831003, 0.017367806, 0.18224186, -0.037883382, 0.9932423, 0.10970392, -0.17910498, -0.11475393, 0.9771147, 0.27818012, 0.6772971, 10.462721)
+
+[node name="broken_wall_0_snow5" parent="Scene" instance=ExtResource("4_1bh1t")]
+transform = Transform3D(0.45912415, -0.08020882, 0.884744, -0.037883382, 0.9932423, 0.10970393, -0.887564, -0.08388475, 0.4529829, 8.771961, 0.6772971, 5.252818)
+
+[node name="broken_wall_0_snow6" parent="Scene" instance=ExtResource("4_1bh1t")]
+transform = Transform3D(0.682804, 0.12838729, 0.57680523, -0.0737651, 0.8930536, -0.11145811, -0.5862989, 0.037160512, 0.68577087, -2.1258712, 0.22082853, 6.6501207)
+
+[node name="broken_wall_1" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(-0.3183803, 0, 0.947963, 0, 1, 0, -0.947963, 0, -0.3183803, -8.111099, 0, 1.6642723)
+
+[node name="broken_wall_4" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(0.20365806, 0.13431397, -0.6775688, -0.0024148915, 0.70653915, 0.13933088, 0.6907491, -0.037130646, 0.20025933, -10.891898, 0, -8.600788)
+
+[node name="broken_wall_2" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(-1.0967151, 0, 0.9020067, 0, 1.42, 0, -0.9020067, 0, -1.0967151, -8.031443, 0, 9.534515)
+
+[node name="broken_wall_5" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(0.78885305, 0, -1.2758178, 0, 1.5, 0, 1.2758178, 0, 0.78885305, -16.627037, -9.536743e-07, 11.45339)
+
+[node name="broken_wall_6" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(1.4501615, -5.5879354e-09, 0.38344675, 0.093361475, 1.454859, -0.35308474, -0.37190735, 0.36521935, 1.4065205, -1.1267414, -9.536743e-07, 19.793001)
+
+[node name="broken_wall_7" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(2.9662678, -0.2761548, -0.3535446, 0.18672293, 2.909718, -0.7061695, 0.40790904, 0.67622435, 2.8941891, -15.396378, -9.536743e-07, 33.422165)
+
+[node name="broken_wall_8" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(2.488466, 0.7236019, 1.511271, -0.47201693, 2.8989835, -0.6108181, -1.6077124, 0.26888496, 2.5185246, 13.961268, -9.536743e-07, 29.873165)
+
+[node name="broken_wall_3" parent="Scene" instance=ExtResource("1_t2l2d")]
+transform = Transform3D(0.21766739, -0.33207077, 1.3633599, 0.052353766, 1.3806264, 0.32791787, -1.4022412, 0, 0.22387499, -13.807037, 0, -2.9813814)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scene"]
+mesh = SubResource("PlaneMesh_t2l2d")
+skeleton = NodePath("../..")

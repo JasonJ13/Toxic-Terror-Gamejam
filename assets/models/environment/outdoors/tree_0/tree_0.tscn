@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://8r5mfypxx2g5"]
+
+[ext_resource type="PackedScene" uid="uid://cpahbb2ukkt62" path="res://assets/models/environment/outdoors/tree_0/tree_0.glb" id="1_asqdt"]
+[ext_resource type="Material" uid="uid://bcs1fhdkq0iwp" path="res://assets/models/environment/outdoors/tree_0/tree_0.tres" id="2_jfvdq"]
+
+[node name="tree_0" instance=ExtResource("1_asqdt")]
+
+[node name="Vert_001" parent="." index="0"]
+material_override = ExtResource("2_jfvdq")
