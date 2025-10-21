@@ -284,7 +284,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.8454577, -0.24846911, -0.47272027, 0.32901195, -0.4548982, 0.8275377, -0.42065722, -0.8551788, -0.3028478, 0, 3.3058891, 0)
+transform = Transform3D(0.408301, 0.119641, -0.90497303, 0.8101468, -0.50433654, 0.29884246, -0.42065722, -0.8551788, -0.3028478, 0, 3.3058891, 0)
 light_color = Color(0.9019608, 1, 1, 1)
 light_energy = 0.489
 light_volumetric_fog_energy = 1.731
