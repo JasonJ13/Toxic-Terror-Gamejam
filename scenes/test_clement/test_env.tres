@@ -77,12 +77,12 @@ shader_parameter/stars_speed = 0.014000000665
 
 [sub_resource type="Sky" id="Sky_oqhk6"]
 sky_material = SubResource("ShaderMaterial_kbjno")
+radiance_size = 0
 
 [resource]
 background_mode = 2
 background_energy_multiplier = 0.1
 sky = SubResource("Sky_oqhk6")
-ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 1
 glow_enabled = true
