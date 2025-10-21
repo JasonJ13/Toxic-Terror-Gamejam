@@ -21,12 +21,14 @@ uniform float horizon_falloff: hint_range(0.0, 1.0, 0.1);
 
 
 // Sun Stuff
+uniform float sun_energy_mult : hint_range(1.0, 10.0) = 1.0;
 uniform vec3 sun_col: source_color = vec3(1.0);
 uniform float sun_size: hint_range(0.01, 1.0) = 1.0;
 uniform float sun_blur: hint_range(0.01, 1.0) = 0.01;
 
 
 // Moon Stuff
+uniform float moon_energy_muly : hint_range(1.0, 10.0) = 1.0;
 uniform vec3 moon_col: source_color = vec3(1.0);
 uniform float moon_size: hint_range(0.01, 1.0) = 1.0;
 uniform float moon_crescent_offset: hint_range(-1.0, 1.0) = 0.5;
@@ -88,6 +90,7 @@ void sky() {
 	float sun_power = 1.0 - clamp(sun_distance / sun_size, 0.0, 1.0);
 	float sun_disc = clamp(sun_power / sun_blur, sun_power, 1.0);
 	vec3 sun = sun_col * sun_disc;
+	sun *= sun_energy_mult;
 	
 	
 	
@@ -102,6 +105,7 @@ void sky() {
 	vec3 moon_crescent = moon_col * moon_crescent_disc;
 	
 	vec3 moon = clamp( (moon_col * moon_disc) - moon_crescent, 0.0 , 1.0);
+	moon *= moon_energy_muly;
 	
 	
 	
@@ -129,7 +133,8 @@ void sky() {
 	
 	
 	vec3 sun_moon = sun + moon;
-	sun_moon = clamp(sun_moon * clouds_negative, 0.0, 1.0);
+	sun_moon = sun_moon * clouds_negative;
+	// sun_moon = clamp(sun_moon * clouds_negative, 0.0, 1.0);
 	
 	sky_gradients = clamp(sky_gradients * clouds_negative, 0.0, 1.0);
 	
