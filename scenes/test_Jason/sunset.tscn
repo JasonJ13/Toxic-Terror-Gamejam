@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyr7m83boa1oh"]
+[gd_scene load_steps=10 format=3 uid="uid://cyr7m83boa1oh"]
 
-[ext_resource type="Texture2D" uid="uid://bw72n33u2hh43" path="res://assets/2Dsprite/fond/sunset.png" id="1_4h4it"]
-[ext_resource type="Texture2D" uid="uid://c76f5a46r3ytq" path="res://assets/2Dsprite/MainCharacter/character shadow.png" id="2_dyyls"]
+[ext_resource type="Texture2D" uid="uid://bw72n33u2hh43" path="res://assets/2Dsprite/fond/sunset-panel.png" id="1_4h4it"]
+[ext_resource type="Script" uid="uid://cy7njh23cv3vf" path="res://scenes/test_Jason/sunset.gd" id="1_dyyls"]
+[ext_resource type="Texture2D" uid="uid://1kdl8tcfi33c" path="res://assets/2Dsprite/Character/character shadow.png" id="2_dyyls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1wjq"]
 atlas = ExtResource("1_4h4it")
@@ -57,6 +58,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dyyls")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -71,3 +73,12 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_eqq6x")
 autoplay = "default"
 frame_progress = 0.009485917
+
+[node name="TimerLetter" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
