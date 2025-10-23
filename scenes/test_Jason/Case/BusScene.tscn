@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c3ctgygunw2xq" path="res://assets/2Dsprite/fond/fond-bus.png" id="1_b4ct7"]
 [ext_resource type="Script" uid="uid://begh0avlcodbo" path="res://tests-scripts/test_Jason/bus_scene.gd" id="1_csvk3"]
-[ext_resource type="Texture2D" uid="uid://cm8vb8lrj1x0o" path="res://assets/2Dsprite/MainCharacter/bus-character.png" id="2_aknvg"]
+[ext_resource type="Texture2D" uid="uid://cm8vb8lrj1x0o" path="res://assets/2Dsprite/Character/bus-character.png" id="2_aknvg"]
 [ext_resource type="Texture2D" uid="uid://dghf7awuggwqw" path="res://assets/2Dsprite/bully.png" id="2_qxgr6"]
 [ext_resource type="Texture2D" uid="uid://cj51rel5in42c" path="res://assets/2Dsprite/siège1.png" id="3_1m8mb"]
 [ext_resource type="Texture2D" uid="uid://ygssa25yup6d" path="res://assets/2Dsprite/siège2.png" id="3_qxgr6"]
-[ext_resource type="Texture2D" uid="uid://bgcfcs1wu6lvh" path="res://assets/2Dsprite/MainCharacter/bus-character2.png" id="6_fm2n3"]
-[ext_resource type="Texture2D" uid="uid://dnerogai2t2su" path="res://assets/2Dsprite/MainCharacter/bus-character3.png" id="7_ubg36"]
+[ext_resource type="Texture2D" uid="uid://bgcfcs1wu6lvh" path="res://assets/2Dsprite/Character/bus-character2.png" id="6_fm2n3"]
+[ext_resource type="Texture2D" uid="uid://dnerogai2t2su" path="res://assets/2Dsprite/Character/bus-character3.png" id="7_ubg36"]
 
 [sub_resource type="Animation" id="Animation_fm2n3"]
 length = 0.001

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbpmh3p41wkpd"]
 
 [ext_resource type="Texture2D" uid="uid://e2ht7tvystof" path="res://assets/2Dsprite/fond/fond-School.png" id="1_2n1dr"]
-[ext_resource type="Texture2D" uid="uid://dhcqq5mmeyjos" path="res://assets/2Dsprite/MainCharacter/backhead.png" id="2_3bpph"]
+[ext_resource type="Texture2D" uid="uid://dhcqq5mmeyjos" path="res://assets/2Dsprite/Character/backhead.png" id="2_3bpph"]
 
 [node name="ColorRect" type="ColorRect"]
 anchors_preset = 4
