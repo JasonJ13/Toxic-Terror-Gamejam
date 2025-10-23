@@ -11,16 +11,24 @@ config_version=5
 [application]
 
 config/name="Toxic Terror Gamejam"
-run/main_scene="uid://p61rvjjd1k2g"
+run/main_scene="uid://bbt61d2raicpq"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://entities/Objets/Récupérable/globals.gd"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/size/mode=2
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 [input]
 
@@ -62,7 +70,8 @@ common/physics_ticks_per_second=120
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 anti_aliasing/quality/msaa_3d=1
+scaling_3d/mode=2
+scaling_3d/scale=0.5
+scaling_3d/fsr_sharpness=1.0

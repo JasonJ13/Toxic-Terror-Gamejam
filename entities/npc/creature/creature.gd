@@ -8,7 +8,7 @@ extends Node3D
 @onready var look_at_modifier_3d: LookAtModifier3D = $Armature/Skeleton3D/LookAtModifier3D
 
 
-@export var playerToFollow : Node3D
+@export var playerToFollow : Player
 @export var followForceHead := 400.0
 @export var followForceArm := 80.0
 @export var searchingPath : SplineCircuit
@@ -30,7 +30,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	var head_distance := (playerToFollow.global_position - physical_bone_head.global_position).length()
-	print(head_distance)
 	change_search_mode(should_search(head_distance))
 	var goal_pos := get_goal_pos(delta)
 		
@@ -65,5 +64,6 @@ func change_search_mode(search: bool):
 	
 
 func should_search(head_distance) -> bool:
-	return head_distance > findDistance
+	print(playerToFollow.object_view)
+	return head_distance > findDistance || playerToFollow.object_view
 	

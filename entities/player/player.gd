@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 var speed := 2.0
@@ -153,3 +154,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			if highlighted_object is Recuperable:
+				highlighted_object.take()
+				highlighted_object=null
