@@ -10,6 +10,8 @@ var pitch_input := 0.0
 var object_view := false
 @export var jump_speed := 6.0
 
+@export var option_menu: Control
+
 @onready var pitch_pivot := $PitchPivot
 @onready var camera :=$PitchPivot/Camera3D
 @onready var raycast = $RayCast3D
@@ -72,6 +74,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		option_menu.visible=true
 		
 	#Si le joueur n'est pas pas un objet on surligne les objet dont il peut prendre la forme
 	if !object_view:
@@ -153,7 +156,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		pitch_input = -event.relative.y * mouse_sensitivity
 	if event is InputEventMouseButton and event.pressed:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			if !option_menu.visible:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			if highlighted_object is Recuperable:
 				highlighted_object.take()
