@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq2t50kvbyxq6"]
+
+[ext_resource type="Script" uid="uid://bbj6gbvt2iaam" path="res://tests-scripts/test_Jason/option.gd" id="1_157rw"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_157rw"]
+color = Color(1, 1, 1, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5rrg3"]
+color = Color(0.35813847, 0.30926314, 1, 1)
+thickness = 8
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_157rw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Option"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quitter" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.0
+offset_top = -50.0
+offset_right = 33.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quitter
+"
+
+[node name="Reprendre" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -94.0
+offset_right = 45.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Reprendre
+"
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 100.0
+offset_right = 205.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_157rw")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_5rrg3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_5rrg3")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label" type="Label" parent="Panel/HSlider"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -169.0
+offset_top = -8.0
+offset_right = -216.0
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FullScreenControl" type="CheckButton" parent="Panel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 137.0
+offset_right = 277.0
+offset_bottom = 171.0
+text = "FullScreen"
+
+[connection signal="pressed" from="Panel/Quitter" to="." method="_on_quitter_pressed"]
+[connection signal="pressed" from="Panel/Reprendre" to="." method="_on_reprendre_pressed"]
+[connection signal="value_changed" from="Panel/HSlider" to="." method="_on_audio_value_changed"]
+[connection signal="toggled" from="Panel/FullScreenControl" to="." method="_on_full_screen_control_toggled"]
