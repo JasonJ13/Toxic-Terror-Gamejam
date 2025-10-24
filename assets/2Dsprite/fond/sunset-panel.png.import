@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhcqq5mmeyjos"
-path="res://.godot/imported/backhead.png-fb53ed13f800cb17911a3a5ae59bbb0d.ctex"
+uid="uid://bw72n33u2hh43"
+path="res://.godot/imported/sunset-panel.png-28bee1dac270c445e83d39150ffbddd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/MainCharacter/backhead.png"
-dest_files=["res://.godot/imported/backhead.png-fb53ed13f800cb17911a3a5ae59bbb0d.ctex"]
+source_file="res://assets/2Dsprite/fond/sunset-panel.png"
+dest_files=["res://.godot/imported/sunset-panel.png-28bee1dac270c445e83d39150ffbddd0.ctex"]
 
 [params]
 

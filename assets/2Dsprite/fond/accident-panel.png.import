@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1kdl8tcfi33c"
-path="res://.godot/imported/character shadow.png-7f85c67681afcca2c9f08180100d44c3.ctex"
+uid="uid://dq150irnslvon"
+path="res://.godot/imported/accident-panel.png-3d3da4c196ef9fa2d42e302c2749cf17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/MainCharacter/character shadow.png"
-dest_files=["res://.godot/imported/character shadow.png-7f85c67681afcca2c9f08180100d44c3.ctex"]
+source_file="res://assets/2Dsprite/fond/accident-panel.png"
+dest_files=["res://.godot/imported/accident-panel.png-3d3da4c196ef9fa2d42e302c2749cf17.ctex"]
 
 [params]
 

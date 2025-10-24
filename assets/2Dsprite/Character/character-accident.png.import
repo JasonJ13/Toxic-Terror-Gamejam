@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmx4yycq0lqk3"
-path="res://.godot/imported/room-character.png-5766f081b1117e77e52dfb438df02207.ctex"
+uid="uid://h5sf4cn3f5sc"
+path="res://.godot/imported/character-accident.png-3b9c783c8e1479ae457567e445f2df33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/MainCharacter/room-character.png"
-dest_files=["res://.godot/imported/room-character.png-5766f081b1117e77e52dfb438df02207.ctex"]
+source_file="res://assets/2Dsprite/Character/character-accident.png"
+dest_files=["res://.godot/imported/character-accident.png-3b9c783c8e1479ae457567e445f2df33.ctex"]
 
 [params]
 

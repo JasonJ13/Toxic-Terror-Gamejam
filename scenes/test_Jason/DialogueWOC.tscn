@@ -4,9 +4,12 @@
 [ext_resource type="FontFile" uid="uid://1yr6oxdc5o5p" path="res://assets/2Dsprite/font/Toxique_font_full-Regular.otf" id="2_7m12m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e6ah5"]
+paragraph_spacing = 8.0
 font = ExtResource("2_7m12m")
 font_size = 36
 font_color = Color(0.13333334, 0.1254902, 0.20392157, 1)
+outline_size = 8
+outline_color = Color(0.9999997, 0.8706728, 0.6825867, 1)
 
 [sub_resource type="Animation" id="Animation_ekdfl"]
 length = 0.001
@@ -54,6 +57,7 @@ grow_vertical = 2
 script = ExtResource("1_2bp2t")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.07300001
@@ -73,8 +77,8 @@ vertical_scroll_mode = 3
 texture_filter = 1
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_horizontal = 2
+size_flags_vertical = 3
 label_settings = SubResource("LabelSettings_e6ah5")
 
 [node name="TimerLetter" type="Timer" parent="ScrollContainer/Label"]

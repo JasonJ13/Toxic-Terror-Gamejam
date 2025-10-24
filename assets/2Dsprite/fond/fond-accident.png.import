@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bll2jv2icj8y5"
-path="res://.godot/imported/chair-character.png-7621a1e3377d4f6aea56a7314aa64790.ctex"
+uid="uid://c1x784pqmpqt0"
+path="res://.godot/imported/fond-accident.png-7bf9d9a10a6b171f749eb28d689be444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/MainCharacter/chair-character.png"
-dest_files=["res://.godot/imported/chair-character.png-7621a1e3377d4f6aea56a7314aa64790.ctex"]
+source_file="res://assets/2Dsprite/fond/fond-accident.png"
+dest_files=["res://.godot/imported/fond-accident.png-7bf9d9a10a6b171f749eb28d689be444.ctex"]
 
 [params]
 

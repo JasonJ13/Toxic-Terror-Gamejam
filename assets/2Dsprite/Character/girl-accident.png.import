@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm8vb8lrj1x0o"
-path="res://.godot/imported/bus-character.png-b72d9d77704284fe4005f9412cc659f7.ctex"
+uid="uid://yfimotpkpphb"
+path="res://.godot/imported/girl-accident.png-be7bcd9897bd58813f86e14b7bef77d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/MainCharacter/bus-character.png"
-dest_files=["res://.godot/imported/bus-character.png-b72d9d77704284fe4005f9412cc659f7.ctex"]
+source_file="res://assets/2Dsprite/Character/girl-accident.png"
+dest_files=["res://.godot/imported/girl-accident.png-be7bcd9897bd58813f86e14b7bef77d4.ctex"]
 
 [params]
 

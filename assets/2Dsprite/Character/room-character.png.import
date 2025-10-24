@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnerogai2t2su"
-path="res://.godot/imported/bus-character3.png-359d7f649288e0589fb0d84b23c0f791.ctex"
+uid="uid://dmx4yycq0lqk3"
+path="res://.godot/imported/room-character.png-d2d2775481c04adba27549b107ac0a0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/MainCharacter/bus-character3.png"
-dest_files=["res://.godot/imported/bus-character3.png-359d7f649288e0589fb0d84b23c0f791.ctex"]
+source_file="res://assets/2Dsprite/Character/room-character.png"
+dest_files=["res://.godot/imported/room-character.png-d2d2775481c04adba27549b107ac0a0d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw72n33u2hh43"
-path="res://.godot/imported/sunset.png-f567dee7f3f069425ed49160e041afb0.ctex"
+uid="uid://bgcfcs1wu6lvh"
+path="res://.godot/imported/bus-character2.png-6e82ce33cbef67f133a0eb28dea887e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2Dsprite/fond/sunset.png"
-dest_files=["res://.godot/imported/sunset.png-f567dee7f3f069425ed49160e041afb0.ctex"]
+source_file="res://assets/2Dsprite/Character/bus-character2.png"
+dest_files=["res://.godot/imported/bus-character2.png-6e82ce33cbef67f133a0eb28dea887e3.ctex"]
 
 [params]
 
