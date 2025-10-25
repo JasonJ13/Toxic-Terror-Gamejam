@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8jogokqcb18y"
-path="res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.ctex"
+uid="uid://tf2i0wxc0md7"
+path="res://.godot/imported/cliff_side_nor_gl_2k.jpg-2bc4c67af6000ba1bb53d9c82a8b3c6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/snow/snow_02_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.ctex"]
+source_file="res://assets/textures/cliff_side_2k/cliff_side_nor_gl_2k.jpg"
+dest_files=["res://.godot/imported/cliff_side_nor_gl_2k.jpg-2bc4c67af6000ba1bb53d9c82a8b3c6f.ctex"]
 
 [params]
 
