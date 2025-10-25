@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5rhghv1eajei"]
+
+[ext_resource type="PackedScene" uid="uid://bpyxv0auekoy2" path="res://assets/models/environment/outdoors/broken_wall_0/broken_wall_0.glb" id="1_ohmoo"]
+[ext_resource type="Material" uid="uid://rqdo1a8gh07l" path="res://assets/models/environment/outdoors/broken_wall_0/broken_wall_0_snow.material" id="2_ae8tk"]
+
+[node name="broken_wall_0_snow" instance=ExtResource("1_ohmoo")]
+
+[node name="Low" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ae8tk")

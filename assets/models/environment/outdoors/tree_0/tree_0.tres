@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bcs1fhdkq0iwp"]
+
+[ext_resource type="Texture2D" uid="uid://uo1jfouwcsv1" path="res://assets/textures/bark/bark_willow_diff_1k.jpg" id="1_f21af"]
+[ext_resource type="Texture2D" uid="uid://b1o33f1mg0the" path="res://assets/textures/bark/bark_willow_arm_1k.jpg" id="2_l8u13"]
+[ext_resource type="Texture2D" uid="uid://ddjt5uxwjdb1f" path="res://assets/textures/bark/bark_willow_nor_gl_1k.jpg" id="3_yhkl3"]
+
+[resource]
+albedo_texture = ExtResource("1_f21af")
+metallic = 1.0
+metallic_texture = ExtResource("2_l8u13")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_l8u13")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_yhkl3")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_l8u13")
