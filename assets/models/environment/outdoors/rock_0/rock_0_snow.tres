@@ -1,0 +1,49 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://dj2t127conmvp"]
+
+[ext_resource type="Shader" uid="uid://ctx3cbcha5ri6" path="res://assets/shaders/overlay_snow.gdshader" id="1_e3ix1"]
+[ext_resource type="Texture2D" uid="uid://dqgsqafx3nfbv" path="res://assets/models/environment/outdoors/rock_0/textures/rock_0_albedo.png" id="2_ouh2h"]
+[ext_resource type="Texture2D" uid="uid://bi2up81xtae24" path="res://assets/models/environment/outdoors/rock_0/textures/rock_0_arm.png" id="3_8kquw"]
+[ext_resource type="Texture2D" uid="uid://coo0d12pr7ite" path="res://assets/models/environment/outdoors/rock_0/textures/rock_0_normal.png" id="4_mic60"]
+[ext_resource type="Texture2D" uid="uid://d4fy0l6y58mmi" path="res://assets/textures/snow/snow_02_diff_2k.jpg" id="5_ryarw"]
+[ext_resource type="Texture2D" uid="uid://cf23vfnevmtkq" path="res://assets/textures/snow/snow_02_arm_2k.jpg" id="6_kosn4"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_e3ix1")
+shader_parameter/main_albedo = Color(0.91228896, 0.9122889, 0.91228884, 1)
+shader_parameter/main_texture_albedo = ExtResource("2_ouh2h")
+shader_parameter/main_albedo_texture_size = Vector2i(0, 0)
+shader_parameter/main_point_size = 0.10000000149012
+shader_parameter/main_roughness = 0.682000032395
+shader_parameter/main_texture_metallic = ExtResource("3_8kquw")
+shader_parameter/main_roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/main_metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/main_texture_roughness = ExtResource("3_8kquw")
+shader_parameter/main_specular = 0.50999998860048
+shader_parameter/main_metallic = 0.999999977648
+shader_parameter/main_texture_normal = ExtResource("4_mic60")
+shader_parameter/main_normal_scale = 1.000000807500001
+shader_parameter/main_texture_ambient_occlusion = ExtResource("3_8kquw")
+shader_parameter/main_ao_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/main_ao_light_affect = 0.999999977648
+shader_parameter/overlay_albedo = Color(1, 1, 1, 1)
+shader_parameter/overlay_texture_albedo = ExtResource("5_ryarw")
+shader_parameter/overlay_albedo_texture_size = Vector2i(0, 0)
+shader_parameter/overlay_point_size = 0.0
+shader_parameter/overlay_roughness = 1.0
+shader_parameter/overlay_texture_metallic = ExtResource("6_kosn4")
+shader_parameter/overlay_roughness_texture_channel = Vector4(0, 1, 0, 0)
+shader_parameter/overlay_metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/overlay_texture_roughness = ExtResource("6_kosn4")
+shader_parameter/overlay_specular = 0.999999977648
+shader_parameter/overlay_metallic = 0.999999977648
+shader_parameter/overlay_texture_normal = ExtResource("4_mic60")
+shader_parameter/overlay_normal_scale = 1.000000807500001
+shader_parameter/overlay_texture_ambient_occlusion = ExtResource("6_kosn4")
+shader_parameter/overlay_ao_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/overlay_ao_light_affect = 0.999999977648
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/expo = 0.44
