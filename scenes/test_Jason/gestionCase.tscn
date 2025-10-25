@@ -1,0 +1,140 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmxdtj5uh8ru8"]
+
+[ext_resource type="Texture2D" uid="uid://b3e1qwthldyqx" path="res://assets/2Dsprite/text box.png" id="1_752ax"]
+[ext_resource type="Script" uid="uid://bhtoku17vfbwb" path="res://tests-scripts/test_Jason/gestion_case.gd" id="1_awnwr"]
+[ext_resource type="PackedScene" uid="uid://ctpgkabgno2ba" path="res://scenes/test_Jason/DialogueWOC.tscn" id="2_awnwr"]
+
+[sub_resource type="Animation" id="Animation_ycspk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Case:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Case:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 152)]
+}
+
+[sub_resource type="Animation" id="Animation_3gtev"]
+resource_name = "fondu_In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Case:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(480, 112), Vector2(480, 132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Case:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3pmud"]
+resource_name = "fondu_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Case:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Case:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(480, 132), Vector2(480, 112)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5p456"]
+_data = {
+&"RESET": SubResource("Animation_ycspk"),
+&"fondu_In": SubResource("Animation_3gtev"),
+&"fondu_Out": SubResource("Animation_3pmud")
+}
+
+[node name="GestionCase" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_awnwr")
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Case" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 480.0
+offset_top = 152.0
+offset_right = 520.0
+offset_bottom = 192.0002
+
+[node name="TextBox" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(488.50003, 410)
+scale = Vector2(2.9960938, 3.6)
+texture = ExtResource("1_752ax")
+
+[node name="DialogueWOC" parent="." instance=ExtResource("2_awnwr")]
+layout_mode = 1
+
+[node name="TextAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5p456")
+}
+speed_scale = 2.0
+
+[node name="Duration" type="Timer" parent="TextAnimation"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="end_dialogue" from="DialogueWOC" to="." method="end_dialogue"]
+[connection signal="timeout" from="TextAnimation/Duration" to="." method="animation_ended"]

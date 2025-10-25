@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceq02y5j70f0n"]
+
+[ext_resource type="Texture2D" uid="uid://dq150irnslvon" path="res://assets/2Dsprite/fond/accident-panel.png" id="1_h3grx"]
+
+[sub_resource type="Animation" id="Animation_h3grx"]
+resource_name = "shake"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AccidentPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(495, 273), Vector2(500, 242), Vector2(514, 255), Vector2(503, 294), Vector2(511, 253), Vector2(464, 278), Vector2(538, 283), Vector2(539, 262), Vector2(484, 291), Vector2(457, 249)]
+}
+
+[sub_resource type="Animation" id="Animation_ejwkd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AccidentPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(495, 273)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81im1"]
+_data = {
+&"RESET": SubResource("Animation_ejwkd"),
+&"shake": SubResource("Animation_h3grx")
+}
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AccidentPanel" type="Sprite2D" parent="."]
+position = Vector2(495, 273)
+scale = Vector2(4, 4)
+texture = ExtResource("1_h3grx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_81im1")
+}
+autoplay = "shake"

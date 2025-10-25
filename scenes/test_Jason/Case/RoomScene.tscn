@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://jdcjnhrf5lru"]
+
+[ext_resource type="Texture2D" uid="uid://d33w5pltayrby" path="res://assets/2Dsprite/fond/fond-room.png" id="1_2oi14"]
+[ext_resource type="Texture2D" uid="uid://dmx4yycq0lqk3" path="res://assets/2Dsprite/Character/room-character.png" id="2_w6obs"]
+[ext_resource type="Texture2D" uid="uid://bll2jv2icj8y5" path="res://assets/2Dsprite/Character/chair-character.png" id="3_6iunu"]
+
+[node name="ColorRect" type="ColorRect"]
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_2oi14")
+
+[node name="RoomCharacter" type="Sprite2D" parent="."]
+position = Vector2(-154, 57)
+scale = Vector2(6, 6)
+texture = ExtResource("2_w6obs")
+
+[node name="ChairCharacter" type="Sprite2D" parent="."]
+position = Vector2(264, -18)
+scale = Vector2(6, 6)
+texture = ExtResource("3_6iunu")
