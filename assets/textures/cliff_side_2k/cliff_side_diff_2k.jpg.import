@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8jogokqcb18y"
-path="res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.ctex"
+uid="uid://slwy7yd5m7i2"
+path="res://.godot/imported/cliff_side_diff_2k.jpg-c89047ef0f48e6a1ae5985be5fa2af5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/snow/snow_02_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.ctex"]
+source_file="res://assets/textures/cliff_side_2k/cliff_side_diff_2k.jpg"
+dest_files=["res://.godot/imported/cliff_side_diff_2k.jpg-c89047ef0f48e6a1ae5985be5fa2af5e.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
