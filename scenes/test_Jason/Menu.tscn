@@ -40,11 +40,7 @@ credit
 exit"
 label_settings = SubResource("LabelSettings_5kl4l")
 
-[node name="Arrow" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 260.0
-offset_top = 273.0
-offset_right = 300.0
-offset_bottom = 313.0
+[node name="Arrow" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
 texture = ExtResource("3_lq5c3")
 flip_h = true
