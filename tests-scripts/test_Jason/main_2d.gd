@@ -29,15 +29,19 @@ func start_3D() -> void :
 	print("start game")
 
 
-func start_diag(anim_name: StringName) -> void:
+func end_anim(anim_name: StringName) -> void:
 	
 	if anim_name == "fade_in_black" :
-		case = case_preload.instantiate()
+		start_diag(1)
+
+
+func start_diag(chap : int) -> void :
+	case = case_preload.instantiate()
 			
-		add_child(case)
+	add_child(case)
 			
-		case.connect('end_chap',Callable(self,'start_3D'))
-		case.define_order(3)
-		case.next_case()
+	case.connect('end_chap',Callable(self,'start_3D'))
+	case.define_order(chap)
+	case.next_case()
 			
-		fade_in_black.play("appeared")
+	fade_in_black.play("appeared")
