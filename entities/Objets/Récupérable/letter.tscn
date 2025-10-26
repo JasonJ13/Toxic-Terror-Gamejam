@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=4 uid="uid://bltgotxlw4v41"]
+
+[ext_resource type="Script" uid="uid://4kwrt4sic042" path="res://entities/Objets/Récupérable/objet_cache.gd" id="1_tckgu"]
+[ext_resource type="Texture2D" uid="uid://dnxkv0mmk1e0o" path="res://assets/models/letter/envelope_0.jpg" id="2_7rdvm"]
+[ext_resource type="Texture2D" uid="uid://otcw1fitfkp4" path="res://assets/models/letter/envelope_1.png" id="3_nnvyr"]
+[ext_resource type="Texture2D" uid="uid://cpoflmaqxkxkf" path="res://assets/models/letter/envelope_2.jpg" id="4_gfp5v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ikxn"]
+resource_name = "M_Paper"
+cull_mode = 2
+albedo_texture = ExtResource("2_7rdvm")
+metallic = 1.0
+metallic_texture = ExtResource("3_nnvyr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_nnvyr")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("4_gfp5v")
+ao_enabled = true
+ao_texture = ExtResource("3_nnvyr")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pokxc"]
+_surfaces = [{
+"aabb": AABB(-1, -0.944364, -0.0787792, 2, 1.888728, 0.1575584),
+"format": 34896613377,
+"index_count": 69,
+"index_data": PackedByteArray("AAABAAIAAwABAAAABAAAAAIABAADAAAABQAEAAIAAQADAAYABwAEAAUABAAHAAgAAwAEAAgACQAIAAcACgAGAAMACAAKAAMACAAJAAsACgAIAAsABgAKAAwACwAMAAoADAALAAkADQAMAAkADAANAA4ADwAOAA0ADgAPABAADwARABAAEQAPABIA"),
+"name": "M_Paper",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("aAA/ADw6AABoAK+cPDoAAP9/d048OgAAAAAAAKYgAACW/z8APDoAAJb/r5w8OgAAAADvnKYgAAD//++cpiAAAP//AACmIAAAlv+vnA8HAABoAD8ADwcAAJb/PwAPBwAAaACvnA8HAACW/1ygAAAAAGgAXKAAAAAAg4lB/aj4AAB7dkH9qPgAAIN8/////wAAe4P/////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_poi8y"]
+resource_name = "Sketchfab_Scene_defaultMaterial"
+_surfaces = [{
+"aabb": AABB(-1, -0.944364, -0.0787792, 2, 1.888728, 0.1575584),
+"attribute_data": PackedByteArray("9Pj1Js6R7iZbxQiA6Pgh2cKRGtkSCzrUT3GhIxILoSNPcTrU6Pgh2ZmR6Nod+e/awpEa2fkH0dQSC6Ej+wdTIxILOtTo+FojmZEgJR35KCXCkVMjZHQ31E9xoSNPcTrUZHSeI2+0gXmZsoGCb7RUfpmyVXVkdJ4jmbKBgpmyVXVkdDfUHfkoJc6R7ib0+PUmmZEgJeEEg9T7B1Mj4QTqI/kH0dQd+e/azpG23PT4vdyZkeja"),
+"format": 34896613399,
+"index_count": 69,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAADAAIABQAGAAcABgAFAAgACQAKAAsACgAJAAwADQAOAA8ADgANABAAEQASABMAEgARABQAFQAWABcAFgAVABgAGQAaABsAGgAZABwAHQAeAB8AHgAdACAAIQAiACMAIgAhACQAJQAmACcAJgAlACgAKQAqACsAKgApACwA"),
+"material": SubResource("StandardMaterial3D_4ikxn"),
+"name": "M_Paper",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 45,
+"vertex_data": PackedByteArray("aAA/ADw6AsBoAK+cPDoEwP9/d048OgHAlv8/ADw6BsCW/6+cPDoEwJb/PwAPB2D/aACvnA8H4f9oAD8ADwfU/5b/r5wPB6v/lv8/ADw6BMD//++cpiBV1f//AACmIPnwlv+vnDw6AsD//wAApiC9x2gAPwAPB6D/AAAAAKYgguSW/z8ADwdg/2gAPwAPB2D/AADvnKYgVdUAAAAApiC+wmgAr5wPB6v/lv9coAAAYvpoAK+cDwfh/5b/r5wPB6v/aABcoAAAYvqDfP////+s+YOJQf2o+Kz5e4P/////rPl7dkH9qPis+WgAXKAAAGX6g4lB/aj4rPl7dkH9qPis+Zb/XKAAAGX6AAAAAKYgvsJoAK+cPDoCwGgAPwA8OgDAAADvnKYgVdWW/z8APDrvowAAAACmILfeaAA/ADw66pj//wAApiCby///AACmIPrwlv+vnA8H4P+W/z8ADwfU////75ymIFXVVH1Jfwt+8oH/f/9/SX9UffOBDH4WQBdALcAtwFdAVkDvP+8/SH9SfaqqVlUpj5VH84ENfpNY7UXnKLVXBFD9YQocwWPnPxbAVFWoqrosWJYPQO6/Kb3jvFrAAcDWPwdAKr3jvKa8p7ymvKe8prynvKe8prwFvQW9p7ymvKe8prwFvQW9uixXlg1+84FSfUh/VFWoqnR9UHyxSkZm3XlfgSpg5UMpj5VH0b8uQKg/V8CqqlZV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pokxc")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7rdvm"]
+radius = 1.123714
+
+[node name="Letter" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
+script = ExtResource("1_tckgu")
+meshInstance = NodePath("Sketchfab_Scene/Sketchfab_model/Collada visual scene group/SM_Envelope/defaultMaterial")
+
+[node name="Sketchfab_Scene" type="Node3D" parent="."]
+
+[node name="Sketchfab_model" type="Node3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 0)
+
+[node name="Collada visual scene group" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model"]
+transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1, 0, 1, -4.3711392e-08, 0, 0, 0)
+
+[node name="SM_Envelope" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/Collada visual scene group"]
+
+[node name="defaultMaterial" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/Collada visual scene group/SM_Envelope"]
+mesh = SubResource("ArrayMesh_poi8y")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1947663, 0)
+light_energy = 3.0
+light_volumetric_fog_energy = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7rdvm")

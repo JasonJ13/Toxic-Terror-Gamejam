@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://k6okso8ten7w"]
+
+[ext_resource type="PackedScene" uid="uid://cn7ng813g2bsy" path="res://entities/Objets/Copiable/snow_tree_copiable.tscn" id="1_p1a7e"]
+
+[node name="littleTreePatchA" type="Node3D"]
+
+[node name="SnowTreeCopiable" parent="." instance=ExtResource("1_p1a7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7048683, -1.8858795)
+
+[node name="SnowTreeCopiable2" parent="." instance=ExtResource("1_p1a7e")]
+transform = Transform3D(0.69157434, 0, -0.40215045, 0, 0.8, 0, 0.40215045, 0, 0.69157434, -13.483803, -0.7048683, -7.560837)
+
+[node name="SnowTreeCopiable3" parent="." instance=ExtResource("1_p1a7e")]
+transform = Transform3D(0.43223396, 0, -0.251344, 0, 0.5, 0, 0.251344, 0, 0.43223396, -0.2726059, -0.7048683, -17.341385)
