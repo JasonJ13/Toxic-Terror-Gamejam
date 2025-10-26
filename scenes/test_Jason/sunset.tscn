@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyr7m83boa1oh"]
+
+[ext_resource type="Texture2D" uid="uid://bw72n33u2hh43" path="res://assets/2Dsprite/fond/sunset-panel.png" id="1_4h4it"]
+[ext_resource type="Script" uid="uid://cy7njh23cv3vf" path="res://scenes/test_Jason/sunset.gd" id="1_dyyls"]
+[ext_resource type="Texture2D" uid="uid://1kdl8tcfi33c" path="res://assets/2Dsprite/Character/character shadow.png" id="2_dyyls"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1wjq"]
+atlas = ExtResource("1_4h4it")
+region = Rect2(0, 0, 256, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60chn"]
+atlas = ExtResource("1_4h4it")
+region = Rect2(256, 0, 256, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psk73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1wjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60chn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.75
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ayg"]
+atlas = ExtResource("2_dyyls")
+region = Rect2(0, 0, 32, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx0ah"]
+atlas = ExtResource("2_dyyls")
+region = Rect2(32, 0, 32, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eqq6x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ayg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx0ah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dyyls")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_psk73")
+autoplay = "default"
+frame_progress = 0.77649015
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, 121)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_eqq6x")
+autoplay = "default"
+frame_progress = 0.009485917
+
+[node name="TimerLetter" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

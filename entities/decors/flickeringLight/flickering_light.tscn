@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccggkqpnhhm8l"]
+
+[ext_resource type="Script" uid="uid://dlxi5i85byq3a" path="res://entities/decors/flickeringLight/light_flicker.gd" id="1_t0eon"]
+[ext_resource type="Material" uid="uid://cba4q6l8lv56h" path="res://entities/decors/flickeringLight/flickering_light_mat.tres" id="2_w1vcr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_y7uti"]
+noise_type = 5
+frequency = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_y7uti"]
+material = ExtResource("2_w1vcr")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w1vcr"]
+top_radius = 0.2
+bottom_radius = 0.8
+height = 0.8
+
+[node name="FlickeringLight" type="SpotLight3D"]
+light_color = Color(1, 0.41960785, 0, 1)
+light_energy = 10.0
+light_volumetric_fog_energy = 10.0
+spot_range = 50.0
+spot_attenuation = 0.5
+spot_angle = 30.0
+script = ExtResource("1_t0eon")
+lightBulbMaterial = ExtResource("2_w1vcr")
+noise = SubResource("FastNoiseLite_y7uti")
+
+[node name="LightBulb" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9977055, 0.057992846, -0.034933854, 0.00084954675, -0.5266788, -0.85006386, -0.06769655, 0.84808373, -0.5255197, 0, 0, 0)
+mesh = SubResource("SphereMesh_y7uti")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99999905, 0, 0, 0, 0.0019024159, -0.99999726, 0, 0.99999803, 0.0019024144, 0, 0, 0.22609973)
+mesh = SubResource("CylinderMesh_w1vcr")

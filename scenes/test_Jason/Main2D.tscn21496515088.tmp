@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dul1c872kc1af"]
+
+[ext_resource type="Script" uid="uid://c81g5y1egq1sh" path="res://tests-scripts/test_Jason/main_2d.gd" id="1_5kul3"]
+[ext_resource type="PackedScene" uid="uid://cnl3o1d0tid18" path="res://scenes/test_Jason/Menu.tscn" id="3_3l4t5"]
+[ext_resource type="PackedScene" uid="uid://cyr7m83boa1oh" path="res://scenes/test_Jason/sunset.tscn" id="4_qfgsi"]
+
+[node name="Main2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5kul3")
+
+[node name="Sunset" parent="." instance=ExtResource("4_qfgsi")]
+layout_mode = 1
+
+[node name="Menu" parent="." instance=ExtResource("3_3l4t5")]
+layout_mode = 1
+
+[connection signal="Game_started" from="Menu" to="." method="Start"]

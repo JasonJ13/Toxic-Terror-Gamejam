@@ -1,0 +1,101 @@
+[gd_resource type="Environment" load_steps=14 format=3 uid="uid://cff6swre0cgvh"]
+
+[ext_resource type="Shader" uid="uid://b78shngnolcow" path="res://entities/sky/sky.gdshader" id="1_kbjno"]
+
+[sub_resource type="Gradient" id="Gradient_kbjno"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oqhk6"]
+noise_type = 2
+frequency = 0.005
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_31rqp"]
+noise = SubResource("FastNoiseLite_oqhk6")
+color_ramp = SubResource("Gradient_kbjno")
+seamless = true
+invert = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n2aei"]
+noise_type = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_snpt2"]
+noise = SubResource("FastNoiseLite_n2aei")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tlxsg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6n0p4"]
+noise = SubResource("FastNoiseLite_tlxsg")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_xg11b"]
+offsets = PackedFloat32Array(0.3203593, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5g6cv"]
+noise_type = 2
+frequency = 0.0156
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1nnd2"]
+noise = SubResource("FastNoiseLite_5g6cv")
+color_ramp = SubResource("Gradient_xg11b")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbjno"]
+shader = ExtResource("1_kbjno")
+shader_parameter/day_bottom_color = Color(0.35686275, 0.7019608, 1, 1)
+shader_parameter/day_top_color = Color(0.35686275, 0.49019608, 1, 1)
+shader_parameter/sunset_bottom_color = Color(0.49019608, 0.24313726, 0.24705882, 1)
+shader_parameter/sunset_top_color = Color(0.10980392, 0.15294118, 0.18039216, 1)
+shader_parameter/night_bottom_color = Color(0.09019608, 0, 0.09803922, 1)
+shader_parameter/night_top_color = Color(0, 0, 0, 1)
+shader_parameter/horizon_color_day = Color(0.14509805, 0.8156863, 0.34901962, 1)
+shader_parameter/horizon_color_sunset = Color(0.8402309, 0.44554877, 0.1552287, 1)
+shader_parameter/horizon_color_night = Color(0.14, 0.07, 0.07116665, 1)
+shader_parameter/horizon_falloff = 0.0
+shader_parameter/sun_energy_mult = 10.0
+shader_parameter/sun_col = Color(1, 1, 1, 1)
+shader_parameter/sun_size = 0.15000000642648
+shader_parameter/sun_blur = 0.01
+shader_parameter/moon_energy_muly = 5.00000019
+shader_parameter/moon_col = Color(0.42000002, 0.6326667, 1, 1)
+shader_parameter/moon_size = 0.15000000642648
+shader_parameter/moon_crescent_offset = 0.5
+shader_parameter/clouds_texture = SubResource("NoiseTexture2D_6n0p4")
+shader_parameter/clouds_distort_texture = SubResource("NoiseTexture2D_31rqp")
+shader_parameter/clouds_noise_texture = SubResource("NoiseTexture2D_snpt2")
+shader_parameter/clouds_main_color = Color(0.8352941, 0.8627451, 1, 1)
+shader_parameter/clouds_edge_color = Color(0, 0.101960786, 0.6117647, 1)
+shader_parameter/clouds_speed = 0.0499999988824
+shader_parameter/clouds_scale = 0.17999999597664
+shader_parameter/clouds_cutoff = 0.07999999821184
+shader_parameter/clouds_fuzziness = 0.1999999955296
+shader_parameter/stars_texture = SubResource("NoiseTexture2D_1nnd2")
+shader_parameter/stars_cutoff = 0.925
+shader_parameter/stars_speed = 0.014000000665
+
+[sub_resource type="Sky" id="Sky_oqhk6"]
+sky_material = SubResource("ShaderMaterial_kbjno")
+radiance_size = 0
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_oqhk6")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 1
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 1.0
+glow_blend_mode = 4
+fog_mode = 1
+fog_light_color = Color(0.5176471, 1, 0.60784316, 1)
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+volumetric_fog_emission = Color(0.04960001, 0.20583998, 0.31, 1)
+volumetric_fog_emission_energy = 5.0
+volumetric_fog_anisotropy = 0.3
+volumetric_fog_length = 68.0
+volumetric_fog_ambient_inject = 2.0
