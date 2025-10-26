@@ -1,13 +1,17 @@
 extends Node
 
-var objets_a_recuperer=1
-var objets_recuperes := 0
+signal open_portal_signal
 
-func add_object():
-	objets_recuperes+=1
-	
-func get_atteint():
-	if objets_recuperes==objets_a_recuperer:
-		return (true)
-	else:
-		return(false)
+var objets_nb = 1
+var objets_taken := 0
+
+var keys_nb = 1
+var keys_taken := 0
+
+func take_key():
+	keys_taken += 1
+	if keys_taken == keys_nb:
+		open_portal_signal.emit()
+
+func take_object():
+	objets_taken += 1

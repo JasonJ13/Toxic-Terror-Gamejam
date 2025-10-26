@@ -22,6 +22,7 @@ signal end_dialogue
 
 func new_text(file_name : String) -> void:
 	var file = FileAccess.open("res://assets/dialogue/"+file_name+".txt",FileAccess.READ)
+
 	full_text = file.get_as_text()
 	
 	nmb_line_tot = full_text.get_slice_count("]") - 1

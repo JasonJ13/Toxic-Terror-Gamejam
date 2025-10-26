@@ -6,9 +6,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ekry"]
 size = Vector3(12.807983, 5.4696045, 1)
 
-[node name="SnowTreeCopiable" type="StaticBody3D" node_paths=PackedStringArray("collider", "meshInstance")]
+[node name="WallCopiable" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
 script = ExtResource("1_8ekry")
-collider = NodePath("CollisionShape3D")
 meshInstance = NodePath("broken_wall_0_snow/Low")
 
 [node name="broken_wall_0_snow" parent="." instance=ExtResource("1_bd70l")]

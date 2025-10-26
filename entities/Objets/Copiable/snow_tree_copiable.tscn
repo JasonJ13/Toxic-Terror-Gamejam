@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cn7ng813g2bsy"]
+[gd_scene load_steps=8 format=4 uid="uid://cn7ng813g2bsy"]
 
 [ext_resource type="Material" uid="uid://bcs1fhdkq0iwp" path="res://assets/models/environment/outdoors/tree_0/tree_0.tres" id="1_nd0bq"]
 [ext_resource type="Script" uid="uid://nebjoxxdp85n" path="res://entities/Objets/Copiable/copiable.gd" id="1_pfrf0"]
@@ -38,19 +38,28 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_282q6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nd0bq"]
-size = Vector3(1, 6.0683556, 3.4943848)
+size = Vector3(1, 6.418457, 3.4943848)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pfrf0"]
+radius = 7.490175
 
 [node name="SnowTreeCopiable" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
 script = ExtResource("1_pfrf0")
 meshInstance = NodePath("tree_0/Vert_001")
 
 [node name="tree_0" type="Node3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -4.4326262, 0)
 
 [node name="Vert_001" type="MeshInstance3D" parent="tree_0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5072474, 0)
 material_override = ExtResource("1_nd0bq")
 mesh = SubResource("ArrayMesh_v5487")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.997621, -0.06893815, 0, 0.06893815, 0.997621, 0, 3.134752, 0.7598232)
+transform = Transform3D(1, 0, 0, 0, 0.997621, -0.06893815, 0, 0.06893815, 0.997621, 0, 3.3093858, 0.7718909)
 shape = SubResource("BoxShape3D_nd0bq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.997621, -0.06893815, 0, 0.06893815, 0.997621, 1.6413574, 13.200261, 0.8038435)
+shape = SubResource("SphereShape3D_pfrf0")

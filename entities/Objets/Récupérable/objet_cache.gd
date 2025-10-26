@@ -5,7 +5,6 @@ func _ready() -> void:
 	outline_thickness=1.01
 
 func take():
-	print("Objet caché récupéré")
-	Globals.add_object()
-	print(Globals.get_atteint())
+	print("objet")
+	Globals.take_object()
 	queue_free()

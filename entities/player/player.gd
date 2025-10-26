@@ -122,7 +122,8 @@ func change_to_object()->bool:
 	if highlighted_object is Copiable:
 		$MeshInstance3D.mesh  = highlighted_object.meshInstance.mesh
 		$MeshInstance3D.material_override = highlighted_object.meshInstance.get_active_material(0)
-		$MeshInstance3D.scale = Vector3(1,1,1)
+		$MeshInstance3D.scale = highlighted_object.scale * highlighted_object.meshInstance.scale
+		$MeshInstance3D.position = -highlighted_object.meshInstance.position
 		
 		#On désactive le surlignage quand on prend la forme de l'objet
 		highlighted_object.remove_outline() 

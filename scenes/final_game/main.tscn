@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://brb185rod85ud"]
+[gd_scene load_steps=33 format=3 uid="uid://brb185rod85ud"]
 
 [ext_resource type="PackedScene" uid="uid://cggqb75a8w8r" path="res://addons/debug_menu/debug_menu.tscn" id="1_2cj8y"]
 [ext_resource type="PackedScene" uid="uid://cq2t50kvbyxq6" path="res://scenes/test_Jason/option.tscn" id="1_faf7b"]
@@ -15,14 +15,19 @@
 [ext_resource type="PackedScene" uid="uid://bn21cqroorckd" path="res://entities/decors/ice/ice.tscn" id="12_faf7b"]
 [ext_resource type="PackedScene" uid="uid://cn7ng813g2bsy" path="res://entities/Objets/Copiable/snow_tree_copiable.tscn" id="14_bjkyw"]
 [ext_resource type="PackedScene" uid="uid://dmsl2msq388jl" path="res://entities/Objets/Copiable/snow_wall_copiable.tscn" id="15_t7a0w"]
+[ext_resource type="PackedScene" uid="uid://dx0rrrhujreyu" path="res://entities/Objets/Récupérable/key.tscn" id="16_y1407"]
+[ext_resource type="PackedScene" uid="uid://bltgotxlw4v41" path="res://entities/Objets/Récupérable/letter.tscn" id="17_ose60"]
+[ext_resource type="PackedScene" uid="uid://cyw6xdom01a40" path="res://entities/portal/portal.tscn" id="18_lka3s"]
+[ext_resource type="PackedScene" uid="uid://bhunnrskeichi" path="res://entities/decors/treePatch/medium_tree_patch.tscn" id="19_ml06t"]
+[ext_resource type="PackedScene" uid="uid://k6okso8ten7w" path="res://entities/decors/treePatch/little_tree_patch_a.tscn" id="20_xkio2"]
 
 [sub_resource type="Curve3D" id="Curve3D_74ppi"]
 closed = true
 _data = {
-"points": PackedVector3Array(-8.988999, 0, -36.270897, 8.988999, 0, 36.270897, -89.5148, 0, -7.8184013, -18.624908, 0, -18.833214, 18.624908, 0, 18.833214, -36.206165, 19.394394, 40.83925, -23.70467, 0, -5.4618955, 23.70467, 0, 5.4618955, -3.4508705, 0, 77.680214, -6.16093, 0, 24.441868, 6.16093, 0, -24.441868, 40, -13.9167595, 60.788776, -12.874743, 0, 42.522747, 12.874743, 0, -42.522747, 4.3089104, 15.8570175, 41.26658, -25.937994, 0, 8.186154, 25.937994, 0, -8.186154, 86.85808, 28.260925, 10.810841, -28.304651, 0, -6.9656744, 28.304651, 0, 6.9656744, 129.6528, -3.5338516, 0, 42.200542, 0, 3.0229187, -42.200542, 0, -3.0229187, 128.24026, 50.21859, 22.524994, 62.65981, 0, 41.197353, -62.65981, 0, -41.197353, 60.401222, 16.504425, -15.17532, 48.980206, 0, -15.397269, -48.980206, 0, 15.397269, -56.788452, -11.583878, -104.458694),
-"tilts": PackedFloat32Array(-3.3720746, 0.185073, -1.0770279, -0.7255652, 1.3492697, 0.2054595, 0.47434008, 0.79066354, 0.8194055, -7.1235814)
+"points": PackedVector3Array(54.822456, 0, -83.872795, -54.822456, 0, 83.872795, -210.39403, -90.50811, -64.15263, -58.6198, 0, -60.512337, 58.6198, 0, 60.512337, -224.08707, -34.40792, 127.74802, -59.4135, 0, 16.578222, 59.4135, 0, -16.578222, -72.819046, -106.644775, 110.662476, -49.570065, 0, 42.73966, 49.570065, 0, -42.73966, 40, -108.563675, 60.788776, -85.772995, 0, 149.87553, 85.772995, 0, -149.87553, 4.3089104, 15.8570175, 41.26658, -123.44159, 0, -91.906204, 123.44159, 0, 91.906204, 260.3394, 1.211319, -190.06137, 118.13835, 0, 45.33686, -118.13835, 0, -45.33686, 91.89815, -58.340714, 60.57659, 33.91219, 0, 74.807205, -33.91219, 0, -74.807205, 115.72377, -88.95135, -189.51083, 70.51686, 0, 11.812843, -70.51686, 0, -11.812843, -16.368801, -66.0962, -284.4519, 41.690063, 0, -40.11403, -41.690063, 0, 40.11403, -149.39891, -98.69192, -243.35213, -35.499435, 0, -49.31949, 35.499435, 0, 49.31949, -183.10013, -57.50315, -140.6073, -8.930894, 0, -79.62324, 8.930894, 0, 79.62324, -70.57329, -103.41198, -141.36746),
+"tilts": PackedFloat32Array(-12.887194, -14.39724, -2.8083608, -1.9912612, 6.6273127, 12.602899, 18.076715, -17.648361, -9.029498, -6.1415215, -5.7679663, 4.291227)
 }
-point_count = 10
+point_count = 12
 
 [sub_resource type="BoxMesh" id="BoxMesh_64xmg"]
 size = Vector3(2, 2, 2)
@@ -112,7 +117,7 @@ detiling_shift = 0.1
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_e6ypj")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_3tc7s"), SubResource("Terrain3DTextureAsset_j8qio")])
 
-[node name="RagdollTest2" type="Node3D"]
+[node name="MainGame" type="Node3D"]
 
 [node name="Control" parent="." instance=ExtResource("1_faf7b")]
 visible = false
@@ -120,133 +125,134 @@ visible = false
 [node name="CanvasLayer" parent="." instance=ExtResource("1_2cj8y")]
 
 [node name="creature" parent="." node_paths=PackedStringArray("playerToFollow", "searchingPath") instance=ExtResource("2_voa2q")]
-transform = Transform3D(2, -2.9802322e-08, 8.881783e-16, 2.9802322e-08, 2, -5.9604638e-08, 0, 5.9604638e-08, 2, -87.27044, 30.066132, 1.9073486e-06)
+transform = Transform3D(2, -2.9802322e-08, 8.881783e-16, 2.9802322e-08, 2, -5.9604638e-08, 0, 5.9604638e-08, 2, -178.38718, 30.066132, -50.36547)
 playerToFollow = NodePath("../Player")
-followForceHead = 400.0
-followForceArm = 30.0
+followForceHead = 600.0
+followForceArm = 40.0
 searchingPath = NodePath("../SearchPath")
-findDistance = 60.0
-multForceRushingPlayer = 3.0
+loopTime = 60.0
+findDistance = 80.0
+multForceRushingPlayer = 2.0
 
 [node name="Physical Bone Spine" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="0"]
-transform = Transform3D(0.5, -1.1921118e-07, 1.15463195e-14, -3.7641006e-09, -0.015787581, -0.4997507, 1.1915174e-07, 0.4997507, -0.015787581, 0, 0.29784584, -0.09655611)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3555111e-14, -0.001037339, 0.543169)
-body_offset = Transform3D(0.5, -1.8829382e-12, 8.881784e-15, 9.769963e-15, -1.8626451e-08, -0.5, 1.897149e-12, 0.5, -1.8626451e-08, 0, 0.2715845, 0.0005186796)
+transform = Transform3D(0.5, -1.1921118e-07, -2.2071234e-13, -3.7643337e-09, -0.015787583, -0.4997507, 1.19151736e-07, 0.4997507, -0.015787583, 0, 0.29792213, -0.097839355)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4895277e-13, 0.0015335305, 0.5432415)
+body_offset = Transform3D(0.5, -1.8829382e-12, -2.2382096e-13, -2.2337687e-13, -2.0489097e-08, -0.5, 1.897149e-12, 0.5, -2.0489097e-08, 0, 0.27162075, -0.00076675415)
 
 [node name="Physical Bone Spine_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="1"]
-transform = Transform3D(0.5, -1.1921887e-07, -2.264855e-13, -3.7645767e-09, -0.015787562, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787562, 0, 0.7583256, -0.082527526)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.195857e-13, -1.074704e-06, 0.48864555)
-body_offset = Transform3D(0.5, -9.5568e-12, -2.2470914e-13, -2.2337687e-13, 1.8626451e-09, -0.5, 9.571011e-12, 0.5, 1.8626451e-09, 0, 0.24432278, 5.364418e-07)
+transform = Transform3D(0.5, -1.1921885e-07, -2.2781776e-13, -3.764578e-09, -0.015787564, -0.4997507, 1.191594e-07, 0.4997507, -0.015787564, 0, 0.75831604, -0.0825367)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2118998e-13, 1.5258789e-05, 0.48862457)
+body_offset = Transform3D(0.5, -9.542589e-12, -2.2604141e-13, -2.2515323e-13, 0, -0.5, 9.563905e-12, 0.5, 0, 0, 0.24431229, -7.6293945e-06)
 
 [node name="Physical Bone Spine_002" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="2"]
-transform = Transform3D(0.5, -1.1921887e-07, -1.9184654e-13, -3.7645442e-09, -0.015787574, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787574, 0, 1.2456656, -0.067131065)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8844778e-13, -2.9693267e-06, 0.4879017)
-body_offset = Transform3D(0.5, -9.5568e-12, -1.931788e-13, -1.9184654e-13, -1.1175871e-08, -0.5, 9.571011e-12, 0.5, -1.1175871e-08, 0, 0.24395084, 1.4901161e-06)
+transform = Transform3D(0.5, -1.1921885e-07, -2.2293278e-13, -3.7645753e-09, -0.015787572, -0.4997507, 1.191594e-07, 0.4997507, -0.015787572, 0, 1.2459354, -0.06690788)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1042616e-13, -0.00043105168, 0.48845482)
+body_offset = Transform3D(0.5, -9.542589e-12, -2.2382096e-13, -2.2293278e-13, -9.313226e-09, -0.5, 9.563905e-12, 0.5, -9.313226e-09, 0, 0.24422741, 0.0002155304)
 
 [node name="Physical Bone Spine_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="3"]
-transform = Transform3D(0.5, -1.1921887e-07, -2.2692959e-13, -3.764575e-09, -0.015787555, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787555, 0, 1.7337542, -0.051713258)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1873475e-13, -3.6126863e-07, 0.48865318)
-body_offset = Transform3D(0.5, -9.5568e-12, -2.2382096e-13, -2.2293278e-13, 3.7252903e-09, -0.5, 9.571011e-12, 0.5, 3.7252903e-09, 0, 0.24432659, 1.7881393e-07)
+transform = Transform3D(0.5, -1.1921885e-07, -2.2737368e-13, -3.7645753e-09, -0.015787555, -0.4997507, 1.191594e-07, 0.4997507, -0.015787555, 0, 1.7336826, -0.048107147)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.197463e-14, -0.0072135963, 0.4887371)
+body_offset = Transform3D(0.5, -9.542589e-12, -2.2470914e-13, -2.2382096e-13, 3.7252903e-09, -0.5, 9.563905e-12, 0.5, 3.7252903e-09, 0, 0.24436855, 0.0036067963)
 
 [node name="Physical Bone Neck" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="4"]
-transform = Transform3D(0.5, -1.1926011e-07, -1.6142643e-12, 2.9064173e-09, 0.012191968, -0.49985135, 1.192247e-07, 0.49985135, 0.012191968, 0, 2.160512, -0.048527222)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1106481e-12, 7.334219e-05, 0.36661336)
-body_offset = Transform3D(0.5, -5.0818016e-11, -1.5045742e-12, -1.503464e-12, 4.4889748e-07, -0.50000006, 5.0832227e-11, 0.50000006, 4.4889748e-07, 0, 0.1833067, -3.683567e-05)
+transform = Transform3D(0.5, -1.1926016e-07, -1.6022739e-12, 2.9064298e-09, 0.012191967, -0.49985135, 1.1922474e-07, 0.49985135, 0.012191967, 0, 2.1672173, -0.050559998)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5225989e-12, 0.0038105415, 0.38011545)
+body_offset = Transform3D(0.5, -5.087486e-11, -1.4928059e-12, -1.4928059e-12, 4.4796616e-07, -0.50000006, 5.087486e-11, 0.50000006, 4.4796616e-07, 0, 0.19005775, -0.0019054413)
 
 [node name="Physical Bone Neck_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="5"]
-transform = Transform3D(0.5, -1.1926005e-07, -1.4366286e-12, 2.9065843e-09, 0.012191931, -0.49985138, 1.1922462e-07, 0.49985135, 0.012191932, 0, 2.5201006, -0.057277348)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.745824e-13, 3.266181e-05, 0.36384955)
-body_offset = Transform3D(0.5, -5.0746962e-11, -1.3347101e-12, -1.334266e-12, 4.1164458e-07, -0.5000001, 5.0761173e-11, 0.50000006, 4.1164458e-07, 0, 0.18192482, -1.6480684e-05)
+transform = Transform3D(0.5, -1.1926012e-07, -9.379164e-13, 2.9070844e-09, 0.01219193, -0.49985138, 1.1922468e-07, 0.49985135, 0.012191931, 0, 2.581316, -0.054574966)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.614253e-14, -0.008354586, 0.48610675)
+body_offset = Transform3D(0.5, -5.0818016e-11, -8.3622e-13, -8.3555385e-13, 4.1071326e-07, -0.5000001, 5.0825122e-11, 0.50000006, 4.1071326e-07, 0, 0.24305344, 0.0041770935)
 
 [node name="Physical Bone Head" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="6"]
-transform = Transform3D(-0.5, -2.9842795e-13, -4.460876e-13, -1.3855582e-13, 0.47317493, -0.16157201, 5.186962e-13, -0.16157201, -0.47317493, 0, 2.7332926, 0.038036767)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6823786e-08, -0.000111438334, 0.21067034)
-body_offset = Transform3D(-0.5, -4.308058e-08, -1.1115325e-07, -1.2233495e-13, 0.46620873, -0.18069181, 1.1920983e-07, -0.1806918, -0.4662087, 0, 0.038118362, 0.09819621)
+transform = Transform3D(-0.5, 5.237144e-12, 1.615641e-11, -2.6467768e-13, 0.47317493, -0.16157195, -1.6981971e-11, -0.16157195, -0.47317493, 0, 2.734314, 0.038562775)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7046775e-08, -0.0017031059, 0.21232192)
+body_offset = Transform3D(-0.5, -4.307503e-08, -1.1113665e-07, -9.605623e-13, 0.46620873, -0.18069175, 1.1919235e-07, -0.18069173, -0.4662087, 0, 0.03915882, 0.09867859)
 
 [node name="Physical Bone arm_L" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="7"]
-transform = Transform3D(-0.0029424774, -0.001830575, -0.49998802, -0.49967828, -0.01768055, 0.0030053873, -0.017691128, 0.49968395, -0.001725348, 1.0903893, 1.6132956, -0.058183882)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030521383, 0.00018820258, 0.74433136)
-body_offset = Transform3D(0.4999999, 1.6763806e-07, -2.551169e-07, -2.7415808e-07, -9.789597e-06, -0.5, -1.6577542e-07, 0.5, -9.789481e-06, -0.0015258789, 0.37216568, -8.6814165e-05)
+transform = Transform3D(-0.002942203, -0.0018308504, -0.499988, -0.49967825, -0.01768055, 0.0030051228, -0.017691128, 0.49968395, -0.0017256328, 1.0791626, 1.6132956, -0.062078476)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026435559, 0.007891881, 0.7218474)
+body_offset = Transform3D(0.49999994, 1.6950071e-07, 1.8757419e-08, -3.4924597e-10, -1.00649195e-05, -0.49999997, -1.6763806e-07, 0.5, -1.00649195e-05, -0.0013217926, 0.36092377, -0.003938675)
 
 [node name="Physical Bone arm_L_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="8"]
-transform = Transform3D(-0.0029411158, -0.0018256713, -0.49998802, -0.49967837, -0.01767886, 0.003003847, -0.017689407, 0.499684, -0.0017205057, 1.8437958, 1.6042767, -0.05549489)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0059164837, -0.00034414374, 0.75443256)
-body_offset = Transform3D(0.50000006, -1.469627e-06, 1.1900556e-06, 1.1709635e-06, -4.895963e-06, -0.50000006, 1.4677644e-06, 0.5000001, -4.89573e-06, 0.002957344, 0.37721634, 0.0001757741)
+transform = Transform3D(-0.002940848, -0.0018256743, -0.49998802, -0.49967843, -0.017676646, 0.003003572, -0.01768719, 0.4996841, -0.0017205315, 1.8445969, 1.6042776, -0.056510925)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005977926, 0.0016935668, 0.7560271)
+body_offset = Transform3D(0.50000006, -3.684312e-06, 1.4657089e-06, 1.4467914e-06, -4.912028e-06, -0.50000006, 3.684312e-06, 0.5000001, -4.9117953e-06, 0.0029878616, 0.3780136, -0.0008430481)
 
 [node name="Physical Bone arm_L_002" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="9"]
-transform = Transform3D(-0.00294111, -0.001822138, -0.49998808, -0.4996782, -0.017684145, 0.0030037344, -0.017694667, 0.49968386, -0.0017169432, 2.5952225, 1.5983858, -0.05244073)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008632289, -0.0013979581, 0.7605513)
-body_offset = Transform3D(0.50000006, 3.6358833e-06, 1.0175208e-06, 9.977302e-07, -1.340406e-06, -0.5000001, -3.6340207e-06, 0.5000001, -1.3401732e-06, 0.0043153763, 0.38027573, 0.00069996715)
+transform = Transform3D(-0.002940746, -0.001825505, -0.49998805, -0.4996782, -0.017684089, 0.0030034897, -0.017694632, 0.49968386, -0.0017203212, 2.5943298, 1.5984659, -0.05268097)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008499327, -0.00091225945, 0.7587736)
+body_offset = Transform3D(0.50000006, 3.600493e-06, 1.3812751e-06, 1.3617646e-06, -4.707603e-06, -0.5000001, -3.600493e-06, 0.50000006, -4.70737e-06, 0.004248619, 0.3793869, 0.00045967102)
 
 [node name="Physical Bone arm_L_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="10"]
-transform = Transform3D(-0.0029410466, -0.0018208497, -0.49998808, -0.4996782, -0.017684154, 0.0030036254, -0.017694669, 0.49968386, -0.001715658, 3.235218, 1.5969086, -0.050787512)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003934126, -0.00014749894, 0.5437468)
-body_offset = Transform3D(0.50000006, 3.6396086e-06, 1.0800723e-06, 1.0604126e-06, -4.726462e-08, -0.5000001, -3.637746e-06, 0.5000001, -4.703179e-08, 0.0019664764, 0.27187347, 7.376075e-05)
+transform = Transform3D(-0.0029406387, -0.0018205915, -0.49998808, -0.4996782, -0.017684158, 0.0030032087, -0.017694669, 0.49968386, -0.0017154143, 3.449669, 1.5969095, -0.05111122)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014334209, 0.0020595146, 0.97264075)
+body_offset = Transform3D(0.50000006, 3.6414713e-06, 1.4879879e-06, 1.4683319e-06, 2.1094456e-07, -0.5000001, -3.6396086e-06, 0.5000001, 2.1129381e-07, 0.00071525574, 0.4863205, -0.0010299683)
 
 [node name="Physical Bone arm_L_004" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="11"]
-transform = Transform3D(-0.0029258768, -0.0018286136, -0.49998814, -0.49967805, -0.017690768, 0.0029887627, -0.01770128, 0.4996836, -0.001723914, 4.0352173, 1.6030607, -0.047763754)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017969012, 8.070072e-05, 0.646851)
-body_offset = Transform3D(0.50000006, 1.0384247e-05, 1.6306603e-05, 1.6287278e-05, -7.771188e-06, -0.5000001, -1.0386109e-05, 0.50000006, -7.771188e-06, -0.008995056, 0.3234253, -3.5136938e-05)
+transform = Transform3D(-0.0029258763, -0.0018288725, -0.49998814, -0.49967805, -0.017690752, 0.0029887713, -0.017701264, 0.4996836, -0.001724173, 4.03627, 1.6030779, -0.04809189)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017991818, 0.00074703235, 0.6489567)
+body_offset = Transform3D(0.50000006, 1.0369346e-05, 1.6307149e-05, 1.6287795e-05, -8.0302125e-06, -0.5000001, -1.0371208e-05, 0.50000006, -8.030329e-06, -0.0090065, 0.32447815, -0.0003681183)
 
 [node name="Physical Bone arm_R" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="12"]
-transform = Transform3D(-0.0029491114, 0.0018292331, 0.49998796, 0.49967828, -0.017678767, 0.0030119638, 0.01768936, 0.499684, -0.001723783, -1.1152, 1.6134319, -0.058060482)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036350824, 0.00013072141, 0.793953)
-body_offset = Transform3D(0.49999994, 1.6260892e-06, 7.002269e-06, 7.0205533e-06, -8.458388e-06, -0.49999997, -1.6279519e-06, 0.5, -8.458504e-06, 0.0018119812, 0.39697647, -5.865097e-05)
+transform = Transform3D(-0.0029495002, 0.0018306111, 0.499988, 0.4996783, -0.017678754, 0.003012401, 0.01768936, 0.499684, -0.0017251463, -1.0455322, 1.6135378, -0.05906105)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029546286, 0.0016302998, 0.65460193)
+body_offset = Transform3D(0.49999997, 1.6316772e-06, 7.391056e-06, 7.4091477e-06, -9.836513e-06, -0.5, -1.6298145e-06, 0.5, -9.836396e-06, 0.0014724731, 0.32730103, -0.0008087158)
 
 [node name="Physical Bone arm_R_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="13"]
-transform = Transform3D(-0.0029421651, 0.0018207841, 0.49998805, 0.4996783, -0.017680371, 0.0030047281, 0.01769089, 0.499684, -0.0017155752, -1.8175163, 1.6102467, -0.055458765)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005708672, -0.00019300003, 0.7018051)
-body_offset = Transform3D(0.5, -1.1175871e-08, -1.6058038e-08, 2.1391315e-09, 1.1641532e-10, -0.5, 9.313226e-09, 0.50000006, 2.3283064e-10, 0.0028543472, 0.35090256, 9.649992e-05)
+transform = Transform3D(-0.0029421644, 0.0018204782, 0.49998805, 0.4996783, -0.017680371, 0.0030047167, 0.017690888, 0.499684, -0.0017152698, -1.8171616, 1.6102457, -0.0547657)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005750633, -0.0015797132, 0.7010956)
+body_offset = Transform3D(0.5, -9.313226e-09, -1.6658305e-08, 1.4333636e-09, 3.0593947e-07, -0.5, 7.450581e-09, 0.50000006, 3.0582305e-07, 0.002875328, 0.3505478, 0.00078964233)
 
 [node name="Physical Bone arm_R_002" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="14"]
-transform = Transform3D(-0.0029455689, 0.0018214202, 0.49998805, 0.49967828, -0.017680759, 0.0030081538, 0.017691294, 0.499684, -0.0017160883, -2.5046234, 1.60289, -0.05299838)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007321247, -0.0006259393, 0.57929987)
-body_offset = Transform3D(0.5, -2.4214387e-07, 3.5487355e-06, 3.5673547e-06, -6.4249616e-07, -0.50000006, 2.4028122e-07, 0.50000006, -6.4237975e-07, -0.0003681183, 0.28964996, 0.00031334162)
+transform = Transform3D(-0.0029455689, 0.0018210757, 0.49998805, 0.49967828, -0.01768076, 0.0030081416, 0.017691294, 0.499684, -0.0017157439, -2.507965, 1.6035624, -0.052598953)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006812685, -0.001353868, 0.5859832)
+body_offset = Transform3D(0.5, -2.4214387e-07, 3.548812e-06, 3.5673547e-06, -2.9802322e-07, -0.50000006, 2.4028122e-07, 0.50000006, -2.977904e-07, 0.00033855438, 0.29299164, 0.00067710876)
 
 [node name="Physical Bone arm_R_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="15"]
-transform = Transform3D(-0.002942001, 0.0018224989, 0.49998802, 0.49967828, -0.0176805, 0.003004625, 0.017691027, 0.49968398, -0.0017172941, -3.8831139, 1.5982819, -0.04624665)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0067538503, -0.004401443, 1.8395233)
-body_offset = Transform3D(0.49999997, 9.313226e-09, -1.9677827e-08, -8.1490725e-10, -1.7179409e-06, -0.5, -9.313226e-09, 0.5, -1.7179409e-06, 0.0033769608, 0.91976166, 0.0022038817)
+transform = Transform3D(-0.0029420007, 0.0018219822, 0.49998802, 0.49967828, -0.017680503, 0.0030046066, 0.017691027, 0.499684, -0.0017167777, -3.8830872, 1.597847, -0.046331406)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005878377, -0.0042642266, 1.8394775)
+body_offset = Transform3D(0.49999997, 7.450581e-09, -1.979788e-08, -1.0477379e-09, -1.2011733e-06, -0.5, -9.313226e-09, 0.50000006, -1.2011733e-06, 0.0029392242, 0.91973877, 0.0021343231)
 
 [node name="Physical Bone arm_R_004" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="16"]
-transform = Transform3D(-0.002940654, 0.0018435356, 0.499988, 0.499678, -0.01768922, 0.003004054, 0.017699871, 0.49968362, -0.0017383124, -4.0852623, 1.5939989, -0.047956184)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00045183208, 0.0002125022, 0.74704736)
-body_offset = Transform3D(0.5, -8.923933e-06, -1.4143006e-06, -1.3963909e-06, -2.2701919e-05, -0.50000006, 8.923933e-06, 0.50000006, -2.2701803e-05, 0.00022697449, 0.3735237, -8.928776e-05)
+transform = Transform3D(-0.002940648, 0.0018435356, 0.499988, 0.499678, -0.01768922, 0.003004048, 0.017699871, 0.4996836, -0.0017383128, -3.8918762, 1.5939875, -0.04635048)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001732817, -0.00442398, 0.3602907)
+body_offset = Transform3D(0.5, -8.923933e-06, -1.4203615e-06, -1.4024445e-06, -2.2702035e-05, -0.50000006, 8.923933e-06, 0.5, -2.2701919e-05, -0.0008659363, 0.18014526, 0.0022201538)
 
 [node name="Physical Bone tail" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="17"]
-transform = Transform3D(0.5, 2.384189e-07, -5.7731597e-15, -7.528101e-09, 0.015787562, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787562, 0, -0.51122856, -0.22676131)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8196085e-14, 0.0031497437, 1.1352196)
-body_offset = Transform3D(0.5, 3.126388e-13, -8.881784e-15, -8.881784e-15, 1.8626451e-09, -0.5, -3.2684966e-13, 0.5, 1.8626451e-09, 0, 0.5676098, -0.0015748739)
+transform = Transform3D(0.5, 2.384189e-07, -7.5495166e-15, -7.5281e-09, 0.015787564, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787564, 0, -0.51124954, -0.22677612)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0231795e-14, 0.0031204224, 1.1352615)
+body_offset = Transform3D(0.5, 3.126388e-13, -9.769963e-15, -9.769963e-15, 0, -0.5, -3.2684966e-13, 0.5, 0, 0, 0.56763077, -0.0015602112)
 
 [node name="Physical Bone tail_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="18"]
-transform = Transform3D(0.5, 2.384189e-07, -2.220446e-15, -7.528105e-09, 0.015787564, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787564, 0, -1.6462479, -0.2643034)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.206741e-15, -0.00022029031, 1.1356106)
-body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -3.7252903e-09, -0.5, -3.2684966e-13, 0.5, -3.7252903e-09, 0, 0.5678053, 0.00011014938)
+transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 0, -1.6455297, -0.26424026)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.928834e-15, -0.00013731643, 1.1341724)
+body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 0, 0.5670862, 6.866455e-05)
 
 [node name="Physical Bone tail_002" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="19"]
-transform = Transform3D(0.5, 2.384189e-07, -2.220446e-15, -7.528105e-09, 0.015787564, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787564, 3.8146973e-06, -2.780364, -0.30157462)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6293945e-06, -0.0031058704, 1.1341801)
-body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -3.7252903e-09, -0.5, -3.2684966e-13, 0.5, -3.7252903e-09, 3.8146973e-06, 0.56709003, 0.0015529394)
+transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 7.6293945e-06, -2.780365, -0.3005867)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, -0.0011329524, 1.134119)
+body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 7.6293945e-06, 0.5670595, 0.00056648254)
 
 [node name="Physical Bone tail_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="20"]
-transform = Transform3D(0.5, 2.384189e-07, -2.220446e-15, -7.528105e-09, 0.015787564, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787564, 3.8146973e-06, -3.915886, -0.33589593)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6293945e-06, -5.7135867e-06, 1.1353741)
-body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -3.7252903e-09, -0.5, -3.2684966e-13, 0.5, -3.7252903e-09, 3.8146973e-06, 0.56768703, 2.861023e-06)
+transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 7.6293945e-06, -3.9167175, -0.3370762)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, -0.0023116937, 1.1371117)
+body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 7.6293945e-06, 0.56855583, 0.0011558533)
 
 [node name="Physical Bone tail_004" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="21"]
-transform = Transform3D(0.5, 2.384189e-07, -6.661338e-15, -7.528104e-09, 0.015787572, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787572, 3.8146973e-06, -5.0507946, -0.36976817)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6293945e-06, 0.0039532525, 1.135313)
-body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -1.4901161e-08, -0.5, -3.2684966e-13, 0.5, -1.4901161e-08, 3.8146973e-06, 0.5676565, -0.0019766092)
+transform = Transform3D(0.5, 2.384189e-07, -6.661338e-15, -7.528104e-09, 0.015787572, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787572, 7.6293945e-06, -5.0507984, -0.3694458)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, 0.004600559, 1.1353016)
+body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -1.4901161e-08, -0.5, -3.2684966e-13, 0.5, -1.4901161e-08, 7.6293945e-06, 0.5676508, -0.0023002625)
 
 [node name="Physical Bone tail_005" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="22"]
-transform = Transform3D(0.5, 2.384189e-07, -2.220446e-15, -7.528105e-09, 0.015787564, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787564, 0, -6.18553, -0.405509)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4598473e-15, 0.0041661346, 1.135025)
-body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -3.7252903e-09, -0.5, -3.2684966e-13, 0.5, -3.7252903e-09, 0, 0.5675125, -0.0020830631)
+transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 0, -6.157146, -0.40387535)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4406375e-15, 0.0056381347, 1.0781832)
+body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 0, 0.5390916, -0.0028190613)
 
 [node name="Physical Bone tail_006" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="23"]
-transform = Transform3D(0.5, 2.384189e-07, -2.220446e-15, -7.528105e-09, 0.015787564, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787564, 0, -7.3207116, -0.44496146)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.954441e-15, -0.0030125296, 1.1358604)
-body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -3.7252903e-09, -0.5, -3.2684966e-13, 0.5, -3.7252903e-09, 0, 0.5679302, 0.001506269)
+transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 0, -7.319755, -0.44595718)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1508016e-15, -0.0050620907, 1.1340122)
+body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 0, 0.5670061, 0.0025310516)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_u5je8")
@@ -330,10 +336,245 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -300)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -400)
 
 [node name="TreeCopiable" parent="lake" instance=ExtResource("14_bjkyw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.51672, 2.806602, -51.838333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.51672, 1.4133253, -51.838333)
 
 [node name="WallCopiable" parent="lake" instance=ExtResource("15_t7a0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.10521, 1.2927961, -36.30916)
 
+[node name="Keys" type="Node3D" parent="."]
+
+[node name="KeyLake" parent="Keys" instance=ExtResource("16_y1407")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.49716, -3.2102952, 90.75043)
+rotation_speed = null
+
+[node name="KeyMountain" parent="Keys" instance=ExtResource("16_y1407")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.06255, 114.78004, -196.27455)
+rotation_speed = null
+
+[node name="KeyForest" parent="Keys" instance=ExtResource("16_y1407")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -185.29556, 15.303177, -298.89252)
+rotation_speed = null
+
+[node name="OmniLight3D" parent="Keys/KeyForest" index="2"]
+light_volumetric_fog_energy = 3.0
+omni_range = 25.763206
+omni_attenuation = 0.2
+
+[node name="Caches" type="Node3D" parent="."]
+
+[node name="Letter" parent="Caches" instance=ExtResource("17_ose60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 277.84158, 1.4152546, 61.716354)
+
+[node name="MontainObjects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.16791, 0, 0)
+
+[node name="Rocks" type="Node3D" parent="MontainObjects"]
+
+[node name="SnowRockCopiable" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 0.99730295, 0.07339485, 0, -0.07339485, 0.99730295, 0, 11.304378, 0)
+
+[node name="SnowRockCopiable2" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 0.99730295, 0.07339485, 0, -0.07339485, 0.99730295, 87.19119, 54.859882, 18.535702)
+
+[node name="SnowRockCopiable3" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 0.99730295, 0.07339485, 0, -0.07339485, 0.99730295, -31.222504, 30.451899, 150.28809)
+
+[node name="SnowRockCopiable4" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 0.99730295, 0.07339485, 0, -0.07339485, 0.99730295, -86.868004, 2.6042223, 137.74857)
+
+[node name="SnowRockCopiable5" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9914517, 0.12778735, -0.02634256, -0.13047428, 0.97103417, -0.20017259, 0, 0.20189849, 0.9794065, 109.45407, 81.30678, -95.66427)
+
+[node name="SnowRockCopiable6" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9914517, 0.12778735, -0.02634256, -0.13047428, 0.97103417, -0.20017259, 0, 0.20189849, 0.9794065, -112.50336, 0.048321962, 91.854866)
+
+[node name="SnowRockCopiable7" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9914517, 0.12778735, -0.02634256, -0.1263882, 0.99075574, 0.049283907, 0.0323969, -0.04553321, 0.99843735, -112.32648, 0.048321962, 214.37415)
+
+[node name="SnowRockCopiable8" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9914517, 0.12778735, -0.02634256, -0.1263882, 0.99075574, 0.049283907, 0.0323969, -0.04553321, 0.99843735, -7.5268555, 0.048321962, 214.37415)
+
+[node name="SnowRockCopiable9" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9914517, 0.12778735, -0.02634256, -0.1263882, 0.99075574, 0.049283907, 0.0323969, -0.04553321, 0.99843735, 100.56601, 0.048321962, 210.94298)
+
+[node name="SnowRockCopiable10" parent="MontainObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9397782, 0.34145924, -0.0149214845, -0.34024626, 0.93879306, 0.053853355, 0.032396905, -0.045533214, 0.99843746, 135.16415, 1.9345796, 148.31575)
+
+[node name="Trees" type="Node3D" parent="MontainObjects"]
+
+[node name="SnowTreeCopiable" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.612656, 0.6214547, -26.941538)
+
+[node name="SnowTreeCopiable2" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.066757, 0.6214547, 240.06358)
+
+[node name="SnowTreeCopiable3" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.643005, 0.6214547, 63.5663)
+
+[node name="SnowTreeCopiable4" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.844284, 62.642178, 103.8861)
+
+[node name="SnowTreeCopiable5" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(-0.9999998, 0, 0.00061097933, -0.00015511306, 0.96723676, -0.25387606, -0.00059096166, -0.25387612, -0.9672366, 91.552124, 108.05969, -206.78052)
+
+[node name="SnowTreeCopiable6" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(-0.9869695, -0.16017117, -0.015378552, -0.1609066, 0.9820833, 0.0980887, -0.0006079605, 0.09928503, -0.99505883, -3.183487, 2.355319, -174.61118)
+
+[node name="SnowTreeCopiable7" parent="MontainObjects/Trees" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(-0.9869695, -0.16017117, -0.015378552, -0.1609066, 0.9820833, 0.0980887, -0.0006079605, 0.09928503, -0.99505883, -136.0361, -3.4092903, 197.94255)
+
+[node name="LakeObjects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.00741, -4.6374083, 77.96689)
+
+[node name="Rocks" type="Node3D" parent="LakeObjects"]
+
+[node name="SnowRockCopiable" parent="LakeObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71038055, -0.22353172, -52.787125)
+
+[node name="SnowRockCopiable2" parent="LakeObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.73918456, 0, 0.6735029, 0, 1, 0, -0.6735029, 0, 0.73918456, -54.056038, -0.1819315, 3.9528732)
+
+[node name="SnowRockCopiable3" parent="LakeObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.73918456, 0, 0.6735029, 0, 1, 0, -0.6735029, 0, 0.73918456, 39.71598, -0.1819315, 91.57286)
+
+[node name="SnowRockCopiable4" parent="LakeObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.36959228, 0, 0.33675146, 0, 0.5, 0, -0.33675146, 0, 0.36959228, -45.07998, -0.29407454, -74.7688)
+
+[node name="PortalObjects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.99663, 62.111565, 190.80469)
+
+[node name="Portal" parent="PortalObjects" instance=ExtResource("18_lka3s")]
+transform = Transform3D(0.96667165, 0, -0.25601944, 0, 1, 0, 0.25601944, 0, 0.96667165, 10.688431, -16.568882, -18.832932)
+
+[node name="Walls" type="Node3D" parent="PortalObjects"]
+
+[node name="SnowTreeCopiable" parent="PortalObjects/Walls" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(0.23521096, 0.00093531376, -0.6592988, -0.011844524, 0.6998922, -0.003232743, 0.6591929, 0.012242082, 0.2351906, -58.083054, -14.24366, -76.30388)
+
+[node name="SnowTreeCopiable2" parent="PortalObjects/Walls" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(-0.5829619, -0.0055571236, 0.93280464, -0.018612826, 1.0998307, -0.005080026, -0.9326355, -0.018475994, -0.5829662, -53.80394, -14.24366, -65.571175)
+
+[node name="SnowTreeCopiable3" parent="PortalObjects/Walls" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(-0.8029443, -0.010835845, 0.5959556, -0.016920753, 0.99984616, -0.0046182037, -0.595814, -0.01379218, -0.80300426, -44.91832, -14.24366, -55.16095)
+
+[node name="Tree" type="Node3D" parent="PortalObjects"]
+
+[node name="SnowTreeCopiable" parent="PortalObjects/Tree" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.67691, -13.1861725, -22.773071)
+
+[node name="SnowTreeCopiable2" parent="PortalObjects/Tree" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -8.046982, -13.1861725, 24.556183)
+
+[node name="SnowTreeCopiable3" parent="PortalObjects/Tree" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -51.317734, -29.034634, -128.75827)
+
+[node name="SnowTreeCopiable4" parent="PortalObjects/Tree" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -5.975067, -62.483643, -193.48332)
+
+[node name="Rocks" type="Node3D" parent="PortalObjects"]
+
+[node name="SnowRockCopiable" parent="PortalObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.304199, -11.914215, -28.337494)
+
+[node name="SnowRockCopiable2" parent="PortalObjects/Rocks" instance=ExtResource("6_7cog7")]
+transform = Transform3D(0.9809721, 0.19414875, 0, -0.19414875, 0.9809721, 0, 0, 0, 1, -22.977036, -46.06977, -164.94711)
+
+[node name="ForestObjects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.25128, 18.769228, -213.50885)
+
+[node name="treePatches" type="Node3D" parent="ForestObjects"]
+
+[node name="mediumTreePatch" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+
+[node name="mediumTreePatch2" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(0.9970875, 0.07626658, 0, -0.07626658, 0.9970875, 0, 0, 0, 1, -37.344864, -6.065836, 85.330795)
+
+[node name="mediumTreePatch3" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(-0.028682778, 0.043464452, 0.9986432, 0.1488618, 0.98809916, -0.038729966, -0.98844206, 0.1475489, -0.034811605, 120.99077, -16.912058, 85.330795)
+
+[node name="SnowTreeCopiable3" parent="ForestObjects/treePatches/mediumTreePatch3/littleTreePatchB" index="2"]
+transform = Transform3D(0.25934047, 0, -0.1508064, -1.8626451e-09, 0.30000007, 9.313226e-10, 0.15080643, 0, 0.25934038, -6.689987, 2.0467324, -17.668463)
+
+[node name="mediumTreePatch4" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(0.94962496, -0.0045185215, 0.3133562, 0.03062412, 0.99644834, -0.07843769, -0.31188887, 0.08408267, 0.9463907, 28.73404, -14.352416, 184.0265)
+
+[node name="mediumTreePatch5" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(0.7270956, -0.07605566, -0.6823106, 0.030624121, 0.99644834, -0.0784377, 0.6858531, 0.036136556, 0.7268424, -116.44536, -14.352416, 152.33862)
+
+[node name="mediumTreePatch6" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(0.7270956, -0.07605566, -0.6823106, 0.06747864, 0.9969493, -0.039219998, 0.6832122, -0.01752467, 0.7300097, -79.56462, -5.15658, 112.08152)
+
+[node name="mediumTreePatch7" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(0.96668774, -0.07505713, -0.24470697, 0.05150971, 0.9935259, -0.10125345, 0.25072265, 0.0852757, 0.9642957, -27.22763, -12.894937, -90.68628)
+
+[node name="littleTreePatchA" parent="ForestObjects/treePatches/mediumTreePatch7" index="0"]
+transform = Transform3D(0.99992144, -0.01206645, 0.0033907741, 0.011892494, 0.9988078, 0.047345586, -0.0039580315, -0.047301542, 0.9988728, -0.21975708, -4.7755947, -0.006072998)
+
+[node name="littleTreePatchB" parent="ForestObjects/treePatches/mediumTreePatch7" index="1"]
+transform = Transform3D(1, 9.313226e-09, 1.4901161e-08, 9.313226e-09, 1, -7.450581e-09, -1.4901161e-08, 1.4901161e-08, 1, 28.141174, -6.1552773, -0.24267578)
+
+[node name="mediumTreePatch8" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(-0.09398778, 0.010684723, -0.99551606, -0.059640214, 0.998086, 0.016343076, 0.9937855, 0.060908765, -0.093170635, -106.99687, -10.927293, -64.12515)
+
+[node name="littleTreePatchA" parent="ForestObjects/treePatches/mediumTreePatch8" index="0"]
+transform = Transform3D(0.99992156, -0.01206645, 0.0033907816, 0.011892494, 0.9988078, 0.04734559, -0.0039580315, -0.047301553, 0.99887294, -0.48379517, -0.35783482, 0.06626892)
+
+[node name="littleTreePatchB" parent="ForestObjects/treePatches/mediumTreePatch8" index="1"]
+transform = Transform3D(0.99929905, -0.037435062, -0.00033558905, 0.03743367, 0.9992928, -0.003541748, 0.0004679337, 0.0035267104, 0.9999937, 40.799423, -5.3794556, -1.4294586)
+
+[node name="mediumTreePatch9" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(-0.6135177, -0.023735784, -0.7893243, -0.059640214, 0.998086, 0.016343078, 0.7874258, 0.057102136, -0.61375904, -24.811745, -15.26727, 143.28688)
+
+[node name="littleTreePatchA" parent="ForestObjects/treePatches/mediumTreePatch9" index="0"]
+transform = Transform3D(0.9999217, -0.012066454, 0.0033908486, 0.011892498, 0.99880785, 0.04734559, -0.0039580464, -0.047301553, 0.998873, -0.52645874, 0.35604954, 0.07795715)
+
+[node name="littleTreePatchB" parent="ForestObjects/treePatches/mediumTreePatch9" index="1"]
+transform = Transform3D(0.99895394, 0.045652393, 0.0026598573, -0.045084987, 0.9929344, -0.10976741, -0.0076523125, 0.109532654, 0.9939537, 40.646984, -2.8284516, -1.3876953)
+
+[node name="mediumTreePatch10" parent="ForestObjects/treePatches" instance=ExtResource("19_ml06t")]
+transform = Transform3D(-0.9844691, 0.102792814, 0.14231826, 0.10284045, 0.9946729, -0.0070401896, -0.14228384, 0.007705159, -0.98979586, 138.46483, -20.697815, -57.599335)
+
+[node name="littleTreePatchA" parent="ForestObjects/treePatches/mediumTreePatch10" index="0"]
+transform = Transform3D(0.9950101, 0.099232815, 0.010407075, -0.09969188, 0.9930461, 0.06262075, -0.004120618, -0.06334577, 0.99798346, -0.27114868, 2.8252938, 0.06048584)
+
+[node name="littleTreePatchB" parent="ForestObjects/treePatches/mediumTreePatch10" index="1"]
+transform = Transform3D(0.99895394, 0.045652393, 0.0026598573, -0.045084987, 0.9929344, -0.10976741, -0.0076523125, 0.109532654, 0.9939537, 40.646984, -2.8284516, -1.3876953)
+
+[node name="littleTreePatchA" parent="ForestObjects/treePatches" instance=ExtResource("20_xkio2")]
+transform = Transform3D(0.81167597, 0, -0.584108, 0, 1, 0, 0.584108, 0, 0.81167597, 66.91396, -15.834007, 90.43303)
+
+[node name="littleTreePatchA2" parent="ForestObjects/treePatches" instance=ExtResource("20_xkio2")]
+transform = Transform3D(0.8116761, -5.26525e-09, -0.58410805, -0.06061994, 0.9946002, -0.08423743, 0.5809539, 0.10378207, 0.80729306, 66.91396, -10.407483, 8.702988)
+
+[node name="BigTree" parent="ForestObjects" instance=ExtResource("14_bjkyw")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -64.72717, -15.917356, -63.356323)
+
+[node name="NearKey" type="Node3D" parent="ForestObjects"]
+
+[node name="WallCopiable" parent="ForestObjects/NearKey" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(-1.1184248, 0, -0.43488643, 0, 1.2, 0, 0.43488643, 0, -1.1184248, -83.706406, -7.435132, -96.365814)
+
+[node name="WallCopiable2" parent="ForestObjects/NearKey" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(-0.55430675, 0, 0.83231246, 0, 1, 0, -0.83231246, 0, -0.55430675, -75.05354, -9.6790495, -92.22543)
+
+[node name="WallCopiable3" parent="ForestObjects/NearKey" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(0.3525769, -3.7252903e-09, 0.93578285, 0.0742836, 0.99684435, -0.027987987, -0.9328298, 0.07938123, 0.3514643, -90.995026, -9.6790495, -87.0195)
+
+[node name="WallCopiable4" parent="ForestObjects/NearKey" instance=ExtResource("15_t7a0w")]
+transform = Transform3D(-0.98074234, -0.1305144, -0.14529543, -0.12323733, 0.9906784, -0.058045287, 0.15151668, -0.03902162, -0.9876842, -80.7484, -9.6790495, -81.10333)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [editable path="creature"]
 [editable path="Player"]
+[editable path="Keys/KeyForest"]
+[editable path="PortalObjects/Portal"]
+[editable path="ForestObjects/treePatches/mediumTreePatch3"]
+[editable path="ForestObjects/treePatches/mediumTreePatch3/littleTreePatchB"]
+[editable path="ForestObjects/treePatches/mediumTreePatch4"]
+[editable path="ForestObjects/treePatches/mediumTreePatch5"]
+[editable path="ForestObjects/treePatches/mediumTreePatch6"]
+[editable path="ForestObjects/treePatches/mediumTreePatch7"]
+[editable path="ForestObjects/treePatches/mediumTreePatch8"]
+[editable path="ForestObjects/treePatches/mediumTreePatch9"]
+[editable path="ForestObjects/treePatches/mediumTreePatch10"]

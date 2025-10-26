@@ -4,6 +4,8 @@ shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx, sss_mode_skin;
 
 uniform vec4 albedo : source_color;
+uniform vec4 glow_color : source_color;
+
 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
 uniform ivec2 albedo_texture_size;
 uniform float point_size : hint_range(0.1, 128.0, 0.1);
@@ -65,4 +67,8 @@ void fragment() {
 	// Subsurface Scattering: Enabled
 	float sss_tex = texture(texture_subsurface_scattering, base_uv).r;
 	SSS_STRENGTH = subsurface_scattering_strength * sss_tex;
+
+	// Glow
+
+	EMISSION = ALBEDO * glow_color.rgb * glow_color.a;
 }
