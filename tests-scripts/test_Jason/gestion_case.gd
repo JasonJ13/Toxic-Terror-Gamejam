@@ -44,7 +44,6 @@ func next_case() -> void :
 		animation.play("fondu_In")
 	
 	else :
-		print("emit")
 		end_chap.emit()
 
 

@@ -2,8 +2,9 @@ extends Control
 
 var n_position : int = 0
 var tab_position : Array[Vector2i] = [Vector2(300,183),Vector2(264,273),Vector2(316,361),Vector2(228,449)]
+var menu_working = true
 
-@onready var arrow : TextureRect = $Arrow
+@onready var arrow : Sprite2D = $Arrow
 
 signal Game_started
 
@@ -27,17 +28,19 @@ func _process(delta: float) -> void:
 		arrow.position = tab_position[n_position]
 
 	if Input.is_action_just_pressed("ui_accept") :
-		match n_position :
-			0 :
-				Game_started.emit()
-				
-			1 :
-				pass
-				#Ajout d'une scène pour les menues
-				
-			2 :
-				pass
-				#Ajout d'une scène pour les crédits
-				
-			3 :
-				get_parent().queue_free()
+		
+		if menu_working :
+			match n_position :
+				0 :
+					Game_started.emit()
+					
+				1 :
+					pass
+					#Ajout d'une scène pour les menues
+					
+				2 :
+					pass
+					#Ajout d'une scène pour les crédits
+					
+				3 :
+					get_tree().quit()

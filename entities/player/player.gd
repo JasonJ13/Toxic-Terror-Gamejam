@@ -34,6 +34,7 @@ func _ready() -> void:
 	default_camera_transform = camera.transform
 	default_shape=$CollisionShape3D.shape
 	default_mesh=$MeshInstance3D.mesh
+
 	
 func get_collider_center_y(shape: Shape3D, mesh: Mesh) -> float:
 	if shape is CapsuleShape3D:
