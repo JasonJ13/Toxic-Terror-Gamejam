@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cyr7m83boa1oh"]
 
 [ext_resource type="Texture2D" uid="uid://bw72n33u2hh43" path="res://assets/2Dsprite/fond1/sunset-panel.png" id="1_4h4it"]
-[ext_resource type="Script" uid="uid://cy7njh23cv3vf" path="res://scenes/test_Jason/sunset.gd" id="1_dyyls"]
+[ext_resource type="Script" uid="uid://cy7njh23cv3vf" path="res://tests-scripts/test_Jason/sunset.gd" id="1_dyyls"]
 [ext_resource type="Texture2D" uid="uid://1kdl8tcfi33c" path="res://assets/2Dsprite/Character/character shadow.png" id="2_dyyls"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1wjq"]
