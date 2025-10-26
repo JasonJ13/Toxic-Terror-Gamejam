@@ -137,4 +137,5 @@ wait_time = 0.5
 one_shot = true
 
 [connection signal="end_dialogue" from="DialogueWOC" to="." method="end_dialogue"]
+[connection signal="signal_line" from="DialogueWOC" to="." method="new_line"]
 [connection signal="timeout" from="TextAnimation/Duration" to="." method="animation_ended"]

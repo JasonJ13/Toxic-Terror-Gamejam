@@ -1,6 +1,5 @@
 extends Control
 
-
 var full_text : String
 var act_line : String
 
@@ -12,20 +11,31 @@ var nmb_letter_tot : int
 
 var carriage_return = 0
 
-@onready var scroll : ScrollContainer = $ScrollContainer
-@onready var label : Label = $ScrollContainer/Label
-@onready var timerLetter : Timer = $ScrollContainer/Label/TimerLetter
-@onready var animationScroll : AnimationPlayer = $ScrollAnimation
-@onready var timerScroll : Timer = $ScrollContainer/Label/TimerScroll
+var scroll : ScrollContainer 
+var label : Label
+var timerLetter : Timer
+var animationScroll : AnimationPlayer
+var timerScroll : Timer
 
+signal signal_line
 signal end_dialogue
 
-func new_text(file_name : String) -> void:
-	var file = FileAccess.open("res://assets/dialogue/"+file_name+".txt",FileAccess.READ)
+func _ready() -> void:
+	scroll = $ScrollContainer
+	label = $ScrollContainer/Label
+	timerLetter = $ScrollContainer/Label/TimerLetter
+	animationScroll = $ScrollAnimation
+	timerScroll = $ScrollContainer/Label/TimerScroll
+	
+
+func new_text(file_name : String, chap : int) -> void:
+	var file = FileAccess.open("res://assets/dialogue/order"+str(chap)+"/"+file_name+".txt",FileAccess.READ)
+	print()
 	full_text = file.get_as_text()
 	
 	nmb_line_tot = full_text.get_slice_count("]") - 1
 	n_line = 0
+	
 	get_next_line()
 	
 	file.close()
@@ -36,6 +46,7 @@ func new_text(file_name : String) -> void:
 func get_next_line()  -> bool :
 	
 	if n_line < nmb_line_tot :
+		signal_line.emit(n_line)
 		act_line = full_text.get_slice("]",n_line)
 		if n_line != 0 :
 			act_line = act_line.right(-1)
@@ -45,6 +56,7 @@ func get_next_line()  -> bool :
 		nmb_letter_tot = act_line.length()
 		timerLetter.start()
 		return true
+		
 	else :
 		label.text = ""
 		return false
@@ -75,6 +87,7 @@ func next_letter() -> void:
 	if n_letter < nmb_letter_tot && carriage_return < 3 : 
 		if act_line[n_letter] == '\n' :
 			carriage_return += 1
+			
 		
 			if carriage_return == 3 :
 				n_letter += 1
@@ -94,8 +107,3 @@ func endScroll() -> void:
 	
 	carriage_return = 2
 	timerLetter.start()
-
-
-@warning_ignore("unused_parameter")
-func choice_made(choice: Variant) -> void:
-	$"../Dialogue2C".queue_free()

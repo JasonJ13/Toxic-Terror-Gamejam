@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjke1nq30guc"]
+
+[ext_resource type="Texture2D" uid="uid://by207n0e821ow" path="res://assets/2Dsprite/fond1/fond-bully.png" id="1_swd2v"]
+[ext_resource type="Script" uid="uid://ddtcmjtvsq0ei" path="res://tests-scripts/test_Jason/case.gd" id="1_y427c"]
+[ext_resource type="Texture2D" uid="uid://dghf7awuggwqw" path="res://assets/2Dsprite/bully.png" id="2_xhpju"]
+
+[sub_resource type="Animation" id="Animation_xhpju"]
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Bully1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4666667, 1.2666667, 1.4666667, 1.6666667, 2.4666667),
+"transitions": PackedFloat32Array(2, 2, 1, 0.5, 2),
+"update": 0,
+"values": [Vector2(0, 2.5), Vector2(0, 0), Vector2(0, 0.4), Vector2(0, 0), Vector2(0, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Bully2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.0000001, 1.8000002, 2, 2.2000003, 3),
+"transitions": PackedFloat32Array(2, 2, 1, 0.5, 2),
+"update": 0,
+"values": [Vector2(-28, 2.5), Vector2(-28, 0), Vector2(-28, 0.4), Vector2(-28, 0), Vector2(-28, 2.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/Bully3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.79999995, 0.99999976, 1.2, 1.9999998),
+"transitions": PackedFloat32Array(2, 2, 1, 0.5, 2),
+"update": 0,
+"values": [Vector2(28, 2.5), Vector2(28, 0), Vector2(28, 0.4), Vector2(28, 0), Vector2(28, 2.5)]
+}
+
+[sub_resource type="Animation" id="Animation_swd2v"]
+resource_name = "bully_move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Bully1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1, 1.2, 2),
+"transitions": PackedFloat32Array(2, 0.5, 1, 0.5, 1),
+"update": 0,
+"values": [Vector2(0, 2.5), Vector2(0, 2), Vector2(0, 2.5), Vector2(0, 2), Vector2(0, 2.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Bully2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.30000007, 1.1, 1.3000001, 1.5000001, 2.3000002),
+"transitions": PackedFloat32Array(2, 0.5, 1, 0.5, 1),
+"update": 0,
+"values": [Vector2(-28, 2.5), Vector2(-28, 2), Vector2(-28, 2.5), Vector2(0, 2), Vector2(0, 2.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t76dr"]
+_data = {
+&"RESET": SubResource("Animation_xhpju"),
+&"bully_move": SubResource("Animation_swd2v")
+}
+
+[node name="BullyScene" type="ColorRect"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_y427c")
+metadata/_custom_type_script = "uid://ddtcmjtvsq0ei"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_swd2v")
+
+[node name="Bully1" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(0, 2.5)
+texture = ExtResource("2_xhpju")
+
+[node name="Bully2" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(-28, 2.5)
+scale = Vector2(1, 1.0863869)
+skew = 0.26179934
+texture = ExtResource("2_xhpju")
+
+[node name="Bully3" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(28, 2.5)
+scale = Vector2(1, 1.0823427)
+skew = -0.26179945
+texture = ExtResource("2_xhpju")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t76dr")
+}
+autoplay = "RESET"
