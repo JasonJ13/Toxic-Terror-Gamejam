@@ -38,11 +38,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_282q6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nd0bq"]
-size = Vector3(1, 4.8886566, 1)
+size = Vector3(1, 6.0683556, 3.4943848)
 
-[node name="SnowTreeCopiable" type="StaticBody3D" node_paths=PackedStringArray("collider", "meshInstance")]
+[node name="SnowTreeCopiable" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
 script = ExtResource("1_pfrf0")
-collider = NodePath("CollisionShape3D")
 meshInstance = NodePath("tree_0/Vert_001")
 
 [node name="tree_0" type="Node3D" parent="."]
@@ -53,5 +52,5 @@ mesh = SubResource("ArrayMesh_v5487")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9835179, -0.18081097, 0, 0.18081097, 0.9835179, 0, 2.391468, 0.5177478)
+transform = Transform3D(1, 0, 0, 0, 0.997621, -0.06893815, 0, 0.06893815, 0.997621, 0, 3.134752, 0.7598232)
 shape = SubResource("BoxShape3D_nd0bq")
