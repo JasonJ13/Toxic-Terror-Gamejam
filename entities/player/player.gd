@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-@export var speed := 2.0
+@export var default_speed := 2.0
 @export var object_speed:=0.2
 @export var mouse_sensitivity := 0.001
 var twist_input := 0.0
@@ -11,15 +11,18 @@ var object_view := false
 
 @export var option_menu: Control
 
-@onready var pitch_pivot := $PitchPivot
-@onready var camera :=$PitchPivot/Camera3D
-@onready var raycast = $RayCast3D
+
+@onready var twist_pivot: Node3D = $TwistPivot
+@onready var pitch_pivot: Node3D = $TwistPivot/PitchPivot
+@onready var camera: Camera3D = $TwistPivot/PitchPivot/Camera3D
+
+@onready var raycast: RayCast3D = $TwistPivot/PitchPivot/RayCast3D
+
+@onready var speed := default_speed
 
 var default_camera_transform : Transform3D
 var default_shape: Shape3D
 var default_mesh: Mesh
-var collider_offset_y := 0.0
-var default_collider_offset_y := 0.0
 
 var highlighted_object: Objet = null
 	
@@ -28,9 +31,6 @@ func _ready() -> void:
 	default_camera_transform = camera.transform
 	default_shape=$CollisionShape3D.shape
 	default_mesh=$MeshInstance3D.mesh
-	collider_offset_y = get_collider_center_y(default_shape,default_mesh)
-	default_collider_offset_y = collider_offset_y
-	
 	
 func get_collider_center_y(shape: Shape3D, mesh: Mesh) -> float:
 	if shape is CapsuleShape3D:
@@ -40,15 +40,12 @@ func get_collider_center_y(shape: Shape3D, mesh: Mesh) -> float:
 			return mesh.get_aabb().size.y / 2
 	return 0.0
 
-	
-func _process(delta: float) -> void:
-	# --- Déplacement ---
+func deplacement(delta):
 	var input_dir := Vector3.ZERO
 	input_dir.x = Input.get_axis("move_left", "move_right")
 	input_dir.z = Input.get_axis("move_forward", "move_back")
 	input_dir = input_dir.normalized()
-
-	var direction = (basis * input_dir)
+	var direction = (twist_pivot.global_basis * input_dir)
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
 
@@ -60,16 +57,21 @@ func _process(delta: float) -> void:
 			velocity.y = jump_speed
 		else:
 			velocity.y = 0.0
-
-	move_and_slide()
-
-	# --- Rotation ---
-	rotate_y(twist_input)
+			
+func rotation():
+	twist_pivot.rotate_y(twist_input)
 	pitch_pivot.rotate_x(pitch_input)
 	pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, -1.2, 1.2)
 
 	twist_input = 0.0
 	pitch_input = 0.0
+	
+func _process(delta: float) -> void:
+	if !object_view:
+		deplacement(delta)
+		move_and_slide()
+
+	rotation()
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -78,7 +80,6 @@ func _process(delta: float) -> void:
 	#Si le joueur n'est pas pas un objet on surligne les objet dont il peut prendre la forme
 	if !object_view:
 		processRaycast()
-
 		
 	if Input.is_action_just_pressed("change_view"):
 		object_view=!object_view
@@ -92,18 +93,10 @@ func _process(delta: float) -> void:
 			$CollisionShape3D.shape=default_shape
 			$MeshInstance3D.mesh=default_mesh
 			$MeshInstance3D.scale = Vector3(0.4,1,0.4)
-			var old_center = collider_offset_y  # centre précédent
-			var new_center = default_collider_offset_y
-			# Ajuster la position verticale pour compenser
-			position.y += (new_center - old_center)
-			collider_offset_y = new_center  # mettre à jour l'offset
 			camera.transform = default_camera_transform
+			speed = default_speed
 		
 func processRaycast():
-	raycast.global_transform.origin = camera.global_transform.origin
-	raycast.global_transform.basis = camera.global_transform.basis
-
- 
 	raycast.force_raycast_update()  # s'assure que le raycast est à jour
 	if raycast.is_colliding():
 		var collide = raycast.get_collider()
@@ -129,19 +122,11 @@ func change_to_object()->bool:
 	if highlighted_object is Copiable:
 		$MeshInstance3D.mesh  = highlighted_object.meshInstance.mesh
 		$MeshInstance3D.scale = Vector3(1,1,1)
-		var shape = $MeshInstance3D.mesh.create_convex_shape()
-		$CollisionShape3D.shape=shape
-		
-		#Déplacer le center pour pas tomber à travers le sol
-		var old_center = collider_offset_y  
-		var new_center = get_collider_center_y(shape,highlighted_object.meshInstance.mesh)
-		position.y += (new_center - old_center)
-		collider_offset_y = new_center  
 		
 		#On désactive le surlignage quand on prend la forme de l'objet
 		highlighted_object.remove_outline() 
 		highlighted_object=null
-		return(true)
+		return true
 	return false
 
 	

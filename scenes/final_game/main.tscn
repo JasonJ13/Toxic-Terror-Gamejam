@@ -253,13 +253,8 @@ environment = ExtResource("3_u5je8")
 
 [node name="Player" parent="." node_paths=PackedStringArray("option_menu") instance=ExtResource("5_q2lsd")]
 transform = Transform3D(-0.7020537, 0, 0.712124, 0, 1, 0, -0.712124, 0, -0.7020537, -16.367771, 5.404495, 13.438195)
-speed = 10.0
+default_speed = 10.0
 option_menu = NodePath("../Control")
-
-[node name="Camera3D" parent="Player/PitchPivot" index="0"]
-environment = ExtResource("3_u5je8")
-fov = 37.849285
-far = 1000.0
 
 [node name="SearchPath" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 126.07941, 0)
@@ -293,6 +288,9 @@ light_volumetric_fog_energy = 1.731
 light_bake_mode = 1
 directional_shadow_mode = 1
 directional_shadow_blend_splits = true
+
+[node name="SnowTreeCopiable" parent="." instance=ExtResource("6_7cog7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90451, -4.71157, 53.547516)
 
 [node name="lake" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.6707, -5.0188284, 97.88983)
@@ -331,11 +329,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -300)
 [node name="Ice11" parent="lake/Ice12" instance=ExtResource("12_faf7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -400)
 
-[node name="SnowTreeCopiable" parent="lake" instance=ExtResource("6_7cog7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.76619, 0.3072586, -44.342316)
-
 [node name="SnowTreeCopiable2" parent="lake" instance=ExtResource("14_bjkyw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.91512, 0.15249586, -51.838333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.5285, 5.5270057, -51.838333)
 
 [node name="SnowTreeCopiable3" parent="lake" instance=ExtResource("15_t7a0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.10521, 1.2927961, -36.30916)

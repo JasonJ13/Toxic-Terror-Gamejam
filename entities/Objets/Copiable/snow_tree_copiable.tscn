@@ -40,8 +40,9 @@ shadow_mesh = SubResource("ArrayMesh_282q6")
 [sub_resource type="BoxShape3D" id="BoxShape3D_nd0bq"]
 size = Vector3(1, 4.8886566, 1)
 
-[node name="SnowTreeCopiable" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
+[node name="SnowTreeCopiable" type="StaticBody3D" node_paths=PackedStringArray("collider", "meshInstance")]
 script = ExtResource("1_pfrf0")
+collider = NodePath("CollisionShape3D")
 meshInstance = NodePath("tree_0/Vert_001")
 
 [node name="tree_0" type="Node3D" parent="."]

@@ -64,6 +64,5 @@ func change_search_mode(search: bool):
 	
 
 func should_search(head_distance) -> bool:
-	print(playerToFollow.object_view)
 	return head_distance > findDistance || playerToFollow.object_view
 	
