@@ -8,6 +8,10 @@ extends Node3D
 @onready var look_at_modifier_3d: LookAtModifier3D = $Armature/Skeleton3D/LookAtModifier3D
 @onready var skeleton_3d: Skeleton3D = $Armature/Skeleton3D
 
+@onready var monster_growl: AudioStreamPlayer3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Spine_003/MonsterGrowl"
+@onready var monster_breath: AudioStreamPlayer3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Spine_003/MonsterBreath"
+@onready var monster_attack: AudioStreamPlayer3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Spine_003/MonsterAttack"
+
 
 @export var playerToFollow : Player
 @export var followForceHead := 400.0
@@ -16,6 +20,8 @@ extends Node3D
 @export var loopTime := 50.0 # En secondes
 @export var findDistance := 10.0
 @export var multForceRushingPlayer := 5.0
+
+@export var scream_probability := 0.02
 
 var pathProgress := 0.0
 var pathLength : float
@@ -49,6 +55,7 @@ func _physics_process(delta: float) -> void:
 	physical_bone_arm_l_end.apply_central_impulse(force_arm_left * multForce * delta)
 	physical_bone_arm_r_end.apply_central_impulse(force_arm_rigt * multForce * delta)
 	
+	
 func get_goal_pos(delta: float) -> Vector3:
 	if searchMode:
 		pathProgress += delta/loopTime
@@ -67,6 +74,8 @@ func change_search_mode(search: bool):
 		searchMode = true
 	else:
 		searchMode = false
+		if !monster_attack.playing: monster_attack.play()
+		
 	
 
 func should_search(head_distance) -> bool:
@@ -75,9 +84,20 @@ func should_search(head_distance) -> bool:
 # Death zone enfant de Skeleton3D/PhysicalBoneSimulator/Spine__03
 func _on_death_zone_body_entered(body: Node3D) -> void:
 	if body is not Player: return
+	if body.object_view: return
+	
 	print("u dead")
+	playerToFollow.death_scream.play()
 	playerToFollow.transform = playerStartTransform
 	physical_bone_simulator_3d.physical_bones_stop_simulation()
 	transform = creatureStartTransform
 	physical_bone_simulator_3d.physical_bones_start_simulation.call_deferred()
 	
+
+
+func _on_timer_timeout() -> void:
+	var rand = randf()
+	if rand > 1 - scream_probability:
+		monster_breath.play()
+	elif rand < scream_probability:
+		monster_growl.play()

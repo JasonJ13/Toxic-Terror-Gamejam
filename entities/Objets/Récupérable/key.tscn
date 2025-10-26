@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://dx0rrrhujreyu"]
+[gd_scene load_steps=12 format=4 uid="uid://dx0rrrhujreyu"]
 
 [ext_resource type="Script" uid="uid://cdsygex4cvb7d" path="res://entities/Objets/Récupérable/cle.gd" id="1_a2xhj"]
 [ext_resource type="Texture2D" uid="uid://20va63gsiv2t" path="res://assets/models/key/old_rusty_key_0.png" id="1_oearp"]
 [ext_resource type="Texture2D" uid="uid://usw70xmgklkp" path="res://assets/models/key/old_rusty_key_1.png" id="2_a2xhj"]
 [ext_resource type="Texture2D" uid="uid://ce21b54bibiy3" path="res://assets/models/key/old_rusty_key_2.png" id="3_bvjxi"]
+[ext_resource type="AudioStream" uid="uid://b1ibkf3pnsv0p" path="res://assets/audio/sons_uwu/collect_key.mp3" id="5_bvjxi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yao5h"]
 radius = 0.29492188
@@ -106,3 +107,8 @@ omni_attenuation = 0.5
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4458938, 0)
 mesh = SubResource("SphereMesh_a2xhj")
+
+[node name="CollectSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_bvjxi")
+
+[connection signal="finished" from="CollectSound" to="." method="_on_collect_sound_finished"]

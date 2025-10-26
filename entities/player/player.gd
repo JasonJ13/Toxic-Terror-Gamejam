@@ -15,10 +15,13 @@ var object_view := false
 @onready var twist_pivot: Node3D = $TwistPivot
 @onready var pitch_pivot: Node3D = $TwistPivot/PitchPivot
 @onready var camera: Camera3D = $TwistPivot/PitchPivot/Camera3D
-
 @onready var raycast: RayCast3D = $TwistPivot/PitchPivot/RayCast3D
-
 @onready var speed := default_speed
+@onready var death_scream: AudioStreamPlayer3D = $DeathScream
+@onready var walking_sound: AudioStreamPlayer3D = $WalkingSound
+
+
+
 
 var default_camera_transform : Transform3D
 var default_shape: Shape3D
@@ -48,6 +51,14 @@ func deplacement(delta):
 	var direction = (twist_pivot.global_basis * input_dir)
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
+	
+	if input_dir != Vector3.ZERO:
+		if !walking_sound.playing: 
+			walking_sound.play()
+	else:
+		walking_sound.stop()
+	
+		
 
 	# Gravité
 	if not is_on_floor():
@@ -67,9 +78,12 @@ func rotation():
 	pitch_input = 0.0
 	
 func _process(delta: float) -> void:
+	
 	if !object_view:
 		deplacement(delta)
 		move_and_slide()
+	else:
+		walking_sound.stop()
 
 	rotation()
 	

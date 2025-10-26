@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dsnx8mndq4xls"]
+[gd_scene load_steps=34 format=3 uid="uid://dsnx8mndq4xls"]
 
 [ext_resource type="PackedScene" uid="uid://cq2t50kvbyxq6" path="res://scenes/test_Jason/option.tscn" id="1_8qcgq"]
 [ext_resource type="PackedScene" uid="uid://cggqb75a8w8r" path="res://addons/debug_menu/debug_menu.tscn" id="2_lkiti"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cyw6xdom01a40" path="res://entities/portal/portal.tscn" id="18_802qj"]
 [ext_resource type="PackedScene" uid="uid://bhunnrskeichi" path="res://entities/decors/treePatch/medium_tree_patch.tscn" id="19_01snx"]
 [ext_resource type="PackedScene" uid="uid://k6okso8ten7w" path="res://entities/decors/treePatch/little_tree_patch_a.tscn" id="20_v66lx"]
+[ext_resource type="AudioStream" uid="uid://dx7ocrglwywvp" path="res://assets/audio/music_uwu/ambient_neutral.mp3" id="21_lkiti"]
 
 [sub_resource type="Curve3D" id="Curve3D_74ppi"]
 closed = true
@@ -160,9 +161,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5225989e-12, 0.003810541
 body_offset = Transform3D(0.5, -5.087486e-11, -1.4928059e-12, -1.4928059e-12, 4.4796616e-07, -0.50000006, 5.087486e-11, 0.50000006, 4.4796616e-07, 0, 0.19005775, -0.0019054413)
 
 [node name="Physical Bone Neck_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="5"]
-transform = Transform3D(0.5, -1.1926012e-07, -9.379164e-13, 2.9070844e-09, 0.01219193, -0.49985138, 1.1922468e-07, 0.49985135, 0.012191931, 0, 2.655201, -0.054574966)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5509393e-13, -0.01195578, 0.63383085)
-body_offset = Transform3D(0.5, -5.0818016e-11, -8.3622e-13, -8.3555385e-13, 4.1071326e-07, -0.5000001, 5.0825122e-11, 0.50000006, 4.1071326e-07, 0, 0.3169155, 0.0059776306)
+transform = Transform3D(0.5, -1.1926012e-07, -9.379164e-13, 2.9070844e-09, 0.01219193, -0.49985138, 1.1922468e-07, 0.49985135, 0.012191931, 0, 2.7153225, -0.054574966)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5221166e-13, -0.014889381, 0.7540396)
+body_offset = Transform3D(0.5, -5.0818016e-11, -8.3622e-13, -8.3555385e-13, 4.1071326e-07, -0.5000001, 5.0825122e-11, 0.50000006, 4.1071326e-07, 0, 0.37701988, 0.0074443817)
 
 [node name="Physical Bone Head" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="6"]
 transform = Transform3D(-0.5, 5.237144e-12, 1.615641e-11, -2.6467768e-13, 0.47317493, -0.16157195, -1.6981971e-11, -0.16157195, -0.47317493, 0, 2.734314, 0.038562775)
@@ -170,9 +171,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7046775e-08, -0.0017031
 body_offset = Transform3D(-0.5, -4.307503e-08, -1.1113665e-07, -9.605623e-13, 0.46620873, -0.18069175, 1.1919235e-07, -0.18069173, -0.4662087, 0, 0.03915882, 0.09867859)
 
 [node name="Physical Bone arm_L" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="7"]
-transform = Transform3D(-0.002942203, -0.0018308504, -0.499988, -0.49967825, -0.01768055, 0.0030051228, -0.017691128, 0.49968395, -0.0017256328, 1.0791626, 1.6132956, -0.062078476)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026435559, 0.007891881, 0.7218474)
-body_offset = Transform3D(0.49999994, 1.6950071e-07, 1.8757419e-08, -3.4924597e-10, -1.00649195e-05, -0.49999997, -1.6763806e-07, 0.5, -1.00649195e-05, -0.0013217926, 0.36092377, -0.003938675)
+transform = Transform3D(-0.0029422033, -0.0018308504, -0.499988, -0.49967828, -0.01768055, 0.003005123, -0.017691128, 0.49968395, -0.0017256328, 1.0791626, 1.6132956, -0.062078476)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026435554, 0.007891881, 0.72184736)
+body_offset = Transform3D(0.4999999, 1.6950071e-07, 1.899025e-08, -1.1641532e-10, -1.00649195e-05, -0.49999997, -1.6763806e-07, 0.5, -1.00649195e-05, -0.0013217926, 0.36092377, -0.003938675)
 
 [node name="Physical Bone arm_L_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="8"]
 transform = Transform3D(-0.002940848, -0.0018256743, -0.49998802, -0.49967843, -0.017676646, 0.003003572, -0.01768719, 0.4996841, -0.0017205315, 1.8445969, 1.6042776, -0.056510925)
@@ -185,9 +186,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008499326, -0.000907541
 body_offset = Transform3D(0.50000006, 3.600493e-06, 1.3810713e-06, 1.3617646e-06, -7.8163575e-06, -0.5000001, -3.600493e-06, 0.50000006, -7.816125e-06, 0.004248619, 0.3793869, 0.00045967102)
 
 [node name="Physical Bone arm_L_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="10"]
-transform = Transform3D(-0.0029406387, -0.0018205915, -0.49998808, -0.4996782, -0.017684158, 0.0030032087, -0.017694669, 0.49968386, -0.0017154143, 3.7329254, 1.5969095, -0.05111122)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018970158, 0.0041230503, 1.5391384)
-body_offset = Transform3D(0.50000006, 3.6414713e-06, 1.4879879e-06, 1.4683319e-06, 2.1094456e-07, -0.5000001, -3.6396086e-06, 0.5000001, 2.1129381e-07, -0.0009508133, 0.7695694, -0.0020618439)
+transform = Transform3D(-0.0029406387, -0.0018205915, -0.49998808, -0.4996782, -0.017684158, 0.0030032087, -0.017694669, 0.49968386, -0.0017154143, 3.9791183, 1.5969086, -0.05111122)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0047927997, 0.0059157703, 2.031509)
+body_offset = Transform3D(0.50000006, 3.6414713e-06, 1.4879879e-06, 1.4683319e-06, 2.1094456e-07, -0.5000001, -3.6396086e-06, 0.5000001, 2.1129381e-07, -0.0023994446, 1.0157547, -0.0029582977)
 
 [node name="Physical Bone arm_L_004" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="11"]
 transform = Transform3D(-0.0029258763, -0.0018288725, -0.49998814, -0.49967805, -0.017690752, 0.0029887713, -0.017701264, 0.4996836, -0.001724173, 4.03627, 1.6030779, -0.04809189)
@@ -245,9 +246,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, 0.00460055
 body_offset = Transform3D(0.5, 3.126388e-13, -3.5527137e-15, -3.5527137e-15, -1.4901161e-08, -0.5, -3.2684966e-13, 0.5, -1.4901161e-08, 7.6293945e-06, 0.5676508, -0.0023002625)
 
 [node name="Physical Bone tail_005" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="22"]
-transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 0, -6.1241727, -0.40387535)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.021206e-15, 0.0035553093, 1.012269)
-body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 0, 0.5061345, -0.0017776489)
+transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 0, -6.0966034, -0.40387726)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8332524e-15, 0.0018119919, 0.9571581)
+body_offset = Transform3D(0.5, 3.126388e-13, 8.881784e-16, 8.881784e-16, -5.5879354e-09, -0.5, -3.2684966e-13, 0.5, -5.5879354e-09, 0, 0.47857904, -0.0009059906)
 
 [node name="Physical Bone tail_006" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="23"]
 transform = Transform3D(0.5, 2.384189e-07, 1.3322676e-15, -7.52811e-09, 0.015787566, 0.4997507, 2.3830002e-07, -0.4997507, 0.015787566, 0, -7.319755, -0.44595718)
@@ -345,15 +346,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.10521, 1.2927961, -36.309
 
 [node name="KeyLake" parent="Keys" instance=ExtResource("16_bpbkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.49716, -3.2102952, 90.75043)
-rotation_speed = null
 
 [node name="KeyMountain" parent="Keys" instance=ExtResource("16_bpbkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.06255, 114.78004, -196.27455)
-rotation_speed = null
 
 [node name="KeyForest" parent="Keys" instance=ExtResource("16_bpbkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -185.29556, 15.303177, -298.89252)
-rotation_speed = null
 
 [node name="OmniLight3D" parent="Keys/KeyForest" index="2"]
 light_volumetric_fog_energy = 3.0
@@ -563,7 +561,11 @@ transform = Transform3D(0.3525769, -3.7252903e-09, 0.93578285, 0.0742836, 0.9968
 [node name="WallCopiable4" parent="ForestObjects/NearKey" instance=ExtResource("15_exu5i")]
 transform = Transform3D(-0.98074234, -0.1305144, -0.14529543, -0.12323733, 0.9906784, -0.058045287, 0.15151668, -0.03902162, -0.9876842, -80.7484, -9.6790495, -81.10333)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_lkiti")
+volume_db = -20.0
+autoplay = true
+bus = &"Musique"
 
 [editable path="creature"]
 [editable path="Player"]
