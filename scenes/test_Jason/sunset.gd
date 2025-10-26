@@ -3,6 +3,7 @@ extends Control
 var n_letter : int = 0
 @onready var label : Label = $Label
 
+signal end
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

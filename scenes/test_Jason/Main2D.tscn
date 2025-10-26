@@ -1,8 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://dul1c872kc1af"]
+[gd_scene load_steps=8 format=3 uid="uid://dul1c872kc1af"]
 
 [ext_resource type="Script" uid="uid://c81g5y1egq1sh" path="res://tests-scripts/test_Jason/main_2d.gd" id="1_5kul3"]
 [ext_resource type="PackedScene" uid="uid://cnl3o1d0tid18" path="res://scenes/test_Jason/Menu.tscn" id="3_3l4t5"]
 [ext_resource type="PackedScene" uid="uid://cyr7m83boa1oh" path="res://scenes/test_Jason/sunset.tscn" id="4_qfgsi"]
+
+[sub_resource type="Animation" id="Animation_qfgsi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h1khe"]
+resource_name = "appeared"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3l4t5"]
+resource_name = "fade_in_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1khe"]
+_data = {
+&"RESET": SubResource("Animation_qfgsi"),
+&"appeared": SubResource("Animation_h1khe"),
+&"fade_in_black": SubResource("Animation_3l4t5")
+}
 
 [node name="Main2D" type="Control"]
 layout_mode = 3
@@ -19,4 +71,10 @@ layout_mode = 1
 [node name="Menu" parent="." instance=ExtResource("3_3l4t5")]
 layout_mode = 1
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h1khe")
+}
+
 [connection signal="Game_started" from="Menu" to="." method="Start"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="start_diag"]

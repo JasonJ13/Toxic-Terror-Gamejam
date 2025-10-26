@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkctgtpstjbd"]
+
+[ext_resource type="Texture2D" uid="uid://c1x784pqmpqt0" path="res://assets/2Dsprite/fond1/fond-accident.png" id="1_6q8b5"]
+[ext_resource type="Script" uid="uid://ddtcmjtvsq0ei" path="res://tests-scripts/test_Jason/case.gd" id="1_ckn6b"]
+[ext_resource type="Texture2D" uid="uid://h5sf4cn3f5sc" path="res://assets/2Dsprite/Character/character-accident.png" id="2_ckn6b"]
+[ext_resource type="Texture2D" uid="uid://yfimotpkpphb" path="res://assets/2Dsprite/Character/girl-accident.png" id="3_y4de6"]
+[ext_resource type="Texture2D" uid="uid://ygssa25yup6d" path="res://assets/2Dsprite/siège2.png" id="4_gtmp8"]
+[ext_resource type="Texture2D" uid="uid://dnerogai2t2su" path="res://assets/2Dsprite/Character/bus-character3.png" id="5_2jk5h"]
+
+[sub_resource type="Animation" id="Animation_ckn6b"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(192, -20), Vector2(192, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y4de6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(192, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4de6"]
+_data = {
+&"RESET": SubResource("Animation_y4de6"),
+&"fade_in": SubResource("Animation_ckn6b")
+}
+
+[node name="AccidentScene" type="ColorRect" node_paths=PackedStringArray("animation_tab")]
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_ckn6b")
+num_line_jump = Array[int]([1])
+animation_tab = [NodePath("Case2/AnimationPlayer")]
+metadata/_custom_type_script = "uid://ddtcmjtvsq0ei"
+
+[node name="Case1" type="Sprite2D" parent="."]
+position = Vector2(-192, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("1_6q8b5")
+
+[node name="CharacterAccident" type="Sprite2D" parent="Case1"]
+position = Vector2(9.375, -4)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_ckn6b")
+
+[node name="GirlAccident" type="Sprite2D" parent="Case1"]
+position = Vector2(-12.5, 2.625)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_y4de6")
+
+[node name="Siège2" type="Sprite2D" parent="Case1"]
+position = Vector2(-2, 11)
+texture = ExtResource("4_gtmp8")
+
+[node name="Siège3" type="Sprite2D" parent="Case1"]
+position = Vector2(-15, 11.125)
+texture = ExtResource("4_gtmp8")
+
+[node name="Case2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(192, 0)
+scale = Vector2(8, 8)
+texture = ExtResource("1_6q8b5")
+
+[node name="BusCharacter3" type="Sprite2D" parent="Case2"]
+position = Vector2(-7.375, 1.375)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_2jk5h")
+flip_h = true
+
+[node name="Siège4" type="Sprite2D" parent="Case2"]
+position = Vector2(-2, 10.875)
+texture = ExtResource("4_gtmp8")
+
+[node name="Siège5" type="Sprite2D" parent="Case2"]
+position = Vector2(-15, 11)
+texture = ExtResource("4_gtmp8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Case2"]
+libraries = {
+&"": SubResource("AnimationLibrary_y4de6")
+}
+autoplay = "RESET"
+speed_scale = 2.0
