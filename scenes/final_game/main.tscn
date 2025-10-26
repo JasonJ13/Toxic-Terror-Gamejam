@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://brb185rod85ud"]
+[gd_scene load_steps=25 format=3 uid="uid://brb185rod85ud"]
 
 [ext_resource type="PackedScene" uid="uid://cggqb75a8w8r" path="res://addons/debug_menu/debug_menu.tscn" id="1_2cj8y"]
 [ext_resource type="PackedScene" uid="uid://cq2t50kvbyxq6" path="res://scenes/test_Jason/option.tscn" id="1_faf7b"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://tf2i0wxc0md7" path="res://assets/textures/cliff_side_2k/cliff_side_nor_gl_2k.jpg" id="9_q55wk"]
 [ext_resource type="Texture2D" uid="uid://d4fy0l6y58mmi" path="res://assets/textures/snow/snow_02_diff_2k.jpg" id="10_2uhwy"]
 [ext_resource type="Texture2D" uid="uid://b8jogokqcb18y" path="res://assets/textures/snow/snow_02_nor_gl_2k.jpg" id="11_tfgeh"]
+[ext_resource type="PackedScene" uid="uid://bn21cqroorckd" path="res://entities/decors/ice/ice.tscn" id="12_faf7b"]
 
 [sub_resource type="Curve3D" id="Curve3D_74ppi"]
 closed = true
@@ -129,9 +130,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3555111e-14, -0.0010373
 body_offset = Transform3D(0.5, -1.8829382e-12, 8.881784e-15, 9.769963e-15, -1.8626451e-08, -0.5, 1.897149e-12, 0.5, -1.8626451e-08, 0, 0.2715845, 0.0005186796)
 
 [node name="Physical Bone Spine_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="1"]
-transform = Transform3D(0.5, -1.1921887e-07, -2.2692959e-13, -3.7645767e-09, -0.015787562, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787562, 0, 0.7583256, -0.082527526)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.191517e-13, -1.074704e-06, 0.48864555)
-body_offset = Transform3D(0.5, -9.5568e-12, -2.2426505e-13, -2.2337687e-13, 1.8626451e-09, -0.5, 9.571011e-12, 0.5, 1.8626451e-09, 0, 0.24432278, 5.364418e-07)
+transform = Transform3D(0.5, -1.1921887e-07, -2.264855e-13, -3.7645767e-09, -0.015787562, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787562, 0, 0.7583256, -0.082527526)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.195857e-13, -1.074704e-06, 0.48864555)
+body_offset = Transform3D(0.5, -9.5568e-12, -2.2470914e-13, -2.2337687e-13, 1.8626451e-09, -0.5, 9.571011e-12, 0.5, 1.8626451e-09, 0, 0.24432278, 5.364418e-07)
 
 [node name="Physical Bone Spine_002" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="2"]
 transform = Transform3D(0.5, -1.1921887e-07, -1.9184654e-13, -3.7645442e-09, -0.015787574, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787574, 0, 1.2456656, -0.067131065)
@@ -139,9 +140,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8844778e-13, -2.9693267e
 body_offset = Transform3D(0.5, -9.5568e-12, -1.931788e-13, -1.9184654e-13, -1.1175871e-08, -0.5, 9.571011e-12, 0.5, -1.1175871e-08, 0, 0.24395084, 1.4901161e-06)
 
 [node name="Physical Bone Spine_003" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="3"]
-transform = Transform3D(0.5, -1.1921887e-07, -2.264855e-13, -3.764575e-09, -0.015787555, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787555, 0, 1.7337542, -0.051713258)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1916876e-13, -3.6126863e-07, 0.48865318)
-body_offset = Transform3D(0.5, -9.5568e-12, -2.2426505e-13, -2.2293278e-13, 3.7252903e-09, -0.5, 9.571011e-12, 0.5, 3.7252903e-09, 0, 0.24432659, 1.7881393e-07)
+transform = Transform3D(0.5, -1.1921887e-07, -2.2692959e-13, -3.764575e-09, -0.015787555, -0.4997507, 1.1915941e-07, 0.4997507, -0.015787555, 0, 1.7337542, -0.051713258)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1873475e-13, -3.6126863e-07, 0.48865318)
+body_offset = Transform3D(0.5, -9.5568e-12, -2.2382096e-13, -2.2293278e-13, 3.7252903e-09, -0.5, 9.571011e-12, 0.5, 3.7252903e-09, 0, 0.24432659, 1.7881393e-07)
 
 [node name="Physical Bone Neck" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="4"]
 transform = Transform3D(0.5, -1.1926011e-07, -1.6142643e-12, 2.9064173e-09, 0.012191968, -0.49985135, 1.192247e-07, 0.49985135, 0.012191968, 0, 2.160512, -0.048527222)
@@ -159,9 +160,9 @@ joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6823786e-08, -0.0001114
 body_offset = Transform3D(-0.5, -4.308058e-08, -1.1115325e-07, -1.2233495e-13, 0.46620873, -0.18069181, 1.1920983e-07, -0.1806918, -0.4662087, 0, 0.038118362, 0.09819621)
 
 [node name="Physical Bone arm_L" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="7"]
-transform = Transform3D(-0.0029424771, -0.001830575, -0.49998802, -0.49967825, -0.01768055, 0.0030053873, -0.017691128, 0.49968395, -0.001725348, 1.0903893, 1.6132956, -0.058183882)
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003052138, 0.00018820258, 0.74433136)
-body_offset = Transform3D(0.49999994, 1.6763806e-07, -2.551169e-07, -2.743909e-07, -9.789597e-06, -0.5, -1.6577542e-07, 0.5, -9.789481e-06, -0.0015258789, 0.37216568, -8.6814165e-05)
+transform = Transform3D(-0.0029424774, -0.001830575, -0.49998802, -0.49967828, -0.01768055, 0.0030053873, -0.017691128, 0.49968395, -0.001725348, 1.0903893, 1.6132956, -0.058183882)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030521383, 0.00018820258, 0.74433136)
+body_offset = Transform3D(0.4999999, 1.6763806e-07, -2.551169e-07, -2.7415808e-07, -9.789597e-06, -0.5, -1.6577542e-07, 0.5, -9.789481e-06, -0.0015258789, 0.37216568, -8.6814165e-05)
 
 [node name="Physical Bone arm_L_001" parent="creature/Armature/Skeleton3D/PhysicalBoneSimulator3D" index="8"]
 transform = Transform3D(-0.0029411158, -0.0018256713, -0.49998802, -0.49967837, -0.01767886, 0.003003847, -0.017689407, 0.499684, -0.0017205057, 1.8437958, 1.6042767, -0.05549489)
@@ -283,5 +284,40 @@ light_energy = 0.489
 light_volumetric_fog_energy = 1.731
 shadow_enabled = true
 directional_shadow_blend_splits = true
+
+[node name="lake" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.6707, -6.426182, 97.88983)
+
+[node name="Ice" parent="lake" instance=ExtResource("12_faf7b")]
+
+[node name="Ice2" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0, 0)
+
+[node name="Ice3" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
+
+[node name="Ice4" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 100)
+
+[node name="Ice5" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+
+[node name="Ice6" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -100)
+
+[node name="Ice7" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, -100)
+
+[node name="Ice8" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, -200)
+
+[node name="Ice9" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -200)
+
+[node name="Ice10" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -300)
+
+[node name="Ice11" parent="lake" instance=ExtResource("12_faf7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -400)
 
 [editable path="creature"]
