@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnl3o1d0tid18"]
 
 [ext_resource type="FontFile" uid="uid://1yr6oxdc5o5p" path="res://assets/2Dsprite/font/Toxique_font_full-Regular.otf" id="1_1nt8d"]
-[ext_resource type="Script" uid="uid://brqyigihrh4h3" path="res://scenes/test_Jason/menu.gd" id="1_lq5c3"]
+[ext_resource type="Script" uid="uid://brqyigihrh4h3" path="res://tests-scripts/test_Jason/menu.gd" id="1_lq5c3"]
 [ext_resource type="Texture2D" uid="uid://c3kwlc1c1hyxo" path="res://assets/2Dsprite/arrow.png" id="3_lq5c3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5kl4l"]
