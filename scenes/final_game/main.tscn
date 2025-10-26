@@ -248,7 +248,7 @@ environment = ExtResource("3_u5je8")
 
 [node name="Player" parent="." node_paths=PackedStringArray("option_menu") instance=ExtResource("5_q2lsd")]
 transform = Transform3D(-0.7020537, 0, 0.712124, 0, 1, 0, -0.712124, 0, -0.7020537, -16.367771, 5.404495, 13.438195)
-default_speed = 100.0
+speed = 10.0
 option_menu = NodePath("../Control")
 
 [node name="SearchPath" type="Path3D" parent="."]

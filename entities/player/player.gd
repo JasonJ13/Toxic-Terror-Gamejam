@@ -1,8 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-var speed := 2.0
-@export var default_speed:=2.0
+@export var speed := 2.0
 @export var object_speed:=0.2
 @export var mouse_sensitivity := 0.001
 var twist_input := 0.0
@@ -99,10 +98,6 @@ func _process(delta: float) -> void:
 			position.y += (new_center - old_center)
 			collider_offset_y = new_center  # mettre à jour l'offset
 			camera.transform = default_camera_transform
-			
-			speed=default_speed
-			
-			
 		
 func processRaycast():
 	raycast.global_transform.origin = camera.global_transform.origin
