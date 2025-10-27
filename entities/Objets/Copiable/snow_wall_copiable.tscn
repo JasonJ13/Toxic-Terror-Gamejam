@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmsl2msq388jl"]
+
+[ext_resource type="Script" uid="uid://nebjoxxdp85n" path="res://entities/Objets/Copiable/copiable.gd" id="1_8ekry"]
+[ext_resource type="PackedScene" uid="uid://b5rhghv1eajei" path="res://assets/models/environment/outdoors/broken_wall_0/broken_wall_0_snow.tscn" id="1_bd70l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ekry"]
+size = Vector3(12.807983, 5.4696045, 1)
+
+[node name="WallCopiable" type="StaticBody3D" node_paths=PackedStringArray("meshInstance")]
+script = ExtResource("1_8ekry")
+meshInstance = NodePath("broken_wall_0_snow/Low")
+
+[node name="broken_wall_0_snow" parent="." instance=ExtResource("1_bd70l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2751075, 1.1920929e-07, -0.25826335)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12823486, 2.2348022, 0)
+shape = SubResource("BoxShape3D_8ekry")
+
+[editable path="broken_wall_0_snow"]

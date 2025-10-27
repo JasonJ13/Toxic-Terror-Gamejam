@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bs1klacudeb26"]
+
+[ext_resource type="Texture2D" uid="uid://b6cc81hsl17tk" path="res://entities/decors/ice/ice_textures/ice_0002_color_1k.jpg" id="1_mvcaa"]
+[ext_resource type="Texture2D" uid="uid://qh4cbdcy6haw" path="res://entities/decors/ice/ice_textures/ice_0002_ao_1k.jpg" id="2_34w08"]
+[ext_resource type="Texture2D" uid="uid://bd1c3yogja5p8" path="res://entities/decors/ice/ice_textures/ice_0002_height_1k.png" id="3_m777r"]
+[ext_resource type="Texture2D" uid="uid://7q07o6nhq2qs" path="res://entities/decors/ice/ice_textures/ice_0002_normal_opengl_1k.png" id="4_ad2ox"]
+[ext_resource type="Texture2D" uid="uid://dkd06jqgeddxu" path="res://entities/decors/ice/ice_textures/ice_0002_roughness_1k.jpg" id="5_kwnpo"]
+
+[resource]
+albedo_color = Color(1, 1, 1, 0.78431374)
+albedo_texture = ExtResource("1_mvcaa")
+metallic = 0.3
+metallic_specular = 0.6
+roughness = 0.5
+roughness_texture = ExtResource("5_kwnpo")
+normal_enabled = true
+normal_texture = ExtResource("4_ad2ox")
+ao_enabled = true
+ao_texture = ExtResource("2_34w08")
+heightmap_texture = ExtResource("3_m777r")
+uv1_scale = Vector3(4, 4, 4)

@@ -1,11 +1,16 @@
 extends Node3D
-# ATTENTION la position de ce noeud bouge pas, c'est que le Skeleton3D qui bouge
+# ATTENTION la position de ce noeud bouge pas, c'est que les os du Skeleton3D qui bouge
 
 @onready var physical_bone_head: PhysicalBone3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Head"
 @onready var physical_bone_simulator_3d: PhysicalBoneSimulator3D = $Armature/Skeleton3D/PhysicalBoneSimulator3D
 @onready var physical_bone_arm_l_end: PhysicalBone3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_L_004"
 @onready var physical_bone_arm_r_end: PhysicalBone3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone arm_R_004"
 @onready var look_at_modifier_3d: LookAtModifier3D = $Armature/Skeleton3D/LookAtModifier3D
+@onready var skeleton_3d: Skeleton3D = $Armature/Skeleton3D
+
+@onready var monster_growl: AudioStreamPlayer3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Spine_003/MonsterGrowl"
+@onready var monster_breath: AudioStreamPlayer3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Spine_003/MonsterBreath"
+@onready var monster_attack: AudioStreamPlayer3D = $"Armature/Skeleton3D/PhysicalBoneSimulator3D/Physical Bone Spine_003/MonsterAttack"
 
 
 @export var playerToFollow : Player
@@ -16,19 +21,26 @@ extends Node3D
 @export var findDistance := 10.0
 @export var multForceRushingPlayer := 5.0
 
+@export var scream_probability := 0.02
+
 var pathProgress := 0.0
 var pathLength : float
 var searchMode := true # Doit seulement être changé avec "_change_mode()"
 var searchingCurve : Curve3D
+
+# Gestion de la mort (literalement)
+var playerStartTransform : Transform3D
+var creatureStartTransform : Transform3D
 
 func _ready() -> void:
 	physical_bone_simulator_3d.physical_bones_start_simulation()
 	look_at_modifier_3d.target_node = playerToFollow.get_path()
 	searchingCurve = searchingPath.get_curve()
 	pathLength = searchingCurve.get_baked_length()
+	playerStartTransform = playerToFollow.transform
+	creatureStartTransform = transform
 	
 func _physics_process(delta: float) -> void:
-	
 	var head_distance := (playerToFollow.global_position - physical_bone_head.global_position).length()
 	change_search_mode(should_search(head_distance))
 	var goal_pos := get_goal_pos(delta)
@@ -42,6 +54,7 @@ func _physics_process(delta: float) -> void:
 	physical_bone_head.apply_central_impulse(force_vec_head * multForce * delta)
 	physical_bone_arm_l_end.apply_central_impulse(force_arm_left * multForce * delta)
 	physical_bone_arm_r_end.apply_central_impulse(force_arm_rigt * multForce * delta)
+	
 	
 func get_goal_pos(delta: float) -> Vector3:
 	if searchMode:
@@ -61,9 +74,30 @@ func change_search_mode(search: bool):
 		searchMode = true
 	else:
 		searchMode = false
+		if !monster_attack.playing: monster_attack.play()
+		
 	
 
 func should_search(head_distance) -> bool:
-	print(playerToFollow.object_view)
 	return head_distance > findDistance || playerToFollow.object_view
 	
+# Death zone enfant de Skeleton3D/PhysicalBoneSimulator/Spine__03
+func _on_death_zone_body_entered(body: Node3D) -> void:
+	if body is not Player: return
+	if body.object_view: return
+	
+	print("u dead")
+	playerToFollow.death_scream.play()
+	playerToFollow.transform = playerStartTransform
+	physical_bone_simulator_3d.physical_bones_stop_simulation()
+	transform = creatureStartTransform
+	physical_bone_simulator_3d.physical_bones_start_simulation.call_deferred()
+	
+
+
+func _on_timer_timeout() -> void:
+	var rand = randf()
+	if rand > 1 - scream_probability:
+		monster_breath.play()
+	elif rand < scream_probability:
+		monster_growl.play()

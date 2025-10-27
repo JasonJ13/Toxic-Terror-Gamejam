@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn21cqroorckd"]
+
+[ext_resource type="Material" uid="uid://bs1klacudeb26" path="res://entities/decors/ice/ice_mat.tres" id="1_8x2dg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8biva"]
+material = ExtResource("1_8x2dg")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8biva"]
+size = Vector3(100, 0.1, 100)
+
+[node name="Ice" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_8biva")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8biva")

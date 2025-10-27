@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhunnrskeichi"]
+
+[ext_resource type="PackedScene" uid="uid://k6okso8ten7w" path="res://entities/decors/treePatch/little_tree_patch_a.tscn" id="1_6jx15"]
+[ext_resource type="PackedScene" uid="uid://dc8rkwvue2r0n" path="res://entities/decors/treePatch/little_tree_patch_b.tscn" id="2_dygx7"]
+
+[node name="mediumTreePatch" type="Node3D"]
+
+[node name="littleTreePatchA" parent="." instance=ExtResource("1_6jx15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20484924, -4.888155, 0)
+
+[node name="littleTreePatchB" parent="." instance=ExtResource("2_dygx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.017708, -8.536539, 0)

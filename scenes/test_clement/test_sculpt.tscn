@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://n7makxhyljut" path="res://entities/player/player.tscn" id="4_kpg1n"]
 [ext_resource type="Script" uid="uid://ceq4wyb23lprb" path="res://tools-scripts/spline_tool.gd" id="5_e6ypj"]
 [ext_resource type="Script" uid="uid://nebjoxxdp85n" path="res://entities/Objets/Copiable/copiable.gd" id="6_2usbq"]
-[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="6_kpg1n"]
-[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="7_e6ypj"]
-[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="8_2usbq"]
-[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="9_n1ivr"]
+[ext_resource type="Texture2D" uid="uid://slwy7yd5m7i2" path="res://assets/textures/cliff_side_2k/cliff_side_diff_2k.jpg" id="8_2usbq"]
+[ext_resource type="Texture2D" uid="uid://tf2i0wxc0md7" path="res://assets/textures/cliff_side_2k/cliff_side_nor_gl_2k.jpg" id="9_n1ivr"]
+[ext_resource type="Texture2D" uid="uid://d4fy0l6y58mmi" path="res://assets/textures/snow/snow_02_diff_2k.jpg" id="10_3tc7s"]
+[ext_resource type="Texture2D" uid="uid://b8jogokqcb18y" path="res://assets/textures/snow/snow_02_nor_gl_2k.jpg" id="11_j8qio"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhxx4"]
 
@@ -52,22 +52,22 @@ seamless = true
 [sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_u5iqr"]
 _shader_parameters = {
 &"auto_base_texture": 0,
-&"auto_height_reduction": 0.1,
+&"auto_height_reduction": 0.0,
 &"auto_overlay_texture": 1,
-&"auto_slope": 1.0,
+&"auto_slope": 0.6250000296875,
 &"bias_distance": 512.0,
-&"blend_sharpness": 0.5,
+&"blend_sharpness": 0.0,
 &"depth_blur": 0.0,
 &"enable_macro_variation": true,
 &"enable_projection": true,
 &"flat_terrain_normals": false,
-&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation1": Color(0.67859995, 0.72929996, 0.78, 1),
 &"macro_variation2": Color(1, 1, 1, 1),
 &"macro_variation_slope": 0.333,
 &"mipmap_bias": 1.0,
 &"noise1_angle": 0.0,
 &"noise1_offset": Vector2(0.5, 0.5),
-&"noise1_scale": 0.04,
+&"noise1_scale": 0.020000000950000003,
 &"noise2_scale": 0.076,
 &"noise_texture": SubResource("NoiseTexture2D_jairc"),
 &"projection_threshold": 0.8
@@ -94,14 +94,15 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_3tc7s"]
 name = "rock023_alb_ht"
-albedo_texture = ExtResource("6_kpg1n")
-normal_texture = ExtResource("7_e6ypj")
+albedo_color = Color(0.43, 0.75299996, 1, 1)
+albedo_texture = ExtResource("8_2usbq")
+normal_texture = ExtResource("9_n1ivr")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_j8qio"]
 name = "ground037_alb_ht"
 id = 1
-albedo_texture = ExtResource("8_2usbq")
-normal_texture = ExtResource("9_n1ivr")
+albedo_texture = ExtResource("10_3tc7s")
+normal_texture = ExtResource("11_j8qio")
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_2usbq"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_e6ypj")])
@@ -280,7 +281,7 @@ mesh = SubResource("BoxMesh_64xmg")
 shape = SubResource("BoxShape3D_64xmg")
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://entities/terrain"
+data_directory = "res://entities/terrain/test_sculpt"
 material = SubResource("Terrain3DMaterial_u5iqr")
 assets = SubResource("Terrain3DAssets_2usbq")
 top_level = true

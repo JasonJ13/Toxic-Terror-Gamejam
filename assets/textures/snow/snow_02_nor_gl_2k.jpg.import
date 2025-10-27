@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8jogokqcb18y"
-path.s3tc="res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.s3tc.ctex"
+path="res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/textures/snow/snow_02_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.s3tc.ctex"]
+dest_files=["res://.godot/imported/snow_02_nor_gl_2k.jpg-f8f336f4571cec68fbe5390e48294f9f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -26,7 +25,7 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
