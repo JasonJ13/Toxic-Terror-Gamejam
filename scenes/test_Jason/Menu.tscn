@@ -44,3 +44,40 @@ label_settings = SubResource("LabelSettings_5kl4l")
 scale = Vector2(4, 4)
 texture = ExtResource("3_lq5c3")
 flip_h = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 155.0
+offset_right = 309.0
+offset_bottom = 242.0
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 258.0
+offset_right = 252.0
+offset_bottom = 325.0
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 341.0
+offset_right = 305.0
+offset_bottom = 413.0
+flat = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 424.0
+offset_right = 223.0
+offset_bottom = 511.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="option1"]
+[connection signal="pressed" from="Button2" to="." method="option2"]
+[connection signal="pressed" from="Button3" to="." method="option3"]
+[connection signal="pressed" from="Button4" to="." method="option4"]

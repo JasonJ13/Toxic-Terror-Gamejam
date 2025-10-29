@@ -1,6 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq2t50kvbyxq6"]
+[gd_scene load_steps=13 format=3 uid="uid://cq2t50kvbyxq6"]
 
 [ext_resource type="Script" uid="uid://bbj6gbvt2iaam" path="res://tests-scripts/test_Jason/option.gd" id="1_157rw"]
+[ext_resource type="FontFile" uid="uid://1yr6oxdc5o5p" path="res://assets/2Dsprite/font/Toxique_font_full-Regular.otf" id="2_samho"]
+[ext_resource type="Texture2D" uid="uid://dwirfrnx230i2" path="res://assets/2Dsprite/Menu-panel.png" id="2_vppf6"]
+[ext_resource type="Texture2D" uid="uid://cyjq4la5c754g" path="res://assets/2Dsprite/back-button.png" id="3_vppf6"]
+[ext_resource type="Texture2D" uid="uid://cgdpn0r41qk3g" path="res://assets/2Dsprite/check-box1.png" id="4_2t33b"]
+[ext_resource type="Texture2D" uid="uid://mygi4kyaegxl" path="res://assets/2Dsprite/check-box2.png" id="5_eqsin"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6a77"]
+font = ExtResource("2_samho")
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpquk"]
+font = ExtResource("2_samho")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_157rw"]
 color = Color(1, 1, 1, 1)
@@ -9,6 +25,16 @@ thickness = 8
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_5rrg3"]
 color = Color(0.35813847, 0.30926314, 1, 1)
 thickness = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_p716v"]
+font = ExtResource("2_samho")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2dj1f"]
+font = ExtResource("2_samho")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,7 +47,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_157rw")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.78431374)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098958336
+anchor_top = 0.14444445
+anchor_right = 0.8989583
+anchor_bottom = 0.85555553
+offset_right = -672.0
+offset_bottom = -336.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8, 8)
+texture = ExtResource("2_vppf6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,14 +82,18 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = -27.0
+offset_right = 35.0
 offset_bottom = 50.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 32
 text = "Option"
+label_settings = SubResource("LabelSettings_v6a77")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Quitter" type="Button" parent="Panel"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -59,8 +106,40 @@ offset_right = 33.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Quitter
-"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Quitter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vppf6")
+
+[node name="Label" type="Label" parent="Panel/Quitter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = SubResource("LabelSettings_jpquk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Reprendre" type="Button" parent="Panel"]
 layout_mode = 1
@@ -75,8 +154,39 @@ offset_right = 45.0
 offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Reprendre
-"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Reprendre"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vppf6")
+
+[node name="Label" type="Label" parent="Panel/Reprendre"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -11.5
+offset_right = 29.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+label_settings = SubResource("LabelSettings_jpquk")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="Panel"]
 layout_mode = 1
@@ -105,7 +215,8 @@ offset_right = -216.0
 offset_bottom = 37.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 16
-text = "Volume"
+text = "Sound"
+label_settings = SubResource("LabelSettings_p716v")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -115,7 +226,32 @@ offset_left = 128.0
 offset_top = 137.0
 offset_right = 277.0
 offset_bottom = 171.0
+
+[node name="Label" type="Label" parent="Panel/FullScreenControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "FullScreen"
+label_settings = SubResource("LabelSettings_2dj1f")
+vertical_alignment = 1
+
+[node name="Off" type="Sprite2D" parent="Panel/FullScreenControl"]
+texture_filter = 1
+position = Vector2(128, 16)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("4_2t33b")
+
+[node name="On" type="Sprite2D" parent="Panel/FullScreenControl"]
+visible = false
+texture_filter = 1
+position = Vector2(126, 16)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("5_eqsin")
 
 [connection signal="pressed" from="Panel/Quitter" to="." method="_on_quitter_pressed"]
 [connection signal="pressed" from="Panel/Reprendre" to="." method="_on_reprendre_pressed"]
