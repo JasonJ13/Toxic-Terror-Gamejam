@@ -1,4 +1,4 @@
-extends Node3D
+extends Control
 
 @onready var twoD : Control = $"2D"
 @onready var sunset : Control = $"2D/Sunset"

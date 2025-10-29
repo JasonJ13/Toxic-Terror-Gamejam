@@ -18,8 +18,10 @@ func _on_audio_value_changed(value: float) -> void:
 func _on_full_screen_control_toggled(toggled_on: bool) -> void:
 	if toggled_on == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		$Panel/FullScreenControl/On.show()
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		$Panel/FullScreenControl/On.hide()
 
 
 func _on_quitter_pressed() -> void:

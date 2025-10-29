@@ -7,7 +7,7 @@ var menu_working = true
 @onready var arrow : Sprite2D = $Arrow
 
 signal Game_started
-
+signal Option
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,15 +32,29 @@ func _process(delta: float) -> void:
 		if menu_working :
 			match n_position :
 				0 :
-					Game_started.emit()
+					option1()
 					
 				1 :
-					pass
+					option2()
 					#Ajout d'une scène pour les menues
 					
 				2 :
-					pass
+					option3()
 					#Ajout d'une scène pour les crédits
 					
 				3 :
-					get_tree().quit()
+					option4()
+
+
+func option1() -> void :
+	Game_started.emit()
+
+
+func option2() -> void :
+	Option.emit()
+
+func option3() -> void :
+	pass
+
+func option4() -> void :
+	get_tree().quit()
